@@ -42,7 +42,8 @@ declare the position and each axis value of a sketch as a `DECISION` with its re
 its origin visible ("position X; principles taken: …"); build and verify it for real and say
 what was not checked; load [accessibility](accessibility.md) and declare any cost a position
 carries; record the user's reaction verbatim and treat a choice made from a preview as a
-hypothesis. The map names and asks; it never scores.
+hypothesis. When a reference's main element is a figurative image, ask the user which image
+or figure to use; do not substitute abstract shapes for it. The map names and asks; it never scores.
 
 The user sometimes answers with an idea of their own instead of an option: leave room for it.
 

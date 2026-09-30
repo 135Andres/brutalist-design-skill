@@ -64,6 +64,30 @@ the other two "don't feel brutalist" (the maintainer's words, translated).
 - The draft procedure in [`inspire.md`](../skill/brutalist/references/inspire.md) came out of
   this run and is **unvalidated**.
 
+## Creative mode — "Positions", first run (2026-09-30)
+
+One real brief (text of a public README of the maintainer's own project; sketches kept local,
+by the maintainer's choice) and four references, one or two per position. Four sketches, one per
+position of [`field-map.md`](../skill/brutalist/references/field-map.md). Reactions, in the
+maintainer's words (translated), seen on a phone:
+
+- A (honest medium): "it feels incomplete… it lacks animations; up there [the wordmark at the
+  top] I'd put an animation"; later, "it feels crude".
+- B (efficiency): "it looks good; I don't know what I'd add".
+- C (clash): "ugly… they don't look like the reference image; it looks like make-up colours or
+  a clown's. In the original they were horses, like on some Deftones cover, with text without a
+  background on top of the image".
+- D (legible distinction): "it feels crude, like A".
+
+- `INFERENCE`: in C the reference's identity was a figurative, motion-smeared image; replacing
+  it with flat blurred colour shapes lost the reference. When a reference's main element is an
+  image, the figure is part of what is being studied and cannot be swapped for abstract colour.
+- `INFERENCE`: "missing animation" and "crude" were both about finish; the second versions of A
+  and D added motion (a scan sweeping the wordmark, a signal along the pipeline, a dither whose
+  threshold breathes) and finer lines. Reaction to those versions pending.
+- Mistake found while building: text columns in C first had contrast between 1.2:1 and 3.4:1
+  against the colour blurs; a readable variant was needed (measured 7.55:1).
+
 ## Editing an existing page — first test
 
 On a sketch the agent itself had written (limitation: it knew the code and the intent;
