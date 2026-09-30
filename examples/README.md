@@ -19,8 +19,7 @@ Live pages with invented content, published on the
 | [`gallery/estatica/`](gallery/estatica/index.html) | `inspire` (digestible questions, second run; see [FINDINGS](../docs/FINDINGS.md)) | the maintainer's answers only |
 
 References #39–#42 are described in [`../references/`](../references/README.md), not
-included. Each page's HTML header says what was taken from its reference. Third-party references used during design are described, not included, in
-[`../references/`](../references/README.md).
+included. Each page's HTML header says what was taken from its reference.
 
 ## Original references
 

@@ -142,6 +142,13 @@ maintainer chose **publishing on npm**: the command is `npx brutalist-design-ski
    before publishing on npm. `[proposal]` applied in the response: updating the installed
    skill keeps an edited copy in `~/.brutalist-skill/backups/` instead of overwriting it.
 
+## A-9 · Published; work continues remotely (2026-09-30)
+
+1. `brutalist-design-skill@0.1.0` is on npm; `npx brutalist-design-skill` works from the
+   registry.
+2. The maintainer continues the work from a remote Claude session. What is pending lives in
+   [`NEXT.md`](NEXT.md).
+
 ## Open questions
 
 Kept in one place: [`SPEC.md` § Open questions](SPEC.md#open-questions). *(This section
