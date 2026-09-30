@@ -23,6 +23,7 @@
   .spine{border-right:2px solid var(--ink);display:flex;justify-content:center;align-items:flex-start;padding-top:12px;position:sticky;top:0;height:100vh}
   .spine span{writing-mode:vertical-rl;transform:rotate(180deg);font:800 20px/1 var(--sans);letter-spacing:-.01em}
   main{min-width:0}
+  .top a{display:inline-block;min-height:24px;line-height:24px}
   .top{display:grid;grid-template-columns:repeat(4,auto) 1fr auto;gap:0 32px;align-items:start;padding:12px 18px;font-size:15px;line-height:1.15}
   .top .btns{display:flex;gap:10px;align-items:center}
   .pill{border:1.5px solid var(--ink);border-radius:999px;padding:5px 12px;font:600 13px/1 var(--sans);text-transform:uppercase;background:none;color:inherit;cursor:pointer}
@@ -38,11 +39,12 @@
     font-variation-settings:"wght" var(--w,400),"wdth" var(--wd,100);transition:font-variation-settings .6s var(--ease)}
   .block .now{position:absolute;right:10px;top:10px;font:500 12px/1 var(--sans);text-transform:uppercase;letter-spacing:.06em}
   .ladder{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
-  .ladder li{display:flex;justify-content:space-between;align-items:baseline;padding:2px 0;border-bottom:1px solid #d8d8d8;cursor:default;
+  .ladder li{border-bottom:1px solid #d8d8d8}
+  .ladder button{all:unset;box-sizing:border-box;width:100%;display:flex;justify-content:space-between;align-items:baseline;padding:2px 0;cursor:pointer;min-height:24px;
     font-size:clamp(17px,1.65vw,26px);line-height:1.05;letter-spacing:-.015em}
-  .ladder li:focus-visible{outline-offset:-2px}
-  .ladder li .ab{font-size:.8em}
-  .ladder li.on{background:var(--ink);color:var(--paper)}
+  .ladder button:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
+  .ladder button .ab{font-size:.8em}
+  .ladder button.on{background:var(--ink);color:var(--paper)}
   .specs{display:grid;grid-template-columns:repeat(3,1fr);gap:4px 12px;margin-top:12px;font-size:10.5px;line-height:1.25}
   .specs dt{font-weight:600}
   .specs dd{margin:0 0 4px}
@@ -91,16 +93,16 @@
     </div>
     <div>
       <div class="ph"><span>(KT) Full family</span><span>Uprights</span><span>Italics</span><span>000</span></div>
-      <ul class="ladder" id="ladder" aria-label="Weights: hover or focus one to see it large">
-        <li tabindex="0" data-w="100">Grotto Sans Thin<span class="ab">Th</span></li>
-        <li tabindex="0" data-w="200">Grotto Sans ExtraLight<span class="ab">XL</span></li>
-        <li tabindex="0" data-w="300">Grotto Sans Light<span class="ab">Li</span></li>
-        <li tabindex="0" data-w="400" class="on">Grotto Sans Regular<span class="ab">Rg</span></li>
-        <li tabindex="0" data-w="500">Grotto Sans Medium<span class="ab">Md</span></li>
-        <li tabindex="0" data-w="600">Grotto Sans SemiBold<span class="ab">SB</span></li>
-        <li tabindex="0" data-w="700">Grotto Sans Bold<span class="ab">Bd</span></li>
-        <li tabindex="0" data-w="800">Grotto Sans ExtraBold<span class="ab">XB</span></li>
-        <li tabindex="0" data-w="900">Grotto Sans Black<span class="ab">Bk</span></li>
+      <ul class="ladder" id="ladder" aria-label="Weights: choose one to see it large">
+        <li><button type="button" data-w="100" aria-pressed="false">Grotto Sans Thin<span class="ab">Th</span></button></li>
+        <li><button type="button" data-w="200" aria-pressed="false">Grotto Sans ExtraLight<span class="ab">XL</span></button></li>
+        <li><button type="button" data-w="300" aria-pressed="false">Grotto Sans Light<span class="ab">Li</span></button></li>
+        <li><button type="button" data-w="400" class="on" aria-pressed="true">Grotto Sans Regular<span class="ab">Rg</span></button></li>
+        <li><button type="button" data-w="500" aria-pressed="false">Grotto Sans Medium<span class="ab">Md</span></button></li>
+        <li><button type="button" data-w="600" aria-pressed="false">Grotto Sans SemiBold<span class="ab">SB</span></button></li>
+        <li><button type="button" data-w="700" aria-pressed="false">Grotto Sans Bold<span class="ab">Bd</span></button></li>
+        <li><button type="button" data-w="800" aria-pressed="false">Grotto Sans ExtraBold<span class="ab">XB</span></button></li>
+        <li><button type="button" data-w="900" aria-pressed="false">Grotto Sans Black<span class="ab">Bk</span></button></li>
       </ul>
       <dl class="specs"><div><dt>Glyphs</dt><dd>640</dd><dt>Axes</dt><dd>weight, width</dd></div>
         <div><dt>Languages</dt><dd>Latin, extended</dd><dt>Figures</dt><dd>tabular, oldstyle</dd></div>
@@ -111,7 +113,7 @@
       <div class="ph"><span><b>■</b>Grotto Sans</span><span>Specimen</span><span>Kiln Type</span></div>
       <blockquote class="quote">“A sign is read by someone who is not looking for it. The letters have one chance, and they get it
         from the white around them.”<cite>Mara Kiln, founder</cite></blockquote>
-      <p class="glyphs" aria-label="Sample glyphs">AaBbCc 0123 &amp;?! GrØß</p>
+      <p class="glyphs">AaBbCc 0123 &amp;?! GrØß</p>
     </div>
   </section>
   <footer>Brutalist skill gallery · Kiln Type, Grotto Sans and Mara Kiln are fictional; the type shown is
@@ -121,14 +123,14 @@
 (() => {
   const root = document.documentElement, ladder = document.getElementById('ladder'), now = document.getElementById('now');
   const names = {100:'Thin',200:'ExtraLight',300:'Light',400:'Regular',500:'Medium',600:'SemiBold',700:'Bold',800:'ExtraBold',900:'Black'};
-  const items = [...ladder.children];
+  const items = [...ladder.querySelectorAll('button')];
   items.forEach(li => li.style.fontVariationSettings = `"wght" ${li.dataset.w}`);
   const set = li => {
-    items.forEach(x => x.classList.toggle('on', x === li));
+    items.forEach(x => { x.classList.toggle('on', x === li); x.setAttribute('aria-pressed', String(x === li)); });
     root.style.setProperty('--w', li.dataset.w);
     now.textContent = `${names[li.dataset.w]} · ${li.dataset.w}`;
   };
-  items.forEach(li => { li.addEventListener('pointerenter', () => set(li)); li.addEventListener('focus', () => set(li)); });
+  items.forEach(li => { li.addEventListener('pointerenter', () => set(li)); li.addEventListener('focus', () => set(li)); li.addEventListener('click', () => set(li)); });
   document.getElementById('wd').addEventListener('input', e => root.style.setProperty('--wd', e.target.value));
   /* once, on load: sweep from Thin to Black and settle on Regular */
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {

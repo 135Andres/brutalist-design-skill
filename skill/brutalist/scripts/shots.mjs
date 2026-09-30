@@ -12,7 +12,7 @@
 // Mobile emulation widens the layout viewport to fit content that is too wide, which hides
 // the overflow from scrollWidth; the script warns when the viewport is not the width asked.
 import { spawn } from 'node:child_process';
-import { writeFileSync } from 'node:fs';
+import { writeFileSync, mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 const CHROME = process.env.CHROME || 'chromium';
@@ -21,6 +21,7 @@ if (!OUT || !pageArg) { console.error('usage: shots.mjs OUT_DIR PAGE STEP...'); 
 const [pagePath, query = ''] = pageArg.split(/\?(.*)/s);
 const PAGE = 'file://' + resolve(pagePath) + (query ? '?' + query : '');
 const PORT = 9333;
+mkdirSync(OUT, { recursive: true });
 
 const chrome = spawn(CHROME, ['--headless=new', `--remote-debugging-port=${PORT}`, '--no-first-run',
   '--hide-scrollbars', '--allow-file-access-from-files', 'about:blank'], { stdio: 'ignore' });

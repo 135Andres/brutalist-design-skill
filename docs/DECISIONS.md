@@ -133,6 +133,15 @@ npm 12 refuses packages fetched from git by default (`allow-git = "none"`), so
 `npx github:…` fails for its users. Offered three ways (npm, a flag, a curl script), the
 maintainer chose **publishing on npm**: the command is `npx brutalist-design-skill`.
 
+## A-8 · Pages live; second audit (2026-09-30)
+
+1. The maintainer approved pushing and enabling GitHub Pages («Sí, sube y activa Pages»);
+   the site is live at `https://135andres.github.io/brutalist-design-skill/`.
+2. A second audit by another agent
+   ([`audits/2026-09-30-second-audit.md`](audits/2026-09-30-second-audit.md)) was answered
+   before publishing on npm. `[proposal]` applied in the response: updating the installed
+   skill keeps an edited copy in `~/.brutalist-skill/backups/` instead of overwriting it.
+
 ## Open questions
 
 Kept in one place: [`SPEC.md` § Open questions](SPEC.md#open-questions). *(This section

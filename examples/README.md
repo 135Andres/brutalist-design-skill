@@ -16,6 +16,7 @@ Live pages with invented content, published on the
 | [`gallery/slow-media/`](gallery/slow-media/index.html) | `inspire` | #40 |
 | [`gallery/lichen-office/`](gallery/lichen-office/index.html) | `inspire` | #41 |
 | [`gallery/kiln-type/`](gallery/kiln-type/index.html) | `inspire` | #42 |
+| [`gallery/estatica/`](gallery/estatica/index.html) | `inspire` (digestible questions, second run; see [FINDINGS](../docs/FINDINGS.md)) | the maintainer's answers only |
 
 References #39–#42 are described in [`../references/`](../references/README.md), not
 included. Each page's HTML header says what was taken from its reference. Third-party references used during design are described, not included, in

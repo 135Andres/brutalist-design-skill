@@ -7,7 +7,7 @@
 // Options: --tools=claude,codex,…  --scope=global|project  --dry-run  --uninstall  --no-anim  --list  --help
 // No dependencies. Animation is skipped when output is not a terminal, in CI, with --no-anim,
 // or with NO_MOTION set; colour is skipped with NO_COLOR.
-import { cpSync, existsSync, mkdirSync, rmSync, readdirSync, statSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, rmSync, readdirSync, statSync, readFileSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { dirname, join, resolve, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -49,7 +49,7 @@ const TOOLS = [
   { id: 'cursor',   name: 'Cursor',         project: '.cursor/skills',   mark: [null, '.cursor'] },
   { id: 'gemini',   name: 'Gemini CLI',     project: '.gemini/skills',   mark: [null, '.gemini'] },
   { id: 'copilot',  name: 'GitHub Copilot', project: '.github/skills',   mark: [null, '.github'] },
-  { id: 'opencode', name: 'OpenCode',       project: '.opencode/skills', mark: [null, '.opencode'] },
+  { id: 'opencode', name: 'OpenCode',       global: join(HOME, '.config', 'opencode', 'skills'), project: '.opencode/skills', mark: [join(HOME, '.config', 'opencode'), '.opencode'] },
   { id: 'hermes',   name: 'Hermes Agent',   global: join(HERMES, 'skills'), mark: [HERMES, null] },
 ];
 const where = (t, scope) => scope === 'global' ? t.global : t.project && resolve(CWD, t.project);
@@ -77,17 +77,16 @@ async function intro() {
   }
   w(rows.map(r => '  ' + bold(r)).join('\n') + '\n');
   const width = rows[0].length;
-  // a signal-red bar draws under the word
-  for (let i = 1; i <= width; i += ANIM ? 3 : width) {
-    w('\r  ' + red('▀'.repeat(Math.min(i, width)))); await sleep(12);
-  }
-  w('\n');
-  // the command ticker runs for a moment, then settles
   const tape = COMMANDS.repeat(4);
-  for (let f = 0; f < (ANIM ? 36 : 1); f++) {
-    w('\r  ' + inv(tape.slice(f, f + width))); await sleep(38);
+  if (ANIM) {
+    // a signal-red bar draws under the word, then the command ticker runs for a moment
+    for (let i = 1; i <= width; i += 3) { w('\r  ' + red('▀'.repeat(Math.min(i, width)))); await sleep(12); }
+    w('\r  ' + red('▀'.repeat(width)) + '\n');
+    for (let f = 0; f < 36; f++) { w('\r  ' + inv(tape.slice(f, f + width))); await sleep(38); }
+    w('\r  ' + inv(tape.slice(0, width)) + '\n');
+  } else {
+    w('  ' + red('▀'.repeat(width)) + '\n' + '  ' + inv(tape.slice(0, width)) + '\n');
   }
-  w('\r  ' + inv(tape.slice(0, width)) + '\n');
   w(`  ${dim('an agent skill for brutalist web design · skill/brutalist → your tools')}\n\n`);
 }
 
@@ -134,9 +133,20 @@ function choose({ title, items, multi }) {
 function files(dir) {
   return readdirSync(dir).flatMap(n => { const p = join(dir, n); return statSync(p).isDirectory() ? files(p) : [p]; });
 }
+const rel = (d, p) => relative(d, p);
+function sameTree(a, b) {                     // true when b holds exactly a's files, byte for byte
+  try {
+    const fa = files(a).map(p => rel(a, p)).sort(), fb = files(b).map(p => rel(b, p)).sort();
+    return fa.length === fb.length && fa.every((p, i) => p === fb[i] && readFileSync(join(a, p)).equals(readFileSync(join(b, p))));
+  } catch { return false; }
+}
 async function install(tool, scope, dry) {
   const base = where(tool, scope), dest = join(base, 'brutalist');
   const existed = existsSync(dest);
+  // an installed copy that differs from this version (edited, or older) is kept, outside the
+  // skills folder so no tool loads it as a second skill
+  let backup = null;
+  if (existed && !sameTree(SRC, dest)) backup = join(HOME, '.brutalist-skill', 'backups', `${tool.id}-${scope}-${new Date().toISOString().replace(/[:.]/g, '-')}`);
   const label = `  ${tool.name.padEnd(15)} ${clip(pretty(dest), Math.max(12, COLS() - 36)).padEnd(Math.min(34, Math.max(12, COLS() - 36)))}`;
   const all = files(SRC), n = all.length, W = 16;
   if (ANIM) for (let i = 0; i <= n; i++) {
@@ -146,10 +156,12 @@ async function install(tool, scope, dry) {
   }
   if (!dry) {
     mkdirSync(base, { recursive: true });
+    if (backup) { mkdirSync(dirname(backup), { recursive: true }); cpSync(dest, backup, { recursive: true }); }
     if (existed) rmSync(dest, { recursive: true, force: true });
     cpSync(SRC, dest, { recursive: true });
   }
   w('\r' + label + ' ' + (dry ? dim('DRY RUN') : inv(existed ? ' UPDATED ' : ' DONE ')) + (TTY ? '\x1b[K' : '') + '\n');
+  if (backup) w(`  ${' '.repeat(15)} ${dim((dry ? 'would keep' : 'kept') + ' your previous copy in ' + pretty(backup))}\n`);
 }
 async function uninstall(tool, scope, dry) {
   const dest = join(where(tool, scope), 'brutalist');
@@ -180,6 +192,10 @@ async function main() {
     }
     return;
   }
+  const wantIds = typeof args.tools === 'string' ? args.tools.split(',').map(x => x.trim()).filter(Boolean) : [];
+  const bad = wantIds.filter(id => !TOOLS.some(t => t.id === id));
+  if (bad.length) { console.error(`unknown tool: ${bad.join(', ')} — use ${TOOLS.map(t => t.id).join(', ')}`); process.exit(2); }
+  if (args.scope && !['global', 'project'].includes(args.scope)) { console.error('--scope must be global or project'); process.exit(2); }
   await intro();
   const interactive = TTY && !args.yes;
   let scope = args.scope;
@@ -191,7 +207,7 @@ async function main() {
     up(5);
   }
   scope = scope === 'project' ? 'project' : 'global';
-  const want = typeof args.tools === 'string' ? args.tools.split(',') : null;
+  const want = typeof args.tools === 'string' ? args.tools.split(',').map(s => s.trim()).filter(Boolean) : null;
   const avail = TOOLS.filter(t => where(t, scope));
   let picked;
   if (interactive && !want) {
@@ -201,6 +217,7 @@ async function main() {
     up(items.length + 3);
   } else {
     picked = want ? avail.filter(t => want.includes(t.id)) : avail.filter(t => detected(t, scope));
+    if (want && !picked.length) { console.error(`none of ${want.join(', ')} has a ${scope} skills folder; try --scope=${scope === 'global' ? 'project' : 'global'}`); process.exit(2); }
     if (!picked.length) picked = avail.filter(t => t.id === 'claude');
   }
   if (!picked.length) { w('  nothing selected. nothing changed.\n'); return; }

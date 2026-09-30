@@ -39,7 +39,7 @@
   .install small{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
   .cmd{display:flex;border:var(--rule);font:600 clamp(12px,1.1vw,15px)/1 var(--mono)}
   .cmd code{flex:1;padding:14px;white-space:nowrap;overflow-x:auto}
-  .cmd code::before{content:"$ ";color:var(--signal)}
+  .cmd code::before{content:"$ ";color:#d42a12}
   .cmd button{border:0;border-left:var(--rule);background:var(--ink);color:var(--paper);font:inherit;text-transform:uppercase;letter-spacing:.08em;padding:0 16px;cursor:pointer}
   .cmd button:hover{background:var(--signal);color:var(--ink)}
 
@@ -132,12 +132,12 @@
 <section id="commands" aria-labelledby="c">
   <div class="section-h"><h2 id="c">Commands</h2><span>/brutalist &lt;command&gt; &lt;target&gt;</span></div>
   <div class="cmds">
-    <div><span class="st ok">ready</span><code>recreate &lt;image&gt;</code><p>Rebuild a reference as a working page: rights, inventory, build, comparison, report.</p></div>
-    <div><span class="st">review</span><code>motion &lt;page&gt;</code><p>Plan and build motion; from a still image it is declared invention.</p></div>
+    <div><span class="st ok">specified</span><code>recreate &lt;image&gt;</code><p>Rebuild a reference as a working page: rights, inventory, build, comparison, report.</p></div>
+    <div><span class="st">under review</span><code>motion &lt;page&gt;</code><p>Plan and build motion; from a still image it is declared invention.</p></div>
     <div><span class="st">experimental</span><code>inspire &lt;images…&gt;</code><p>Divergent sketches and visual questions, taking principles, never copies.</p></div>
     <div><span class="st">experimental</span><code>edit &lt;page&gt;</code><p>The smallest change first; escalate only if it is not enough.</p></div>
-    <div><span class="st">draft</span><code>verify &lt;page&gt;</code><p>Screenshots under fixed conditions, comparison, accessibility pass.</p></div>
-    <div><span class="st">draft</span><code>critique &lt;page&gt;</code><p>A review without scores. The human judges.</p></div>
+    <div><span class="st">not specified</span><code>verify &lt;page&gt;</code><p>Screenshots under fixed conditions, comparison, accessibility pass.</p></div>
+    <div><span class="st">not specified</span><code>critique &lt;page&gt;</code><p>A review without scores. The human judges.</p></div>
   </div>
 </section>
 

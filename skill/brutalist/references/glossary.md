@@ -1,5 +1,8 @@
 # Glossary
 
+> **Status: new** (collects definitions from the closed `recreate` spec and the other
+> reference files; no new rules).
+
 The one home for the skill's vocabulary. Other files link here instead of redefining.
 
 ## Evidence states — for properties read from a reference

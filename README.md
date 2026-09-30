@@ -85,12 +85,14 @@ copies [`skill/brutalist/`](skill/brutalist/SKILL.md) into each one's skills fol
 | Cursor | — | `.cursor/skills/` |
 | Gemini CLI | — | `.gemini/skills/` |
 | GitHub Copilot | — | `.github/skills/` |
-| OpenCode | — | `.opencode/skills/` |
+| OpenCode | `~/.config/opencode/skills/` | `.opencode/skills/` |
 | Hermes Agent | `$HERMES_HOME/skills/` | — |
 
 The folders follow each tool's documented skills location. The copy was tested into the
 Claude Code, Codex and Hermes folders of a test home folder; loading inside each tool has
 not been tested yet.
+Updating keeps a copy of an installed skill you edited in `~/.brutalist-skill/backups/`.
+OpenCode also reads `~/.claude/skills/` and `~/.agents/skills/`.
 **Manual install:** copy `skill/brutalist` into any of the folders above.
 
 ## What makes it different
