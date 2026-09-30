@@ -71,7 +71,8 @@ with** identity effects → typography → color and texture → decoration.
 
 ## 4. Build
 
-- In the detected stack ([stacks](stacks.md)).
+- In the detected stack and output format ([stacks](stacks.md) §2): one `index.html` by
+  default, modular files when the project is modular.
 - Horizontal in `%`/`fr`/`vw` with `clamp()`; vertical in rhythm units
   (`em`/`rem`/`lh`).
 - **Fidelity build**: add only what does not change the look at rest — semantics, focus

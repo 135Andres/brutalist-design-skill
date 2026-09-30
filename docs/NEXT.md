@@ -12,19 +12,20 @@ this repository; the exceptions are listed at the end.
 
 ## Waiting for the maintainer
 
-1. **Reaction to Radio Estática** ([`examples/gallery/estatica/`](../examples/gallery/estatica/index.html)),
-   the second run of the digestible-questions format. Record it verbatim in
-   [`FINDINGS.md`](FINDINGS.md); if liked, add it to the landing (`index.html`, gallery grid,
-   with a `cover-720.jpg` like the others) and to the README gallery.
-2. **Review** of `motion.md`, `effects.md`, `resources.md` and `accessibility.md` (all drafts).
-3. **Open questions A–E** in [`SPEC.md`](SPEC.md#open-questions).
+1. **Decisions on open questions A–E** in [`SPEC.md`](SPEC.md#open-questions) (proposals were
+   given in chat, none is decided).
+2. **Approval** of the drafts `motion.md`, `effects.md`, `resources.md`, `accessibility.md`
+   (reviewed and corrected 2026-09-30, see A-10) and of `stacks.md` §2 (new).
+3. Radio Estática was **not liked** (recorded in [`FINDINGS.md`](FINDINGS.md)); it stays out
+   of the landing.
 
 ## Work that can start
 
-- `inspire`: try formats 3 (provocations) and 4 (classic derive) — see
+- `inspire`: next exploration, try formats 3 (provocations) and 4 (classic derive) — see
   [`inspire.md`](../skill/brutalist/references/inspire.md); record reactions in FINDINGS.
 - `edit`: a second test on a page the agent did not write.
-- Specify `verify`, `critique`, `stacks`; write `scripts/spring_to_css`.
+- Test `stacks.md` §2 on a modular project (React/Vue/Svelte/Vite) and on an empty folder.
+- Specify `verify`, `critique`, the rest of `stacks`; write `scripts/spring_to_css`.
 - Test the installed skill inside each tool (Claude Code first), Node 18 and Windows; check
   the tool folders of Codex, Cursor, Gemini CLI, Copilot and Hermes against their docs.
 - A `recreate` test on a reference nobody here authored (the worked example is not

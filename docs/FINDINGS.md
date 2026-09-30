@@ -28,7 +28,15 @@ round 1 — *pirate radio* · *one giant word* · *photocopied paper* · *the cu
 everything*; round 2 — word *ESTÁTICA* · the cursor *tunes* (moving sideways turns the dial;
 only at 88.7 is the word sharp) · *tape* breaks the order · below, *listeners' messages*.
 Built as [`examples/gallery/estatica/`](../examples/gallery/estatica/index.html). Reaction
-pending.
+(2026-09-30): «no me gusta la de radio estática, siento que se siente muy genérica, no tiene
+nada en especial, además de que no es intuitiva con nuevos visitantes» (*I don't like the
+Radio Estática one; it feels very generic, has nothing special, and isn't intuitive for new
+visitors*). Not added to the landing or the README gallery.
+
+- `INFERENCE`: an interaction the visitor must discover (the cursor tunes the word) needs a
+  visible cue; without one, a first-time visitor does not know what to do.
+- `INFERENCE`: a premise taken from the first answer that is a familiar genre ("pirate
+  radio") gave a predictable result; the next run should try format 3 (provocations).
 
 - A second round tailored to the first round's answers made the questions concrete (the
   word, what the cursor does *to it*) instead of generic.

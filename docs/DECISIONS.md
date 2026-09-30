@@ -149,6 +149,26 @@ maintainer chose **publishing on npm**: the command is `npx brutalist-design-ski
 2. The maintainer continues the work from a remote Claude session. What is pending lives in
    [`NEXT.md`](NEXT.md).
 
+## A-10 · Output format follows the project; review fixes (2026-09-30)
+
+The maintainer's words: «me gustaría que la skill por defecto cree los diseños en un archivo
+html (ya lo hace) pero si detecta que en el proyecto se modularizan los archivos entonces
+que también lo haga» (*by default the skill creates designs in one HTML file (it already
+does), but if it detects that the project splits its files into modules, it should do that
+too*).
+
+1. **Applied:** [`stacks.md`](../skill/brutalist/references/stacks.md) §2 — one `index.html`
+   by default; modular files in the project's own system when detected, with the evidence
+   named. Untested until run on a real modular project.
+2. **`[proposal]`, applied as a draft, not yet reviewed:** the user's words override
+   detection; sketches from `inspire` stay one file; `edit` never changes a page's format.
+3. **Review fixes** (the maintainer asked for them after the review in chat): motion §5 no
+   longer repeats `accessibility.md`; motion states which sections apply outside `recreate`;
+   the two-rounds cap in motion now points to its home in `recreate` §5; `resources.md`
+   column renamed "Consulted by"; `accessibility.md` gained input-equivalent, hover-content
+   and text-spacing rows.
+4. **Open questions A–E stay open**; the proposals made in chat are not decisions.
+
 ## Open questions
 
 Kept in one place: [`SPEC.md` § Open questions](SPEC.md#open-questions). *(This section

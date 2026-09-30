@@ -22,8 +22,8 @@ description: Recreate brutalist and experimental web interfaces from reference i
    [accessibility](references/accessibility.md).
 5. **No scores.** Verify in a real browser, report what was and was not verified; the
    human judges.
-6. **Work in the project's stack.** Detect it; do not impose one. See
-   [stacks](references/stacks.md).
+6. **Work in the project's stack.** Detect it; do not impose one. One `index.html` by
+   default; modular files when the project is modular. See [stacks](references/stacks.md).
 
 ## Commands
 
@@ -36,7 +36,8 @@ description: Recreate brutalist and experimental web interfaces from reference i
 | `verify <page>` | screenshots under fixed conditions, comparison, accessibility pass | [verify](references/verify.md) | not yet specified |
 | `critique <page>` | a review without scores | [critique](references/critique.md) | not yet specified |
 
-Every command that writes code also loads [accessibility](references/accessibility.md).
+Every command that writes code also loads [accessibility](references/accessibility.md)
+and [stacks](references/stacks.md) (output format: one file or modular).
 Load [glossary](references/glossary.md) whenever a term is unclear.
 
 **No command given?** Infer it: an image plus "build this" → `recreate`; images plus
@@ -49,7 +50,8 @@ Everything lands in files, not only in chat:
 
 ```
 recreations/<slug>/     recreate: reference (or path), inventory.md, palette.json,
-                        build/, screenshots (ref, build, overlay), report.md
+                        build/ (one index.html, or modules if the project is modular),
+                        screenshots (ref, build, overlay), report.md
 motion-plan.md          motion, next to the build it animates
 ```
 

@@ -21,7 +21,7 @@
 | `edit` | [`edit.md`](../skill/brutalist/references/edit.md) | **experimental**: needs a test on a page the agent did not write |
 | `verify` | [`verify.md`](../skill/brutalist/references/verify.md) | not specified (interim rules) |
 | `critique` | [`critique.md`](../skill/brutalist/references/critique.md) | not specified |
-| Stacks | [`stacks.md`](../skill/brutalist/references/stacks.md) | not specified |
+| Stacks | [`stacks.md`](../skill/brutalist/references/stacks.md) | **partly specified**: output format (one file / modular) drafted (A-10), untested |
 | Templates | [`templates/`](../skill/brutalist/templates/) | new; follow the closed vocabulary |
 | Scripts | `sample_palette.py`, `find_rules.py`, `ink_bbox.py`, `overlay.html`, `shots.mjs` | written; used in the worked example. `spring_to_css`: planned |
 | Per-tool installer | [`install.mjs`](../install.mjs) (`npx brutalist-design-skill`) | done (A-6, A-7); **published on npm, 0.1.0**, and `npx brutalist-design-skill` tested from the registry; copy tested into Claude Code, Codex and Hermes folders of a test home; loading inside each tool not tested |
