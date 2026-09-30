@@ -1,0 +1,21 @@
+# Imágenes de referencia: derechos desconocidos, no se publican (DECISIONS.md A-3)
+references/images/
+
+# Capturas de verificación y salidas locales
+shots/
+**/shots/
+*.log
+
+# Node
+node_modules/
+
+# Sistema y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Notas y borradores locales
+*.local.md
+.scratch/
