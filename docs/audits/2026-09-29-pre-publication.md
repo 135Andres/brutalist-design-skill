@@ -3,7 +3,7 @@
 > Requested by the maintainer: «antes de publicarlo quiero que hagamos una auditoría,
 > veamos la accesibilidad y entendibilidad de la skill» (*before publishing, let's audit
 > the skill's accessibility and understandability*). Done by the agent on commit
-> `d347d7f`; **line references point to that commit**. It proposes; it does not decide.
+> `5a4ba36`; **line references point to that commit**. It proposes; it does not decide.
 > Comparison point: the README of [pbakaus/impeccable](https://github.com/pbakaus/impeccable)
 > (read 2026-09-29). *Translated from Spanish (A-4); the response is at the end.*
 

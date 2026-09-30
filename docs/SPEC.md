@@ -4,7 +4,7 @@
 > [`skill/brutalist/`](../skill/brutalist/SKILL.md), one home per fact; this file keeps
 > only the status of each part, why it is shaped this way, and what is still open.
 > Decisions: [DECISIONS](DECISIONS.md) (`DR5-n`, `A-n`). The earlier Spanish version of
-> the full spec is in the git history (commit `d347d7f`).
+> the full spec is in the git history (commit `5a4ba36`).
 
 ## Status
 

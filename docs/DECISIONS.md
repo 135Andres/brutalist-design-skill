@@ -8,7 +8,7 @@
 > repository; only decisions about the general skill are recorded here.
 >
 > **Translated from Spanish on 2026-09-29 (A-4).** The Spanish original is in the git
-> history (commit `d347d7f`). The maintainer's own words are kept verbatim in Spanish,
+> history (commit `5a4ba36`). The maintainer's own words are kept verbatim in Spanish,
 > followed by a translation.
 
 ## DR5 — a general brutalist design skill (2026-09-29)
