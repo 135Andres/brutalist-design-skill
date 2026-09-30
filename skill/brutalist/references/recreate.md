@@ -1,6 +1,6 @@
 # recreate — rebuild a reference image as an interface
 
-> **Status: specified** (spec section 1, closed by the maintainer, rev. 5). Vocabulary:
+> **Status: specified** (closed, rev. 5). Vocabulary:
 > [glossary](glossary.md). Loads, without repeating them: [effects](effects.md),
 > [motion](motion.md), [accessibility](accessibility.md), [verify](verify.md).
 
@@ -109,7 +109,7 @@ kept); rows marked `INVENTED`, "derived from: …".
 
 `recreations/<slug>/`: reference (or its path) · `inventory.md` · `palette.json` + the
 script · build · screenshots (reference, build, overlay) · `report.md`. What lives only
-in chat does not count. *Open question C* (export the inventory as `DESIGN.md`) is still open; `inventory.md` is the only home meanwhile.
+in chat does not count. `inventory.md` is the only home for the inventory; it is not exported to other formats.
 
 ## 9. Report — `report.md`
 

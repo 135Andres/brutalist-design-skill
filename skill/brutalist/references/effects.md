@@ -37,11 +37,9 @@ decoration under the second and identity under the first.
 - **Permission**: invented motion that needs a **higher** rung than the cost **is allowed
   if declared**: `DECISION` + a concrete reason (e.g. "interruption that preserves
   velocity, which CSS cannot do"). What is never allowed is **climbing silently**.
-  *(Decided, A-11 · B.)*
 - **Library already in the project**: using it is **not** a rung climb — the cost is
   already paid. Declare it in the motion plan (which library, why). Adding a **new**
-  animation dependency is a climb and follows the permission rule above. *(Decided,
-  A-11 · A.)*
+  animation dependency is a climb and follows the permission rule above.
 
 ## Examples
 

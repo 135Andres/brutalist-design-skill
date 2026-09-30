@@ -1,9 +1,7 @@
 # inspire — from references to something new
 
-> **Status: experimental.** The creative mode is being defined by experiment
-> ([decisions](../../../docs/DECISIONS.md) A-1). What follows is what has been tried and
-> what was learned; it is not a fixed procedure. Findings:
-> [FINDINGS](../../../docs/FINDINGS.md).
+> **Status: experimental.** The creative mode is being defined by experiment. What follows
+> is what has been tried and what was learned; it is not a fixed procedure.
 
 The goal is to **inspire the user**, not to copy and not to converge early. Explore many
 directions; the human chooses.

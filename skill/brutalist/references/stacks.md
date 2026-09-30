@@ -1,7 +1,6 @@
 # stacks — work in the project's stack
 
-> **Status: partly specified.** The output-format rule (§2) was added on the maintainer's
-> request (A-10) and is untested; §4 follows A-11 · A. Every command that writes code
+> **Status: partly specified.** The output-format rule (§2) is untested. Every command that writes code
 > loads this file before writing it.
 
 ## 1. Detect, do not impose
@@ -52,10 +51,10 @@ Rules:
 ## 3. No project yet
 
 A single static `index.html` with inline CSS and JS for studies and sketches (§2, first
-row). This was a proposal in DR5-3; it is now applied.
+row).
 
 ## 4. Animation library already present
 
-Using a library the project already has is **not** a rung climb (A-11 · A); declare it in
+Using a library the project already has is **not** a rung climb; declare it in
 the motion plan as a `DECISION` (which library, why). Adding a new one is a climb
 ([effects](effects.md)).

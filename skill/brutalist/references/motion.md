@@ -1,6 +1,6 @@
 # motion — plan and build motion
 
-> **Status: under review** (spec section 2, rev. 3). Loaded by `recreate` (step 6), by the
+> **Status: under review** (rev. 3). Loaded by `recreate` (step 6), by the
 > `motion` command, and by `inspire`/`edit` when they animate. §1 (traits and inferences)
 > is defined only for `recreate`; §0, §2, §3 and §4–§7 apply to every command that animates
 > (in `edit`, the plan may be one line per change). Vocabulary: [glossary](glossary.md). Rungs: [effects](effects.md).
@@ -65,7 +65,7 @@ performance: animate compositor properties (`transform`, `opacity`) by default; 
 ## 6. Verify
 
 Before/during/after, with frames or video saved to files. Rounds are capped as in
-[recreate](recreate.md) §5 (a `DECISION` by the maintainer, rev. 5). A hidden browser tab freezes the
+[recreate](recreate.md) §5 (closed rule). A hidden browser tab freezes the
 animation clock — sample in a visible or emulated-visible tab. No browser: "motion not
 observed" (method column).
 

@@ -1,7 +1,7 @@
 # verify — check the result in a real browser
 
 > **Status: not yet specified.** Interim rules below, gathered from the other files and
-> from experiments ([FINDINGS](../../../docs/FINDINGS.md)).
+> from experiments.
 
 ## Interim rules
 

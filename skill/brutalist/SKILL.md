@@ -71,4 +71,4 @@ Templates: [inventory](templates/inventory.md) · [report](templates/report.md) 
 
 Python scripts need Pillow and numpy; `shots.mjs` needs Node ≥ 22 and a Chromium. When a
 script is not available, say which step was done by eye and mark it `estimated`.
-Worked example of all of them: `examples/recreate-concrete-radio/` in the repository.
+Worked example of all of them: <https://github.com/135Andres/brutalist-design-skill/tree/main/examples/recreate-concrete-radio>.
