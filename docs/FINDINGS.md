@@ -49,6 +49,18 @@ brief.
 - `INFERENCE`: an invented brief with utilitarian content, however well it passes a
   first-visitor check, did not give the maintainer anything to care about; the test needs a
   brief the maintainer knows.
+**Second run (2026-09-30), real briefs from the maintainer's own projects** (kept local; only
+general lessons are recorded here, by the maintainer's choice). Three landing sketches, one per
+brief. Reaction: one was liked for its structure ("not as final, but it has good structure"),
+the other two "don't feel brutalist" (the maintainer's words, translated).
+
+- `INFERENCE`: the liked sketch made the product's own distinctions the page's visual code,
+  used one ink and one texture, and read like a raw document. The other two used accent
+  colours and product-style widgets.
+- Found and fixed while building: a scaled stamp widened the mobile layout; hatched tags were
+  unreadable; a fact was shown with the mark defined for "unknown"; one sketch ignored the
+  earlier finding about oversized type. `shots.mjs` documentation and flags corrected.
+- Not checked: contrast ratios, screen reader, axe-core, keyboard pass by a person.
 - The draft procedure in [`inspire.md`](../skill/brutalist/references/inspire.md) came out of
   this run and is **unvalidated**.
 

@@ -29,30 +29,39 @@ directions; the human chooses.
 
 ## From zero, no reference (draft, under test)
 
-For a brief with no images. A first attempt, not a settled procedure; its first run was
-not liked, so treat every step as a hypothesis.
+For a brief with no images. Two runs so far: the first (premises from outside web design,
+one invented brief) was rejected; the second (a real brief, the premise taken from the
+product's own idea) was partly liked. Treat every step as a hypothesis.
 
-1. **State the brief.** Real content if the user gave it; otherwise invent a neutral one and
-   say so in the file header and in the page footer.
-2. **Name the default you are avoiding** in one line: what would every brutalist page for
-   this brief do? (giant uppercase grotesk, black and white, a marquee…). Do not start there.
-3. **Take premises from outside web design**: a physical object or institution with a
-   function (a shadow board, a tear-off flyer, a loan slip). Avoid premises that are only an
-   aesthetic genre ("pirate radio", "terminal"): they give a mood, not a rule, and came out
-   predictable.
-4. **A premise must give the page a rule for its state** (what is out, what is torn, what is
-   stamped), so the interaction has a reason to exist.
-5. **First-visitor test**, before showing anything: in five seconds, what is this and what
-   do I do? A visible cue states it in words. Content is readable without any interaction.
-6. **One sentence + one built sketch per premise**, three premises, same brief, so the
-   user compares ideas and not content. Each file's header says: premise, what was taken,
-   decisions.
-7. Check the usual ([verify](verify.md)); report what was not checked.
+1. **Use a real brief when there is one**; if you must invent one, say so in the file header
+   and the page footer. Read the brief's own text before designing; quote, do not paraphrase
+   facts. Say what you could not read.
+2. **Ask before building** when the brief is real: a few digestible questions with ASCII
+   previews (the format the user liked), not three finished sketches chosen alone.
+3. **Find the product's own distinction** and make it the page's visual code: what the
+   product separates (known / not known, local / remote, asked / answered) becomes a
+   mark system. A page structured this way was liked; a page that only wears the product's
+   mood was not. Avoid premises that are only an aesthetic genre.
+4. **Brutalist check** (before showing anything): is structure exposed instead of hidden?
+   Is there anything only decorative? Does it work with one ink and one texture before any
+   accent colour? Neon accents and product-style widgets read as a brand, not as
+   brutalism (`INFERENCE`, two sketches).
+5. **Mark audit**: every use of a mark (hatch, dashed border, colour) must mean what the
+   legend says. A fact shown with the "unknown" mark is a bug.
+6. **First-visitor check**: in five seconds, what is this and what do I do? A visible cue
+   says it in words; content is readable without any interaction.
+7. **Run the lessons as checks**, not as memory: type scale (see Lessons), contrast of every
+   pair measured, no text in texture that cannot be read.
+8. **One sketch per brief** is enough for a first look; three sketches of one brief compare
+   ideas, three briefs compare nothing. Each file's header: brief, premise, what was
+   taken, decisions.
+9. Check the usual ([verify](verify.md)); report what was not checked.
 
 ## Lessons
 
 - An answer chosen from a sketch preview is a **hypothesis**: show it built before
   treating it as settled.
 - ASCII previews that resemble the built result were valued.
-- Very large type read as noise in one test; do not assume scale equals character.
+- Very large type read as noise in one test; do not assume scale equals character. The
+  lesson was forgotten once in a later sketch: check type size before delivering.
 - Keep each sketch's origin visible: "inspired by reference N — principles taken: …".

@@ -4,10 +4,11 @@
 //   CHROME=/path/to/chrome node shots.mjs OUT_DIR PAGE 'W|H|WHERE|NAME[|JS]' ...
 //
 // Each step: viewport width and height (CSS px, DPR 1); WHERE = a CSS selector to scroll
-// into view, a scrollY number, or empty; NAME = the PNG file name; JS = optional code run
+// into view, a scrollY number, or empty; NAME = the PNG file name (with or without .png); JS = optional code run
 // before the screenshot (a returned value, or a resolved promise, is printed as JSON).
 // The page reloads whenever the viewport size changes. PAGE may carry a query string.
-// Env: REDUCED_MOTION=1 emulates prefers-reduced-motion; NO_JS=1 disables JavaScript
+// Env: CHROME_ARGS='--no-sandbox' (extra browser flags; needed as root or in containers);
+// REDUCED_MOTION=1 emulates prefers-reduced-motion; NO_JS=1 disables JavaScript
 // (JS steps then do nothing). Prints horizontal overflow per step and console errors.
 // Mobile emulation widens the layout viewport to fit content that is too wide, which hides
 // the overflow from scrollWidth; the script warns when the viewport is not the width asked.
@@ -23,7 +24,8 @@ const PAGE = 'file://' + resolve(pagePath) + (query ? '?' + query : '');
 const PORT = 9333;
 mkdirSync(OUT, { recursive: true });
 
-const chrome = spawn(CHROME, ['--headless=new', `--remote-debugging-port=${PORT}`, '--no-first-run',
+const EXTRA = (process.env.CHROME_ARGS || '').split(/\s+/).filter(Boolean);
+const chrome = spawn(CHROME, [...EXTRA, '--headless=new', `--remote-debugging-port=${PORT}`, '--no-first-run',
   '--hide-scrollbars', '--allow-file-access-from-files', 'about:blank'], { stdio: 'ignore' });
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 let targets = [];
@@ -32,7 +34,7 @@ for (let k = 0; k < 50 && !targets.length; k++) {
   catch { /* browser still starting */ }
   if (!targets.length) await sleep(200);
 }
-if (!targets.length) { console.error('could not reach the browser; set CHROME'); chrome.kill(); process.exit(1); }
+if (!targets.length) { console.error('could not reach the browser; set CHROME (and CHROME_ARGS="--no-sandbox" when running as root or in a container)'); chrome.kill(); process.exit(1); }
 
 const ws = new WebSocket(targets[0].webSocketDebuggerUrl);
 await new Promise(r => { ws.onopen = r; });
@@ -50,7 +52,9 @@ const send = (method, params = {}) => new Promise(r => { const i = ++id; pending
 const ev = async expr => (await send('Runtime.evaluate', { expression: expr, awaitPromise: true, returnByValue: true })).result?.result?.value;
 const shot = async name => {
   const r = await send('Page.captureScreenshot', { format: 'png' });
-  writeFileSync(`${OUT}/${name}.png`, Buffer.from(r.result.data, 'base64'));
+  const file = `${OUT}/${name.replace(/\.png$/i, '')}.png`;
+  writeFileSync(file, Buffer.from(r.result.data, 'base64'));
+  console.log('saved', file);
 };
 
 await send('Runtime.enable'); await send('Log.enable'); await send('Page.enable'); await send('Page.bringToFront');
