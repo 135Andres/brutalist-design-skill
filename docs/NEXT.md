@@ -19,6 +19,12 @@ this repository; the exceptions are listed at the end.
 3. Radio Estática was **not liked** (recorded in [`FINDINGS.md`](FINDINGS.md)); it stays out
    of the landing.
 
+## Open after the Positions experiment
+
+- Whether the field map helps is **unanswered** (the user's feedback was about execution). Ask the
+  three questions again, or leave the map experimental.
+- C of the four sketches was dropped; sources of the map are still not re-read by the agent.
+
 ## Work that can start
 
 - `inspire` from zero: re-run it on the maintainer's own projects (see the open question on where they live and what may be published), then the same flow with reference images; format 4 (classic derive) later — see

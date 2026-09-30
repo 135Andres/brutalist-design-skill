@@ -85,6 +85,17 @@ maintainer's words (translated), seen on a phone:
 - `INFERENCE`: "missing animation" and "crude" were both about finish; the second versions of A
   and D added motion (a scan sweeping the wordmark, a signal along the pipeline, a dither whose
   threshold breathes) and finer lines. Reaction to those versions pending.
+- Second round (same brief, phone): the scan animation in A was rejected ("it is not a scan, it is a
+  decomposition of the word"); the next one (bands sliding sideways, word pinned full-screen) was
+  rejected too; the user wanted the reference's upward-stretching echoes, the word at its earlier
+  size, white space above it at rest, and a spring-like return at the top. D's numbered ladder was
+  circled in red to be removed; D was also said to resemble a product page the agent had not seen.
+  C was dropped at the user's request ("let's leave this") before the figure and palette were chosen.
+- `INFERENCE`: most of the feedback was about execution (motion misread, layout changed unprompted,
+  reference imagery replaced), not about the positions; the three questions about the map (names,
+  whether it helped, what is missing) went unanswered, so the experiment does not show whether the
+  map helps. B, which changed least between versions, was the one left as is.
+- Applied to the skill as neutral process rules (`inspire.md`, "Iterating on a sketch"; `verify.md`).
 - Mistake found while building: text columns in C first had contrast between 1.2:1 and 3.4:1
   against the colour blurs; a readable variant was needed (measured 7.55:1).
 

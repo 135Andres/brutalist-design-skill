@@ -20,6 +20,9 @@
 - Hatched, dotted or textured backgrounds behind text: measure the contrast of the text
   against the worst part of the texture, not against the base colour, and look at the
   screenshot.
+- **Scroll-driven, sticky or pinned effects**: screenshot at the top, at two or three scroll
+  positions and after returning to the top; check at 390 px as well as desktop, and say whether
+  it was tried with a real touch or only emulated.
 - Console errors: none.
 - Report what was **not** verified. "Verified" without evidence is not verified.
 - No browser available: say so; compare code against the inventory instead.

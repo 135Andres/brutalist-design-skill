@@ -35,7 +35,7 @@ or in part; what is skipped becomes your declared `DECISION`.
 | **Sketches first, from images** | 4–6 divergent sketches without asking, each inspired by a different reference; then ask | the user brings images |
 | **Provocations** | 3 unexpected premises, one sentence + one sketch each | the user asks for surprise |
 | **Derive** | one reference → explicit principles → 3 directions | one strong reference |
-| **Positions** | 3–4 sketches of one real brief, each from a different position in [field-map](field-map.md), every axis value a `DECISION`; *not tried* | the user wants to see how the same content reads from different stances |
+| **Positions** | 3–4 sketches of one real brief, each from a different position in [field-map](field-map.md), every axis value a `DECISION`; *tried once, inconclusive* | the user wants to see how the same content reads from different stances |
 
 Positions, protocol: ask for a real brief and two to four references (never invented);
 declare the position and each axis value of a sketch as a `DECISION` with its reason; keep
@@ -63,6 +63,22 @@ The user sometimes answers with an idea of their own instead of an option: leave
    texture; report the ratios ([accessibility](accessibility.md)).
 7. Each file's header: brief, premise, what was taken, the user's stated choices, decisions.
 8. Check the usual ([verify](verify.md)); report what was not checked.
+
+## Iterating on a sketch
+
+- **Say what you understood before building motion**, in one sentence: what triggers it (scroll
+  down, scroll back to the top, hover), what moves, what stays still. Motion was misread three
+  times in one session; a sentence is cheaper than a rebuild. The fuller form is the
+  [motion plan](../templates/motion-plan.md).
+- **Change only what was asked.** When a revision is requested, list what stays as it is; do not
+  re-layout, re-size or add elements that were not asked for.
+- **Check the smallest viewport first** when the user may be looking on a phone, and check
+  scroll- or touch-driven behaviour there at several scroll positions ([verify](verify.md)).
+- **Annotated screenshots** (a circle, an arrow) are a valid way to give feedback. If the mark
+  could mean "remove", "change" or "look here", say which you read before acting.
+- When a reference is figurative, see the rule under Positions; when the user names a site they
+  do not want it to resemble, record it under "User's words" and ask for a capture if you do not
+  know the site.
 
 ## Notes
 

@@ -5,7 +5,8 @@
 
 ## Procedure (current best guess)
 
-1. **Read before touching.** The whole page, what the user said about it, and what must
+1. **Read before touching.** (Feedback given as an annotated screenshot: see
+   [inspire](inspire.md) "Iterating on a sketch".) The whole page, what the user said about it, and what must
    not change. Ask for the goal if it is not clear: what to keep, what bothers them, how
    far the edit may go.
 2. **Fix the truth first.** If the page states something false, fix that before polishing
