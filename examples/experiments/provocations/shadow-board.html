@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Lending Shed — shadow board</title>
+<!--
+  Experiment: creative mode from zero, no reference image (inspire, format 3 · provocations).
+  Brief: INVENTED and neutral — a community tool library ("The Lending Shed"). All content is made up.
+  Premise (from outside web design): a workshop SHADOW BOARD — tools hang over painted outlines,
+  so an empty outline shows at a glance what is out on loan.
+  Principles taken: state shown by absence; flat paint; labels beside things. No reference used.
+  DECISION: system fonts only (no downloads); ink #111, paper #efe9da, safety orange #ff4d00.
+  DECISION: the board is also the navigation — each tool is a real <button>.
+  First-visit cue: a legend sentence above the board says what solid/outline mean and what to press.
+-->
+<style>
+:root{--ink:#111;--paper:#efe9da;--hot:#ff4d00;--line:3px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.45 "Helvetica Neue",Arial,sans-serif}
+a,button{color:inherit}
+:focus-visible{outline:4px solid var(--hot);outline-offset:3px}
+header,main,footer{max-width:68rem;margin:0 auto;padding:0 1rem}
+header{padding-top:2rem;border-bottom:var(--line) solid var(--ink);padding-bottom:1.25rem}
+h1{margin:0;font:900 clamp(2rem,7vw,4.5rem)/.95 "Arial Black",Impact,sans-serif;text-transform:uppercase;letter-spacing:-.02em}
+.tag{margin:.75rem 0 0;font-size:1.25rem;font-weight:700}
+.legend{margin:1.25rem 0;display:flex;gap:1rem 2rem;flex-wrap:wrap;align-items:center;font-weight:700}
+.legend span{display:inline-flex;gap:.5rem;align-items:center}
+.legend svg{width:2.5rem;height:2.5rem}
+.board{display:grid;grid-template-columns:repeat(auto-fill,minmax(9.5rem,1fr));gap:0;border:var(--line) solid var(--ink);
+  background:repeating-linear-gradient(0deg,transparent 0 23px,rgba(0,0,0,.08) 23px 24px)}
+.slot{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;padding:.75rem;border:1px solid var(--ink);min-height:11rem}
+.slot svg{width:100%;height:6rem;overflow:visible}
+.slot .art{fill:var(--ink);stroke:var(--ink);stroke-width:2}
+.slot .ghost{fill:none;stroke:var(--ink);stroke-width:2.5;stroke-dasharray:5 4}
+.slot.out .art{display:none}
+.slot:not(.out) .ghost{display:none}
+.slot b{display:block;text-transform:uppercase;font-size:.9rem;letter-spacing:.04em;margin-top:.5rem}
+.slot small{display:block;font-weight:700}
+.slot.out small{color:var(--hot)}
+.slot[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.slot[aria-pressed=true] .art{fill:var(--paper);stroke:var(--paper)}
+.slot[aria-pressed=true] .ghost{stroke:var(--paper)}
+.slot:focus-visible{outline-offset:-6px}
+#detail{margin:1rem 0 0;border:var(--line) solid var(--ink);padding:1rem;min-height:7rem;background:#fff6}
+#detail h2{margin:0 0 .25rem;font:900 1.5rem "Arial Black",Impact,sans-serif;text-transform:uppercase}
+#detail p{margin:.25rem 0}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1rem;margin:2rem 0}
+.rules div{border-top:var(--line) solid var(--ink);padding-top:.5rem}
+.rules h3{margin:0;font:900 1.1rem "Arial Black",Impact,sans-serif;text-transform:uppercase}
+footer{padding-bottom:2rem;font-size:.85rem}
+@media (prefers-reduced-motion:no-preference){.slot{transition:background .12s steps(2),color .12s steps(2)}}
+</style>
+</head>
+<body>
+<header>
+  <h1>The Lending Shed</h1>
+  <p class="tag">Borrow a tool. Bring it back. Nobody pays.</p>
+</header>
+<main>
+  <div class="legend" role="note">
+    <span><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="10" y="10" width="80" height="80" fill="#111"/></svg>Solid = on the wall</span>
+    <span><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="10" y="10" width="80" height="80" fill="none" stroke="#111" stroke-width="5" stroke-dasharray="10 8"/></svg>Dashed outline = out on loan</span>
+    <span>Press any tool for details.</span>
+  </div>
+  <div class="board" id="board"></div>
+  <div id="detail" role="region" aria-live="polite" aria-label="Tool details">
+    <h2>Pick a tool</h2>
+    <p>Each box above is a tool you can borrow. Press one to see how long you can keep it and whether it is in.</p>
+  </div>
+  <section class="rules" aria-label="How it works">
+    <div><h3>Join</h3><p>Bring proof of address to the shed. Membership is free.</p></div>
+    <div><h3>Open</h3><p>Tuesday and Saturday, 10:00–14:00.</p></div>
+    <div><h3>Late?</h3><p>Tell us. The only fine is an apology and a biscuit.</p></div>
+  </section>
+</main>
+<footer>Invented brief for a design experiment. Nothing here is real and nothing is sent anywhere.</footer>
+<script>
+const shapes = {
+  hammer:'<rect x="44" y="25" width="12" height="70"/><rect x="18" y="10" width="64" height="22"/>',
+  wrench:'<rect x="44" y="30" width="12" height="62"/><circle cx="50" cy="22" r="18"/><rect x="42" y="2" width="16" height="20" fill="var(--paper)" stroke="none"/>',
+  saw:'<path d="M8 40 L80 18 L80 62 L8 62 Z"/><rect x="78" y="14" width="18" height="52"/>',
+  drill:'<rect x="10" y="22" width="62" height="24"/><rect x="50" y="46" width="20" height="44"/><rect x="72" y="30" width="22" height="8"/>',
+  tape:'<circle cx="46" cy="50" r="34"/><rect x="74" y="64" width="22" height="12"/>',
+  ladder:'<rect x="26" y="4" width="8" height="92"/><rect x="66" y="4" width="8" height="92"/><rect x="26" y="18" width="48" height="6"/><rect x="26" y="40" width="48" height="6"/><rect x="26" y="62" width="48" height="6"/><rect x="26" y="84" width="48" height="6"/>',
+  level:'<rect x="4" y="38" width="92" height="24"/><circle cx="50" cy="50" r="7" fill="var(--paper)" stroke="none"/>',
+  pliers:'<path d="M46 10 L54 10 L60 50 L40 50 Z"/><rect x="28" y="50" width="10" height="44" transform="rotate(8 33 72)"/><rect x="62" y="50" width="10" height="44" transform="rotate(-8 67 72)"/>'
+};
+const tools = [
+  {k:'hammer', n:'Claw hammer', out:false, loan:'7 days', note:'No deposit.'},
+  {k:'wrench', n:'Adjustable wrench', out:false, loan:'7 days', note:'No deposit.'},
+  {k:'saw', n:'Hand saw', out:true, back:'Saturday', loan:'7 days', note:'Blade guard comes with it.'},
+  {k:'drill', n:'Cordless drill', out:false, loan:'3 days', note:'Two batteries. Charge before you return it.'},
+  {k:'tape', n:'Tape measure', out:false, loan:'7 days', note:'No deposit.'},
+  {k:'ladder', n:'Step ladder', out:true, back:'Tuesday', loan:'2 days', note:'Needs a car or a strong friend.'},
+  {k:'level', n:'Spirit level', out:false, loan:'7 days', note:'No deposit.'},
+  {k:'pliers', n:'Pliers', out:false, loan:'7 days', note:'No deposit.'}
+];
+const board = document.getElementById('board'), detail = document.getElementById('detail');
+tools.forEach((t, i) => {
+  const b = document.createElement('button');
+  b.className = 'slot' + (t.out ? ' out' : '');
+  b.setAttribute('aria-pressed', 'false');
+  b.innerHTML = '<svg viewBox="0 0 100 100" aria-hidden="true"><g class="ghost">' + shapes[t.k] + '</g><g class="art">' + shapes[t.k] + '</g></svg>' +
+    '<b>' + t.n + '</b><small>' + (t.out ? 'Out · back ' + t.back : 'On the wall') + '</small>';
+  b.addEventListener('click', () => {
+    board.querySelectorAll('.slot').forEach(s => s.setAttribute('aria-pressed', 'false'));
+    b.setAttribute('aria-pressed', 'true');
+    detail.innerHTML = '<h2>' + t.n + '</h2><p><strong>' + (t.out ? 'Out on loan, back ' + t.back + '.' : 'On the wall — ask at the desk.') +
+      '</strong></p><p>Keep it up to ' + t.loan + '. ' + t.note + '</p>';
+  });
+  board.appendChild(b);
+});
+</script>
+</body>
+</html>

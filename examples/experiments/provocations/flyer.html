@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Lending Shed — tear-off flyer</title>
+<!--
+  Experiment: creative mode from zero, no reference image (inspire, format 3 · provocations).
+  Brief: INVENTED and neutral — a community tool library ("The Lending Shed"). All content is made up.
+  Premise (from outside web design): a photocopied street FLYER with tear-off phone-number tabs.
+  Principles taken: one loud message, then small detachable actions; paper that gets used up.
+  DECISION: system fonts only; black on photocopy-grey #e9e9e4, one accent #ffdd00 for the pointer cue.
+  DECISION: tabs use vertical text (real text, DOM order) — the device is kept, accessibility.md row applied.
+  First-visit cue: the line "Tear one off" with an arrow sits directly above the tabs.
+-->
+<style>
+:root{--ink:#0b0b0b;--paper:#e9e9e4;--cue:#ffdd00}
+*{box-sizing:border-box}
+body{margin:0;background:#bdbdb6;color:var(--ink);font:1rem/1.45 "Helvetica Neue",Arial,sans-serif}
+:focus-visible{outline:4px solid #0055ff;outline-offset:3px}
+.sheet{max-width:46rem;margin:0 auto;background:var(--paper);border-left:3px solid var(--ink);border-right:3px solid var(--ink);min-height:100vh;display:flex;flex-direction:column}
+.top{padding:1.5rem 1.25rem 1rem;border-bottom:3px solid var(--ink)}
+h1{margin:0;font:900 clamp(2.25rem,9vw,5.5rem)/.9 "Arial Black",Impact,sans-serif;text-transform:uppercase;letter-spacing:-.03em}
+h1 mark{background:var(--ink);color:var(--paper);padding:0 .1em}
+.lede{margin:1rem 0 0;font-size:1.3rem;font-weight:700;max-width:30rem}
+.where{margin:.5rem 0 0;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:1rem}
+#slip{flex:1;padding:1.25rem;min-height:14rem}
+#slip .empty{font-size:1.1rem}
+#slip article{border:3px dashed var(--ink);padding:1rem 1.25rem;background:#fff8}
+#slip h2{margin:0 0 .35rem;font:900 1.75rem "Arial Black",Impact,sans-serif;text-transform:uppercase}
+#slip p{margin:.3rem 0;font-size:1.1rem}
+.cue{display:flex;align-items:center;gap:.5rem;padding:.4rem 1.25rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;background:var(--cue);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.cue .n{margin-left:auto;font-family:ui-monospace,Menlo,Consolas,monospace}
+.tabs{display:flex;gap:0;padding:0 1.25rem;height:11rem;align-items:flex-start;overflow:hidden}
+.tab{all:unset;box-sizing:border-box;flex:1 1 0;min-width:2.75rem;height:100%;cursor:pointer;border:2px solid var(--ink);border-top:0;border-left-style:dashed;border-right-style:dashed;writing-mode:vertical-rl;text-orientation:mixed;display:flex;align-items:center;justify-content:center;
+  font:800 1.05rem "Helvetica Neue",Arial,sans-serif;text-transform:uppercase;letter-spacing:.08em;background:repeating-linear-gradient(180deg,transparent 0 6px,rgba(0,0,0,.06) 6px 7px)}
+.tab:hover{background:var(--ink);color:var(--paper)}
+.tab[hidden]{display:none}
+.gone{flex:1 1 0;min-width:2.75rem;height:100%;border-left:2px dashed transparent}
+.tabs .tab.tear{animation:tear .45s ease-in forwards}
+@keyframes tear{to{transform:translateY(130%) rotate(14deg);opacity:0}}
+.actions{padding:.75rem 1.25rem 1.25rem}
+.actions button{font:800 1rem "Helvetica Neue",Arial,sans-serif;text-transform:uppercase;letter-spacing:.05em;border:3px solid var(--ink);background:none;padding:.6rem 1rem;cursor:pointer}
+.actions button:hover{background:var(--ink);color:var(--paper)}
+.note{padding:0 1.25rem 1.25rem;font-size:.85rem}
+@media (prefers-reduced-motion:reduce){.tabs .tab.tear{animation:none;opacity:0}}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="top">
+    <h1>Tools <mark>lent</mark> free</h1>
+    <p class="lede">Hammers, drills, ladders. Borrow what you need, bring it back when you are done.</p>
+    <p class="where">THE LENDING SHED · Tue &amp; Sat 10:00–14:00 · behind the old bakery</p>
+  </div>
+  <div id="slip" role="region" aria-live="polite" aria-label="Torn-off tab">
+    <p class="empty">Everything you need is on the tabs below. Tear one off to read it.</p>
+  </div>
+  <div class="cue"><span aria-hidden="true">↓</span><span>Tear one off</span><span class="n" id="count">6 left</span></div>
+  <div class="tabs" id="tabs"></div>
+  <div class="actions"><button id="tape" hidden>Tape them all back</button></div>
+  <p class="note">Invented brief for a design experiment. Nothing here is real and nothing is sent anywhere.</p>
+</div>
+<script>
+const data = [
+  ['Join','Free. Bring proof of address to the shed on any open day. Takes five minutes.'],
+  ['Hours','Tuesday and Saturday, 10:00 to 14:00. Closed on public holidays.'],
+  ['Bring back','Return tools clean and dry to the same door. Late is fine; tell us.'],
+  ['Give tools','Got spare tools in a garage? We take anything that still works.'],
+  ['Help out','Two hours a month at the desk. You get a key and a tea mug.'],
+  ['Find us','Behind the old bakery, the green door with the orange handle.']
+];
+const tabs = document.getElementById('tabs'), slip = document.getElementById('slip'),
+  count = document.getElementById('count'), tape = document.getElementById('tape');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function render(){
+  tabs.innerHTML = '';
+  data.forEach(([label, text], i) => {
+    const b = document.createElement('button');
+    b.className = 'tab'; b.textContent = label; b.dataset.i = i;
+    b.addEventListener('click', () => {
+      slip.innerHTML = '<article><h2>' + label + '</h2><p>' + text + '</p></article>';
+      const place = document.createElement('div'); place.className = 'gone';
+      const go = () => { b.replaceWith(place); update(); };
+      if (reduce) go(); else { b.classList.add('tear'); b.addEventListener('animationend', go, {once:true}); }
+    });
+    tabs.appendChild(b);
+  });
+  update();
+}
+function update(){
+  const left = tabs.querySelectorAll('.tab').length;
+  count.textContent = left + ' left';
+  tape.hidden = left === data.length;
+}
+tape.addEventListener('click', () => { render(); slip.innerHTML = '<p class="empty">Everything you need is on the tabs below. Tear one off to read it.</p>'; tabs.querySelector('.tab').focus(); });
+render();
+</script>
+</body>
+</html>

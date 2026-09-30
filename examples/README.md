@@ -21,6 +21,11 @@ Live pages with invented content, published on the
 References #39–#42 are described in [`../references/`](../references/README.md), not
 included. Each page's HTML header says what was taken from its reference.
 
+## Experiments
+
+Disposable sketches; the maintainer judges. [`experiments/provocations/`](experiments/provocations/README.md):
+creative mode from zero, three premises, one invented brief. Not in the gallery.
+
 ## Original references
 
 Three brutalist pages with invented content, rendered at 1440 × 900, DPR 1. Use the PNGs as
