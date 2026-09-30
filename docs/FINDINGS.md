@@ -3,14 +3,14 @@
 > Creative-mode and editing experiments, run with the brief of a private project that is
 > **not in this repository**. Only the general lessons for the skill are kept here, with
 > no content from that project. The maintainer's reactions are summarized, or quoted
-> (Spanish, with a translation) when they reveal nothing about the project. The agent does
-> not score; the maintainer judges. *Translated from Spanish on 2026-09-29 (A-4).*
+> when they reveal nothing about the project. The agent does not score; the maintainer
+> judges.
 
 ## Creative mode — formats
 
 | Format | What it is | Result |
 |---|---|---|
-| 1 · Digestible questions | 5 questions whose options are **visual** (ASCII sketches as previews), then one built sketch | Reaction to the format: «Me inspiró» (*it inspired me*). To the sketch: good and smooth; «se parece mucho a como lo mostró en la terminal» (*it looks a lot like what the terminal showed*); the huge type, «muucho ruido» (*way too much noise*) |
+| 1 · Digestible questions | 5 questions whose options are **visual** (ASCII sketches as previews), then one built sketch | Reaction to the format: "It inspired me". To the sketch: good and smooth; "It looks a lot like what the terminal showed"; the huge type, "Way too much noise" |
 | 2 · Sketches first, from images | 4 divergent sketches without asking, **each inspired by a different reference image** (#35–#38), taking principles, not text or marks | reaction pending |
 | 3 · Provocations | 3 unexpected premises, one sentence + one sketch each | not tried |
 | 4 · Classic derive | one reference → explicit principles → 3 directions | not tried |
@@ -28,10 +28,7 @@ round 1 — *pirate radio* · *one giant word* · *photocopied paper* · *the cu
 everything*; round 2 — word *ESTÁTICA* · the cursor *tunes* (moving sideways turns the dial;
 only at 88.7 is the word sharp) · *tape* breaks the order · below, *listeners' messages*.
 Built as [`examples/gallery/estatica/`](../examples/gallery/estatica/index.html). Reaction
-(2026-09-30): «no me gusta la de radio estática, siento que se siente muy genérica, no tiene
-nada en especial, además de que no es intuitiva con nuevos visitantes» (*I don't like the
-Radio Estática one; it feels very generic, has nothing special, and isn't intuitive for new
-visitors*). Not added to the landing or the README gallery.
+(2026-09-30): "I don't like the Radio Estática one; it feels very generic, has nothing special, and isn't intuitive for new visitors". Not added to the landing or the README gallery.
 
 - `INFERENCE`: an interaction the visitor must discover (the cursor tunes the word) needs a
   visible cue; without one, a first-time visitor does not know what to do.
@@ -47,11 +44,9 @@ On a sketch the agent itself had written (limitation: it knew the code and the i
 **a test on someone else's page is still missing**).
 
 1. **First attempt — recompose.** From an ASCII preview, the maintainer chose to reorder
-   the page. Built, it was rejected: «Me gustó menos que el anterior» (*I liked it less
-   than the previous one*). Only what changed **least** survived.
+   the page. Built, it was rejected: "I liked it less than the previous one". Only what changed **least** survived.
 2. **Second attempt — minimal change.** The original page untouched; only the large type,
-   with 4 families × 2 scales switchable live. Paused without a choice («podemos dejar
-   este diseño para luego», *we can leave this design for later*).
+   with 4 families × 2 scales switchable live. Paused without a choice ("We can leave this design for later").
 
 Lessons for `edit`:
 - **A choice made on a sketch is a hypothesis**, not a settled criterion: build cheaply

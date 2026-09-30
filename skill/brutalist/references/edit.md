@@ -1,8 +1,7 @@
 # edit — change an existing page
 
-> **Status: experimental.** Proposed by the maintainer («darle más sazón», *give it more
-> flavour*); one test so far, on a page the agent had written itself — a test on someone
-> else's page is still missing. Findings: [FINDINGS](../../../docs/FINDINGS.md).
+> **Status: experimental.** Proposed by the maintainer ("give it more flavour"); one test so far, on a page the agent had written itself — a
+> test on someone else's page is still missing. Findings: [FINDINGS](../../../docs/FINDINGS.md).
 
 ## Procedure (current best guess)
 

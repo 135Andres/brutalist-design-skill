@@ -9,7 +9,7 @@ history or image metadata; third-party images not versioned; 0 broken relative l
 worked example reproduces exactly (`compare.py`, `checks.sh`), its fidelity column follows
 its ±2 px rule, and its build is not a copy of the reference's source (measured values
 differ from the source's); installer install / update / uninstall / list / dry-run; npm
-package contents (24 files); no overflow on the gallery pages; the English translation keeps
+package contents (24 files); no overflow on the gallery pages; the English text keeps
 the rules of the closed spec. Not verifiable from the repository: the maintainer's quotes.
 
 | # | Finding | Severity | Response |

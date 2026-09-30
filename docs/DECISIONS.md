@@ -6,18 +6,10 @@
 >
 > Work began in a private context (2026-09-27 → 2026-09-29) that is not part of this
 > repository; only decisions about the general skill are recorded here.
->
-> **Translated from Spanish on 2026-09-29 (A-4).** The Spanish original is in the git
-> history (commit `5a4ba36`). The maintainer's own words are kept verbatim in Spanish,
-> followed by a translation.
 
 ## DR5 — a general brutalist design skill (2026-09-29)
 
-- **DR5-1 · General skill.** Not tied to any project. The maintainer's words: «General,
-  hecho para diseños brutalistas creativos. Quiero que se puedan recrear todas las
-  imagenes de diseños brutalistas con animaciones y bonitas que hay en pinterest.»
-  (*General, made for creative brutalist designs. I want every beautiful, animated
-  brutalist design image on Pinterest to be recreatable.*) Rules specific to earlier
+- **DR5-1 · General skill.** Not tied to any project. The maintainer's words: "General, made for creative brutalist designs. I want every beautiful, animated brutalist design image on Pinterest to be recreatable." Rules specific to earlier
   projects are not carried over; the rule "reference to principle, never to copy" from an
   earlier method **does not apply to recreate**.
 - **DR5-2 · Two modes:** recreate (reproduce a visual reference as an interface) and
@@ -33,9 +25,9 @@
   kept, a warning is given, and the fix is offered as a separate variant marked `ADDED`.
   Nothing is corrected silently.
 
-**Defaults proposed by the agent and accepted** («sí, vamos con A»): provisional name
-`brutalist-interfaces` (*superseded by A-4*); skill content in **English** (working
-documents in Spanish — *superseded by A-4*).
+**Defaults proposed by the agent and accepted** ("Yes, let's go with A"): provisional name
+`brutalist-interfaces` (*superseded by A-4*); skill content in **English**
+(*superseded by A-4*).
 
 ## A-1 · The creative mode stays open (2026-09-29)
 
@@ -46,31 +38,11 @@ defined**, of which derive is only one possible form.
    lecture about originality; its only limit is rights hygiene. The demand for character
    falls on what the skill produces in its creative mode. No scores, checklists or
    judgement of the user; the human judges.
-2. **The creative mode is defined by experiment.** The maintainer's words: «Puede ser
-   derivar, crear desde 0, podria aplicar los principios de derivar pero en vez de
-   intentar recrear, haria que la IA se inspire. Esto es más sobre que la IA inspire al
-   usuario, tal vez que le haga preguntas que el usuario pueda digerir, tal vez que haga
-   bosquejos, tal vez que haga una ronda de preguntas, hay que experimentar sobre esto
-   porque crear no tiene pies ni cabeza.» (*It could be deriving, creating from scratch,
-   applying derive's principles but letting the AI be inspired instead of recreating.
-   It is more about the AI inspiring the user — maybe questions the user can digest,
-   maybe sketches, maybe a round of questions; we have to experiment, because creating
-   has no fixed shape.*)
+2. **The creative mode is defined by experiment.** The maintainer's words: "It could be deriving, creating from scratch, applying derive's principles but letting the AI be inspired instead of recreating. It is more about the AI inspiring the user — maybe questions the user can digest, maybe sketches, maybe a round of questions; we have to experiment, because creating has no fixed shape."
 
 Consequences: the creative mode is not specified until there are results; its name was
 open (*resolved by A-4: `inspire`*). A **maintainer proposal** recorded later: the skill
-should be able to **edit existing pages** («darle más sazón», *give it more flavour*);
-whether that is its own mode was open (*resolved by A-4: `edit` command*).
-
-## A-2 · Own repository and an image-first direction (2026-09-29)
-
-1. The work lives in its own repository, `brutalist-design-skill`, under git.
-2. Direction, in the maintainer's words: «no es necesario que quede 1 diseño desde el
-   principio, recordemos que se tiene que explorar y experimentar diferentes diseños,
-   por eso vamos a esforzarnos en hacer muy buenoel apartado de recreacion o inspiracion
-   en base a imagenes» (*there's no need to settle on one design from the start; we have
-   to explore and experiment with different designs, so let's work hard on making
-   recreation or inspiration from images really good*).
+should be able to **edit existing pages** ("There's no need to settle on one design from the start; we have to explore and experiment with different designs, so let's work hard on making recreation or inspiration from images really good".
 
 ## A-3 · Public repository (2026-09-29)
 
@@ -84,28 +56,16 @@ whether that is its own mode was open (*resolved by A-4: `edit` command*).
 
 After the pre-publication audit ([`audits/2026-09-29-pre-publication.md`](audits/2026-09-29-pre-publication.md)):
 
-1. **Language:** all public documents in **English** (supersedes the "working documents
-   in Spanish" default). The maintainer's quotes stay in Spanish with a translation.
+1. **Language:** all public documents in **English**.
 2. **Name:** the skill is **`brutalist`** (supersedes `brutalist-interfaces`).
 3. **Commands:** one skill with six commands — `recreate`, `motion`, `inspire`, `edit`,
    `verify`, `critique`. `inspire` and `edit` are marked experimental.
 4. **Examples:** create **original brutalist references** in this repository (rights
    held) and one fully worked example, so examples can be published.
 
-`[proposal]` applied with this restructure (the maintainer asked to «estructurar un poco
-más la skill», *structure the skill a bit more*; not separately approved): content moves from the spec into the skill's
-reference files (one home per fact); `accessibility.md` and `glossary.md` are new; the
-spec keeps only status, rationale and open questions.
-
-## A-5 · A gallery, a live site, and the type-test design (2026-09-30)
-
-After seeing the worked example, the maintainer's words: «no me gustó tanto la que pusiste
-de ejemplo de recreado, entiendo eso pero pues es brutalismo, me gustaria mas algo como
-esto» (*I didn't like the recreate example as much — I get it, but it is brutalism; I'd
-like something more like this*), with four third-party references (#39–#42, described in
+`[proposal]` applied with this restructure (the maintainer asked to "I didn't like the recreate example as much — I get it, but it is brutalism; I'd like something more like this", with four third-party references (#39–#42, described in
 `references/README.md`, not versioned). And of the type-test sketch from the private
-experiments: «es la que más me gustó que hicimos con esta skill» (*it's the one I liked
-most of what we made with this skill*).
+experiments: "It's the one I liked most of what we made with this skill".
 
 1. **Type-test design:** rebuilt with the **same design and invented content**; nothing
    from the private project is published (A-3 stands).
@@ -116,10 +76,7 @@ most of what we made with this skill*).
 
 ## A-6 · A custom installer (2026-09-30)
 
-The maintainer's words: «nos faltó un comando para instalar la skill! veo que impeccable usa
-npx, pero me gustaria hacer algo un poco más custom, algo brutalista, con un diseño bonito,
-simple, animado» (*we were missing a command to install the skill — Impeccable uses npx, but
-I'd like something more custom, brutalist, with a beautiful, simple, animated design*).
+The maintainer's words: "We were missing a command to install the skill — Impeccable uses npx, but I'd like something more custom, brutalist, with a beautiful, simple, animated design".
 
 `[proposal]` applied: a single dependency-free `install.mjs` run with
 `npx github:135Andres/brutalist-design-skill` (no npm publishing needed — *changed by A-7*); the word drawn in
@@ -135,7 +92,7 @@ maintainer chose **publishing on npm**: the command is `npx brutalist-design-ski
 
 ## A-8 · Pages live; second audit (2026-09-30)
 
-1. The maintainer approved pushing and enabling GitHub Pages («Sí, sube y activa Pages»);
+1. The maintainer approved pushing and enabling GitHub Pages ("Yes, push it and enable Pages");
    the site is live at `https://135andres.github.io/brutalist-design-skill/`.
 2. A second audit by another agent
    ([`audits/2026-09-30-second-audit.md`](audits/2026-09-30-second-audit.md)) was answered
@@ -185,10 +142,7 @@ The maintainer accepted the agent's proposals for A, B, D and E as decisions.
    is already the one home for that information; a second file would duplicate it (AGENTS
    rule 5), and the format could not be verified (designmd.ai was unreachable from the
    session; its license is unknown). If adopted later: a generated export, never hand-edited.
-6. **Language:** anything documented and pushed is in **one language, English**. The
-   maintainer's words are recorded translated, without the Spanish original beside them.
-   Entries written before this date keep their Spanish quotes (append-only).
-   `AGENTS.md` rule 9 and `CLAUDE.md` updated.
+6. **Language:** everything documented and pushed is in **one language, English**.
 7. **Branches:** the agent's working branch was renamed `v0.1` (a snapshot of the state at
    this decision); new changes go to a separate working branch, `claude/dev`.
 8. **No code for now:** until told otherwise, the agent writes and edits documents only;
