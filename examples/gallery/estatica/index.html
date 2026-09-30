@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radio Estática · 88.7 FM · sin licencia</title>
+<meta name="description" content="Una radio pirata ficticia. Mueve el cursor para sintonizar. Página de la galería de la skill brutalist.">
+<!-- Gallery · Radio Estática. Contenido ficticio. Hecha con el formato 1 de inspire (preguntas
+     digeribles, 2 rondas): radio pirata · palabra gigante · papel fotocopiado · el cursor
+     sintoniza · cinta adhesiva · mensajes de oyentes. Ver docs/FINDINGS.md. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#ece5d4;--paper2:#f4efe3;--ink:#1b1a18;--tape:rgba(236,220,160,.78);--red:#c8321e;
+    --type:"Special Elite","Courier New",monospace;--display:"Anton",Impact,sans-serif}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--paper);color:var(--ink)}
+  body{font:16px/1.45 var(--type);overflow-x:hidden}
+  a{color:inherit}
+  :focus-visible{outline:3px dashed var(--ink);outline-offset:4px}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  /* photocopy grain over everything */
+  .grain{position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.22;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.4 1.1'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .toner{position:fixed;pointer-events:none;max-width:40vw;z-index:49;border-radius:50%;background:radial-gradient(closest-side,rgba(27,26,24,.14),transparent);mix-blend-mode:multiply}
+
+  .strip{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 18px;padding:12px clamp(14px,3vw,36px);border-bottom:2px solid var(--ink);font-size:14px;text-transform:uppercase;letter-spacing:.06em}
+  .rec{color:var(--red)}
+  .rec b{display:inline-block;width:.7em;height:.7em;border-radius:50%;background:var(--red);vertical-align:.02em;margin-right:.35em}
+
+  /* the word, and the dial */
+  .hero{position:relative;overflow:clip;padding:clamp(14px,3vw,36px) clamp(14px,3vw,36px) 18px;cursor:ew-resize;border-bottom:2px solid var(--ink);touch-action:pan-y}
+  .word{position:relative;margin:0;line-height:.86}
+  .word .layer{display:block;font:400 100px/.86 var(--display);letter-spacing:-.01em;text-transform:uppercase;padding-top:.16em;white-space:nowrap;filter:url(#xerox)}
+  .word .slice{position:absolute;left:0;top:0;will-change:transform}
+  .noise{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;mix-blend-mode:multiply;opacity:0}
+  .under{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px 18px;margin-top:10px;font-size:15px}
+  .status{min-height:1.4em}
+  .status.on{color:var(--red)}
+  .dial{position:relative;margin-top:14px;height:56px;border:2px solid var(--ink);background:
+    repeating-linear-gradient(90deg,var(--ink) 0 1px,transparent 1px 100%) 0 0/calc(100% / 41) 14px no-repeat,
+    repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 100%) 0 0/calc(100% / 10.25) 24px no-repeat,var(--paper2)}
+  .dial .nums{position:absolute;left:0;right:0;bottom:4px;display:flex;justify-content:space-between;padding:0 6px;font-size:12px}
+  .dial .station{position:absolute;top:-2px;transform:translateX(-50%);font-size:12px;color:var(--red);left:var(--st)}
+  .dial .needle{position:absolute;top:-8px;bottom:-8px;width:3px;background:var(--red);left:var(--nx,50%);transform:translateX(-50%);transition:left .12s linear}
+  .dial input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize}
+  .dial input:focus-visible + .needle{outline:3px dashed var(--ink);outline-offset:4px}
+
+  /* listeners' messages, pasted with tape */
+  .msgs{padding:clamp(22px,4vw,48px) clamp(14px,3vw,36px) 40px}
+  .msgs h2{position:relative;display:inline-block;margin:0 0 26px;font:400 clamp(30px,4vw,54px)/1 var(--display);text-transform:uppercase}
+  .msgs h2::after{content:"";position:absolute;left:38%;top:18%;width:48%;height:60%;background:var(--tape);transform:rotate(-4deg);mix-blend-mode:multiply}
+  .slips{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:30px 26px;list-style:none;margin:0;padding:0}
+  .slip{position:relative;background:var(--paper2);border:1.5px solid var(--ink);padding:18px 18px 14px;transform:rotate(var(--r,0deg))}
+  .slip::before,.slip::after{content:"";position:absolute;width:74px;height:22px;background:var(--tape);mix-blend-mode:multiply}
+  .slip::before{top:-11px;left:18px;transform:rotate(-8deg)}
+  .slip::after{bottom:-10px;right:14px;transform:rotate(6deg)}
+  .slip p{margin:0 0 10px;font-size:17px}
+  .slip small{font-size:13px}
+  .note{max-width:62ch;margin:34px 0 0;font-size:14px}
+  footer{border-top:2px solid var(--ink);padding:14px clamp(14px,3vw,36px) 26px;font-size:13px}
+  @media (prefers-reduced-motion:reduce){ .dial .needle{transition:none} }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="xerox" x="-2%" y="-5%" width="104%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7" result="t"/>
+    <feDisplacementMap in="SourceGraphic" in2="t" scale="3.5" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+<div class="grain" aria-hidden="true"></div>
+<div class="toner" aria-hidden="true" style="width:340px;height:260px;left:-80px;top:40%"></div>
+<div class="toner" aria-hidden="true" style="width:260px;height:200px;right:-60px;top:8%"></div>
+
+<header class="strip">
+  <span>Radio Estática · 88.7 FM · sin licencia</span>
+  <span class="rec"><b aria-hidden="true"></b>En vivo desde algún techo · 03:14</span>
+</header>
+
+<main>
+  <section class="hero" id="hero" aria-labelledby="w">
+    <h1 class="word" id="w"><span class="layer" id="base">Estática</span></h1>
+    <canvas class="noise" id="noise" aria-hidden="true"></canvas>
+    <div class="under">
+      <span>radio · sin licencia · de madrugada</span>
+      <span class="status" id="status" aria-live="polite">mueve el cursor ←→ para sintonizar</span>
+    </div>
+    <div class="dial" style="--st:5.85%">
+      <span class="station" aria-hidden="true">▼ 88.7</span>
+      <div class="nums" aria-hidden="true"><span>88</span><span>92</span><span>96</span><span>100</span><span>104</span><span>108</span></div>
+      <input type="range" id="tune" min="87.5" max="108" step="0.1" value="97.3" aria-label="Sintonizar frecuencia (FM)">
+      <span class="needle" aria-hidden="true"></span>
+    </div>
+  </section>
+
+  <section class="msgs" aria-labelledby="m">
+    <h2 id="m">Mensajes de oyentes</h2>
+    <ul class="slips">
+      <li class="slip" style="--r:-1.2deg"><p>«Para la del 4B, que ya no me contesta. Pónganle la de los Ángeles Azules.»</p><small>— anónimo · 02:41</small></li>
+      <li class="slip" style="--r:1deg"><p>«Pongan otra vez la de ayer, la que sonaba como lluvia en lámina.»</p><small>— taxista, periférico · 03:02</small></li>
+      <li class="slip" style="--r:-.6deg"><p>«Aquí en la panadería los escuchamos desde las cuatro. El horno hace el coro.»</p><small>— turno de noche · 04:05</small></li>
+      <li class="slip" style="--r:1.6deg"><p>«¿Alguien más oye el zumbido a las 3:33? No es mi radio, ¿verdad?»</p><small>— vecina insomne · 03:34</small></li>
+      <li class="slip" style="--r:-1.8deg"><p>«Saludos a los del cerro, se les oye clarito cuando no hay viento.»</p><small>— camión 42 · 01:58</small></li>
+      <li class="slip" style="--r:.8deg"><p>«No digan dónde está la antena. Ni en broma.»</p><small>— un amigo · 00:12</small></li>
+    </ul>
+    <p class="note">Radio Estática no existe: los nombres, horarios y recados de esta página son inventados.
+      Hecha con el formato de preguntas digeribles de la skill: dos rondas de cuatro preguntas con bosquejos
+      ASCII, y esta página como bosquejo.</p>
+  </section>
+</main>
+<footer>Galería de la skill brutalist · <a href="../../../">volver a la galería</a></footer>
+
+<script>
+(() => {
+  const STATION = 88.7, MIN = 87.5, MAX = 108;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hero = document.getElementById('hero'), word = document.getElementById('w'), base = document.getElementById('base');
+  const tune = document.getElementById('tune'), status = document.getElementById('status');
+  const needleHost = document.querySelector('.dial'), canvas = document.getElementById('noise'), ctx = canvas.getContext('2d');
+  document.querySelector('.dial').style.setProperty('--st', ((STATION - MIN) / (MAX - MIN) * 100).toFixed(2) + '%');
+
+  /* the word fills the width; horizontal slices of it drift apart with the noise */
+  const SLICES = 9;
+  const slices = [];
+  for (let i = 0; i < SLICES; i++) {
+    const s = base.cloneNode(true); s.removeAttribute('id'); s.classList.add('slice'); s.setAttribute('aria-hidden', 'true');
+    const a = (i / SLICES * 100).toFixed(2), b = (100 - (i + 1) / SLICES * 100).toFixed(2);
+    s.style.clipPath = `inset(${a}% -5% ${b}% -5%)`;
+    word.append(s); slices.push({ el: s, k: (Math.sin(i * 12.9898) * 43758.5453) % 1 });
+  }
+  const fit = () => {
+    const all = [base, ...slices.map(s => s.el)];
+    all.forEach(e => { e.style.fontSize = '100px'; });
+    const w = base.scrollWidth || base.getBoundingClientRect().width;
+    const avail = word.clientWidth;
+    const fs = (100 * avail / w * .99).toFixed(2) + 'px';
+    all.forEach(e => { e.style.fontSize = fs; });
+    canvas.width = Math.ceil(hero.clientWidth / 3); canvas.height = Math.ceil(hero.clientHeight / 3);
+  };
+  base.style.display = 'inline-block';
+  slices.forEach(s => { s.el.style.display = 'inline-block'; });
+
+  let freq = +tune.value, noise = 1;
+  function render(){
+    const d = Math.abs(freq - STATION);
+    noise = Math.min(1, d / 6);                         /* 0 = clear, 1 = lost */
+    const locked = d < 0.15;
+    base.style.opacity = (1 - noise * .85).toFixed(3);
+    slices.forEach((s, i) => {
+      const dx = (s.k * 2 - 1) * noise * 120 + Math.sin(freq * 3 + i) * noise * 30;
+      s.el.style.transform = `translateX(${dx.toFixed(1)}px)`;
+      s.el.style.opacity = noise > .02 ? (0.35 + noise * .5).toFixed(2) : 0;
+    });
+    needleHost.style.setProperty('--nx', ((freq - MIN) / (MAX - MIN) * 100).toFixed(2) + '%');
+    tune.setAttribute('aria-valuetext', `${freq.toFixed(1)} FM — ${locked ? 'señal clara' : noise > .6 ? 'solo ruido' : 'se oye algo'}`);
+    status.textContent = locked ? '● EN EL AIRE · 03:00 RUIDO PARA DORMIR'
+      : `${freq.toFixed(1)} FM · ${noise > .6 ? 'solo estática' : 'algo se cuela… sigue girando'}`;
+    status.classList.toggle('on', locked);
+    canvas.style.opacity = (noise * .55).toFixed(2);
+    if (reduce) drawNoise();
+  }
+  function drawNoise(){
+    const { width: w, height: h } = canvas; if (!w || !h) return;
+    const img = ctx.createImageData(w, h), px = img.data;
+    for (let i = 0; i < px.length; i += 4) { const v = Math.random() * 255 | 0; px[i] = px[i+1] = px[i+2] = v; px[i+3] = 255; }
+    ctx.putImageData(img, 0, 0);
+  }
+  if (!reduce) (function loop(){ if (noise > .02) drawNoise(); requestAnimationFrame(loop); })();
+
+  const setFreq = f => { freq = Math.round(Math.min(MAX, Math.max(MIN, f)) * 10) / 10; tune.value = freq; render(); };
+  hero.addEventListener('pointermove', e => {
+    if (e.target === tune) return;
+    const r = hero.getBoundingClientRect();
+    setFreq(MIN + (e.clientX - r.left) / r.width * (MAX - MIN));
+  });
+  tune.addEventListener('input', () => setFreq(+tune.value));
+  document.fonts.ready.then(() => { fit(); render(); });
+  addEventListener('resize', () => { fit(); render(); });
+  fit(); render();
+})();
+</script>
+</body>
+</html>

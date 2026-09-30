@@ -21,6 +21,18 @@ Lessons:
 - ASCII previews that resembled the built result were valued.
 - The maintainer's direction is to **explore many designs**, not converge early (A-2).
 
+## Creative mode — format 1, second run (2026-09-30)
+
+Two rounds of four digestible questions with ASCII previews, content invented. Answers:
+round 1 — *pirate radio* · *one giant word* · *photocopied paper* · *the cursor moves
+everything*; round 2 — word *ESTÁTICA* · the cursor *tunes* (moving sideways turns the dial;
+only at 88.7 is the word sharp) · *tape* breaks the order · below, *listeners' messages*.
+Built as [`examples/gallery/estatica/`](../examples/gallery/estatica/index.html). Reaction
+pending.
+
+- A second round tailored to the first round's answers made the questions concrete (the
+  word, what the cursor does *to it*) instead of generic.
+
 ## Editing an existing page — first test
 
 On a sketch the agent itself had written (limitation: it knew the code and the intent;
