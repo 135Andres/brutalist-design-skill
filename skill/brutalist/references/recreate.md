@@ -109,7 +109,7 @@ kept); rows marked `INVENTED`, "derived from: …".
 
 `recreations/<slug>/`: reference (or its path) · `inventory.md` · `palette.json` + the
 script · build · screenshots (reference, build, overlay) · `report.md`. What lives only
-in chat does not count. *Open question C:* also export the inventory as `DESIGN.md`?
+in chat does not count. *Open question C* (export the inventory as `DESIGN.md`) is still open; `inventory.md` is the only home meanwhile.
 
 ## 9. Report — `report.md`
 

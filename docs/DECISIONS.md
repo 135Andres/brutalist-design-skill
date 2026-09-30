@@ -151,11 +151,9 @@ maintainer chose **publishing on npm**: the command is `npx brutalist-design-ski
 
 ## A-10 · Output format follows the project; review fixes (2026-09-30)
 
-The maintainer's words: «me gustaría que la skill por defecto cree los diseños en un archivo
-html (ya lo hace) pero si detecta que en el proyecto se modularizan los archivos entonces
-que también lo haga» (*by default the skill creates designs in one HTML file (it already
-does), but if it detects that the project splits its files into modules, it should do that
-too*).
+The maintainer's request: by default the skill creates designs in one HTML file (it
+already does), but if it detects that the project splits its files into modules, it should
+do that too.
 
 1. **Applied:** [`stacks.md`](../skill/brutalist/references/stacks.md) §2 — one `index.html`
    by default; modular files in the project's own system when detected, with the evidence
@@ -168,6 +166,33 @@ too*).
    column renamed "Consulted by"; `accessibility.md` gained input-equivalent, hover-content
    and text-spacing rows.
 4. **Open questions A–E stay open**; the proposals made in chat are not decisions.
+
+## A-11 · Open questions A, B, D, E decided; one language; branches (2026-09-30)
+
+The maintainer accepted the agent's proposals for A, B, D and E as decisions.
+
+1. **A — existing animation library:** using a library the project already has is **not** a
+   rung climb; declare it in the motion plan. Adding a new animation dependency is a climb.
+   Applied in `effects.md` and `stacks.md` §4.
+2. **B — invented motion and higher rungs:** allowed **if declared** (`DECISION` + a
+   concrete reason); climbing silently is never allowed. Applied in `effects.md`.
+3. **D — accessibility loading:** `accessibility.md` is loaded by every command that writes
+   code. `SKILL.md` already said so.
+4. **E — two builds:** deliver the fidelity build and `build-a11y` **only when they differ**
+   (a failed contrast or other check); otherwise one build, with a note saying so. Applied
+   in `accessibility.md`.
+5. **C — `DESIGN.md` export:** still open. Agent's view (`[proposal]`): not now. `inventory.md`
+   is already the one home for that information; a second file would duplicate it (AGENTS
+   rule 5), and the format could not be verified (designmd.ai was unreachable from the
+   session; its license is unknown). If adopted later: a generated export, never hand-edited.
+6. **Language:** anything documented and pushed is in **one language, English**. The
+   maintainer's words are recorded translated, without the Spanish original beside them.
+   Entries written before this date keep their Spanish quotes (append-only).
+   `AGENTS.md` rule 9 and `CLAUDE.md` updated.
+7. **Branches:** the agent's working branch was renamed `v0.1` (a snapshot of the state at
+   this decision); new changes go to a separate working branch, `claude/dev`.
+8. **No code for now:** until told otherwise, the agent writes and edits documents only;
+   it runs no tests and writes no programs.
 
 ## Open questions
 

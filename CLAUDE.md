@@ -4,4 +4,5 @@ Read [`AGENTS.md`](AGENTS.md) first — its rules apply here. Then [`docs/NEXT.m
 for what is pending, and the status table in [`docs/SPEC.md`](docs/SPEC.md).
 
 Working language with the maintainer: Spanish. Everything written to the repository:
-English (decision A-4), keeping the maintainer's quotes in Spanish with a translation.
+English only (decisions A-4, A-11): the maintainer's words are recorded translated into
+English; older entries keep their Spanish quotes (append-only).

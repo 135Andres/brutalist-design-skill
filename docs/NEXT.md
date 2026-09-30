@@ -12,8 +12,8 @@ this repository; the exceptions are listed at the end.
 
 ## Waiting for the maintainer
 
-1. **Decisions on open questions A–E** in [`SPEC.md`](SPEC.md#open-questions) (proposals were
-   given in chat, none is decided).
+1. **Open question C** (`DESIGN.md` export) in [`SPEC.md`](SPEC.md#open-questions). A, B, D
+   and E were decided in A-11.
 2. **Approval** of the drafts `motion.md`, `effects.md`, `resources.md`, `accessibility.md`
    (reviewed and corrected 2026-09-30, see A-10) and of `stacks.md` §2 (new).
 3. Radio Estática was **not liked** (recorded in [`FINDINGS.md`](FINDINGS.md)); it stays out

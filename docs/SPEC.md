@@ -13,7 +13,7 @@
 | Router and principles | [`SKILL.md`](../skill/brutalist/SKILL.md) | draft (A-4) |
 | `recreate` | [`recreate.md`](../skill/brutalist/references/recreate.md) | **closed** by the maintainer (rev. 5) |
 | `motion` | [`motion.md`](../skill/brutalist/references/motion.md) | rev. 3, **pending review** |
-| Effects ladder | [`effects.md`](../skill/brutalist/references/effects.md) | pending review (with motion) |
+| Effects ladder | [`effects.md`](../skill/brutalist/references/effects.md) | pending review; rules for questions A and B decided (A-11) |
 | Resources | [`resources.md`](../skill/brutalist/references/resources.md) | pending review (with motion) |
 | Accessibility | [`accessibility.md`](../skill/brutalist/references/accessibility.md) | **new draft** from the audit; pending review |
 | Glossary | [`glossary.md`](../skill/brutalist/references/glossary.md) | new; collects existing definitions |
@@ -44,15 +44,17 @@
 
 ## Open questions
 
-- **A.** If the project already uses an animation library, does using it count as
-  climbing a rung?
-- **B.** May invented motion justify a higher rung when declared, or only the static look
-  and an animated source? (`effects.md` assumes yes, declared.)
-- **C.** Should `recreate` also export the inventory as `DESIGN.md`?
-- **D.** Is `accessibility.md` loaded by every command that writes code? (audit A1;
-  `SKILL.md` already assumes yes.)
-- **E.** Deliver both builds (fidelity and `build-a11y`) and state which is publishable?
-  (audit A3; draft rule in `accessibility.md`.)
+Decided on 2026-09-30 ([A-11](DECISIONS.md)):
+
+- **A.** Using an animation library the project already has is **not** a rung climb.
+- **B.** Invented motion may use a higher rung if declared (`DECISION` + reason).
+- **D.** `accessibility.md` is loaded by every command that writes code.
+- **E.** Two builds (fidelity and `build-a11y`) only when they differ; otherwise one.
+
+Still open:
+
+- **C.** Should `recreate` also export the inventory as `DESIGN.md`? Agent's view
+  (`[proposal]`): not now; see A-11.
 
 ## Next
 

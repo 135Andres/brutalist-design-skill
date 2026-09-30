@@ -1,7 +1,7 @@
 # accessibility — for everything the skill builds
 
-> **Status: draft, new** (from the pre-publication audit, findings A1–A4; pending the
-> maintainer's review). The one home for accessibility rules; every command that writes
+> **Status: draft, new** (from the pre-publication audit, findings A1–A4; loaded by every
+> command that writes code, A-11 · D; wording pending the maintainer's review). The one home for accessibility rules; every command that writes
 > code loads this file. Criteria refer to WCAG 2.2.
 
 Brutalism breaks conventions on purpose. Keep the look; do not break the person using it.
@@ -22,7 +22,10 @@ Everything added here is marked `ADDED` in the report.
 - Below AA (1.4.3 text 4.5:1 / large 3:1; 1.4.11 non-text 3:1): warn in the report with
   the measured pairs and ratios; the fix goes in a **separate variant** `build-a11y`,
   marked `ADDED`; never inside the fidelity build.
-- *Draft rule:* deliver both builds and say in the report which one is publishable.
+- **Both builds only when they differ** (A-11 · E): if any check fails (contrast or
+  another fix that would change the look), deliver the fidelity build **and** `build-a11y`
+  and say in the report which one is publishable. If nothing differs, deliver one build
+  and say so in the report.
 
 ## Brutalist devices and their defaults
 
