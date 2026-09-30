@@ -3,139 +3,142 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kiln Type — Grotto Sans specimen</title>
-<meta name="description" content="A fictional type foundry's specimen with a live weight ladder. Gallery page of the brutalist agent skill.">
-<!-- Gallery · Kiln Type. Fictional foundry and typeface. Made with the skill's inspire command from
-     a third-party reference (#42, not included; principles only: vertical wordmark, a ladder of
-     weights with right-aligned abbreviations, a black block with giant white letters, spec tables,
-     a quote). "Grotto Sans" is shown with Archivo (SIL OFL), a real variable font. -->
+<title>Kiln Type — Grotto Sans tester</title>
+<meta name="description" content="A fictional type foundry's live type tester. Gallery page of the brutalist agent skill.">
+<!-- Gallery · Kiln Type. Fictional foundry and typeface. First made with the skill's inspire
+     command from a third-party reference (#42, not included). Recomposed after the second audit
+     (docs/audits/2026-09-30-second-audit.md) to move away from that reference's composition:
+     no vertical wordmark, no black block, no three-panel row; the page is now a live type tester
+     with a staircase of weights. "Grotto Sans" is shown with Archivo (SIL OFL). -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  :root{--ink:#0c0c0c;--paper:#fff;--sans:"Archivo",Arial,sans-serif;--ease:cubic-bezier(.2,.8,.2,1)}
+  :root{--ink:#0c0c0c;--paper:#fff;--sans:"Archivo",Arial,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;--ease:cubic-bezier(.2,.8,.2,1);
+    --w:400;--wd:100;--sz:1}
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--paper);color:var(--ink)}
-  body{font:400 15px/1.3 var(--sans);display:grid;grid-template-columns:38px 1fr;min-height:100vh}
-  a{color:inherit;text-decoration:none}
-  a:hover,a:focus-visible{text-decoration:underline}
+  body{font:400 15px/1.35 var(--sans)}
+  a{color:inherit}
   :focus-visible{outline:2px solid var(--ink);outline-offset:2px}
-  .spine{border-right:2px solid var(--ink);display:flex;justify-content:center;align-items:flex-start;padding-top:12px;position:sticky;top:0;height:100vh}
-  .spine span{writing-mode:vertical-rl;transform:rotate(180deg);font:800 20px/1 var(--sans);letter-spacing:-.01em}
-  main{min-width:0}
-  .top a{display:inline-block;min-height:24px;line-height:24px}
-  .top{display:grid;grid-template-columns:repeat(4,auto) 1fr auto;gap:0 32px;align-items:start;padding:12px 18px;font-size:15px;line-height:1.15}
-  .top .btns{display:flex;gap:10px;align-items:center}
-  .pill{border:1.5px solid var(--ink);border-radius:999px;padding:5px 12px;font:600 13px/1 var(--sans);text-transform:uppercase;background:none;color:inherit;cursor:pointer}
+
+  header{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px 28px;padding:12px 20px;border-bottom:2px solid var(--ink)}
+  .mark{font:800 22px/1 var(--sans);font-variation-settings:"wdth" 80;letter-spacing:-.01em}
+  header nav{display:flex;gap:4px 22px;flex-wrap:wrap}
+  header nav a{text-decoration:none;min-height:24px;display:inline-flex;align-items:center}
+  header nav a:hover,header nav a:focus-visible{text-decoration:underline}
+  .btns{display:flex;gap:8px}
+  .pill{border:1.5px solid var(--ink);border-radius:999px;padding:6px 13px;font:600 12px/1 var(--mono);text-transform:uppercase;background:none;color:inherit;cursor:pointer}
   .pill.fill{background:var(--ink);color:var(--paper)}
-  .intro{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding:10px 18px 22px;font:400 clamp(17px,1.6vw,24px)/1.2 var(--sans)}
-  .intro p{margin:0}
-  .intro em{font-style:italic}
-  .panels{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:14px;padding:0 18px 18px}
-  .ph{display:flex;justify-content:space-between;font:500 clamp(14px,1.3vw,19px)/1.1 var(--sans);margin-bottom:8px;gap:10px}
-  .ph b{font-weight:800}
-  .block{background:var(--ink);color:var(--paper);aspect-ratio:3/4;position:relative;overflow:hidden}
-  .block .gr{position:absolute;left:4%;bottom:-6%;font:400 clamp(160px,19vw,300px)/.8 var(--sans);letter-spacing:-.04em;
-    font-variation-settings:"wght" var(--w,400),"wdth" var(--wd,100);transition:font-variation-settings .6s var(--ease)}
-  .block .now{position:absolute;right:10px;top:10px;font:500 12px/1 var(--sans);text-transform:uppercase;letter-spacing:.06em}
-  .ladder{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
-  .ladder li{border-bottom:1px solid #d8d8d8}
-  .ladder button{all:unset;box-sizing:border-box;width:100%;display:flex;justify-content:space-between;align-items:baseline;padding:2px 0;cursor:pointer;min-height:24px;
-    font-size:clamp(17px,1.65vw,26px);line-height:1.05;letter-spacing:-.015em}
-  .ladder button:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
-  .ladder button .ab{font-size:.8em}
-  .ladder button.on{background:var(--ink);color:var(--paper)}
-  .specs{display:grid;grid-template-columns:repeat(3,1fr);gap:4px 12px;margin-top:12px;font-size:10.5px;line-height:1.25}
-  .specs dt{font-weight:600}
-  .specs dd{margin:0 0 4px}
-  .quote{font:400 clamp(18px,1.75vw,26px)/1.12 var(--sans);letter-spacing:-.01em;margin:0}
-  .quote cite{display:block;font-style:normal;margin-top:.5em}
-  .quote cite::before{content:"■ "}
-  .glyphs{margin-top:16px;border-top:2px solid var(--ink);padding-top:10px;font:400 clamp(22px,2.2vw,34px)/1.1 var(--sans);word-break:break-all;
-    font-variation-settings:"wght" var(--w,400),"wdth" var(--wd,100);transition:font-variation-settings .6s var(--ease)}
-  .wd{display:flex;gap:10px;align-items:center;margin-top:12px;font-size:12px;text-transform:uppercase;letter-spacing:.06em}
-  .wd input{flex:1;accent-color:var(--ink)}
-  footer{padding:14px 18px 26px;border-top:2px solid var(--ink);font-size:12px}
+
+  /* the tester */
+  .tester{border-bottom:2px solid var(--ink)}
+  .controls{display:grid;grid-template-columns:repeat(3,1fr) auto;gap:10px 28px;padding:12px 20px;border-bottom:1px solid var(--ink);font:400 12px/1.2 var(--mono);text-transform:uppercase;letter-spacing:.04em}
+  .controls label{display:grid;grid-template-columns:auto 1fr 3.5em;gap:10px;align-items:center}
+  .controls input{accent-color:var(--ink);width:100%;min-height:24px}
+  .controls output{text-align:right}
+  .controls .name{align-self:center;font-weight:600}
+  .line{margin:0;padding:clamp(18px,3vw,36px) 20px clamp(24px,4vw,48px);min-height:40vh;outline:none;
+    font:400 calc(clamp(44px,7.4vw,124px) * var(--sz))/.98 var(--sans);letter-spacing:-.02em;
+    font-variation-settings:"wght" var(--w),"wdth" var(--wd);transition:font-variation-settings .45s var(--ease)}
+  .line:focus-visible{box-shadow:inset 0 0 0 2px var(--ink)}
+  .hint{padding:0 20px 12px;font:400 12px/1 var(--mono);text-transform:uppercase;letter-spacing:.04em}
+
+  /* the staircase of weights, and the facts */
+  .lower{display:grid;grid-template-columns:1.5fr 1fr}
+  .stairs{border-right:2px solid var(--ink);padding:16px 20px 22px}
+  .stairs h2,.facts h2{margin:0 0 10px;font:600 12px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em}
+  .stairs ol{list-style:none;margin:0;padding:0}
+  .stairs button{all:unset;box-sizing:border-box;display:flex;gap:14px;align-items:baseline;width:calc(100% - var(--i) * 5.5%);margin-left:calc(var(--i) * 5.5%);
+    border-top:1px solid var(--ink);padding:3px 6px;min-height:28px;cursor:pointer;font-size:clamp(17px,1.7vw,26px);letter-spacing:-.01em;
+    font-variation-settings:"wght" var(--bw);transition:background .2s,color .2s}
+  .stairs button small{margin-left:auto;font:400 12px/1 var(--mono)}
+  .stairs button:hover,.stairs button:focus-visible,.stairs button[aria-pressed="true"]{background:var(--ink);color:var(--paper);outline:none}
+  .facts{padding:16px 20px 22px}
+  .facts dl{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;margin:0 0 18px;font-size:14px}
+  .facts dt{font:600 12px/1.6 var(--mono);text-transform:uppercase}
+  .facts dd{margin:0}
+  blockquote{margin:0;border:2px solid var(--ink);padding:14px 16px;font:400 clamp(17px,1.5vw,22px)/1.2 var(--sans);font-variation-settings:"wght" 500}
+  blockquote cite{display:block;margin-top:10px;font:400 12px/1 var(--mono);text-transform:uppercase;font-style:normal}
+  footer{padding:14px 20px 26px;border-top:2px solid var(--ink);font-size:12px}
   @media (max-width:900px){
-    .top{grid-template-columns:1fr 1fr;gap:10px 18px}
-    .top .btns{grid-column:1/-1}
-    .intro,.panels{grid-template-columns:1fr}
-    .block{aspect-ratio:4/3}
+    header{grid-template-columns:1fr auto}
+    header nav{grid-column:1/-1;grid-row:2}
+    .controls{grid-template-columns:1fr}
+    .lower{grid-template-columns:1fr}
+    .stairs{border-right:0;border-bottom:2px solid var(--ink)}
   }
   @media (prefers-reduced-motion:reduce){ *{transition:none!important} }
 </style>
 </head>
 <body>
-<div class="spine" aria-hidden="true"><span>Kiln Type</span></div>
+<header>
+  <span class="mark">Kiln Type</span>
+  <nav aria-label="Foundry"><a href="#">Typefaces</a><a href="#">Shop</a><a href="#">About</a><a href="#">Licences</a><a href="#">Contact</a></nav>
+  <span class="btns"><button class="pill" type="button">Trial</button><button class="pill fill" type="button">License</button></span>
+</header>
+
 <main>
-  <nav class="top" aria-label="Foundry">
-    <span><a href="#">Typefaces</a><br><a href="#">Shop</a></span>
-    <span><a href="#">About</a><br><a href="#">Contact</a></span>
-    <span><a href="#">Information</a><br><a href="#">Licences</a></span>
-    <span>KT Grotto Sans<br>9 weights, 18 styles</span>
-    <span></span>
-    <span class="btns"><button class="pill" type="button">Trial</button><button class="pill fill" type="button">License</button></span>
-  </nav>
-  <section class="intro">
-    <h1 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)">Kiln Type — Grotto Sans</h1>
-    <p>Grotto Sans is a grotesque cut for rooms with bad light: open counters, a tall x-height and
-      terminals that stay sharp at small sizes. It began as lettering for a cave museum's signs and
-      grew into a family of nine weights, each with an italic.</p>
-    <p>The drawing is plain on purpose. <em>Grotto</em> does not want to be noticed on the wall; it wants
-      the wall to be read. Variable weight and width, 640 glyphs, tabular figures and a stencil set for
-      the days when the signs are sprayed.</p>
+  <section class="tester" aria-labelledby="tt">
+    <h1 id="tt" style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)">Grotto Sans — type tester</h1>
+    <div class="controls">
+      <label>Weight <input type="range" id="w" min="100" max="900" step="1" value="400"><output id="wo">400</output></label>
+      <label>Width <input type="range" id="wd" min="62" max="125" step="1" value="100"><output id="wdo">100</output></label>
+      <label>Size <input type="range" id="sz" min="0.6" max="1.4" step="0.01" value="1"><output id="szo">100%</output></label>
+      <span class="name" id="name" aria-live="polite">Grotto Sans Regular</span>
+    </div>
+    <p class="line" id="line" contenteditable="true" spellcheck="false" role="textbox" aria-multiline="true" aria-label="Type tester: edit this text">A sign is read by someone who is not looking for it.</p>
+    <p class="hint">Click the line to type your own words · drag the sliders · or pick a step of the staircase</p>
   </section>
 
-  <section class="panels" aria-label="Specimen">
-    <div>
-      <div class="ph"><span><b>■</b>Grotto Sans</span><span>9 Weights</span><span>18 Styles</span></div>
-      <div class="block"><span class="now" id="now">Regular · 400</span><span class="gr" aria-hidden="true">Gr</span></div>
-    </div>
-    <div>
-      <div class="ph"><span>(KT) Full family</span><span>Uprights</span><span>Italics</span><span>000</span></div>
-      <ul class="ladder" id="ladder" aria-label="Weights: choose one to see it large">
-        <li><button type="button" data-w="100" aria-pressed="false">Grotto Sans Thin<span class="ab">Th</span></button></li>
-        <li><button type="button" data-w="200" aria-pressed="false">Grotto Sans ExtraLight<span class="ab">XL</span></button></li>
-        <li><button type="button" data-w="300" aria-pressed="false">Grotto Sans Light<span class="ab">Li</span></button></li>
-        <li><button type="button" data-w="400" class="on" aria-pressed="true">Grotto Sans Regular<span class="ab">Rg</span></button></li>
-        <li><button type="button" data-w="500" aria-pressed="false">Grotto Sans Medium<span class="ab">Md</span></button></li>
-        <li><button type="button" data-w="600" aria-pressed="false">Grotto Sans SemiBold<span class="ab">SB</span></button></li>
-        <li><button type="button" data-w="700" aria-pressed="false">Grotto Sans Bold<span class="ab">Bd</span></button></li>
-        <li><button type="button" data-w="800" aria-pressed="false">Grotto Sans ExtraBold<span class="ab">XB</span></button></li>
-        <li><button type="button" data-w="900" aria-pressed="false">Grotto Sans Black<span class="ab">Bk</span></button></li>
-      </ul>
-      <dl class="specs"><div><dt>Glyphs</dt><dd>640</dd><dt>Axes</dt><dd>weight, width</dd></div>
-        <div><dt>Languages</dt><dd>Latin, extended</dd><dt>Figures</dt><dd>tabular, oldstyle</dd></div>
-        <div><dt>Formats</dt><dd>OTF, TTF, WOFF2</dd><dt>Stencil</dt><dd>yes</dd></div></dl>
-      <label class="wd">Width <input id="wd" type="range" min="62" max="125" value="100" aria-label="Width axis, 62 to 125"></label>
-    </div>
-    <div>
-      <div class="ph"><span><b>■</b>Grotto Sans</span><span>Specimen</span><span>Kiln Type</span></div>
-      <blockquote class="quote">“A sign is read by someone who is not looking for it. The letters have one chance, and they get it
+  <div class="lower">
+    <section class="stairs" aria-labelledby="st">
+      <h2 id="st">Nine weights, one staircase</h2>
+      <ol id="stairs"></ol>
+    </section>
+    <section class="facts" aria-labelledby="fa">
+      <h2 id="fa">Grotto Sans</h2>
+      <dl>
+        <dt>Styles</dt><dd>9 weights, each with an italic</dd>
+        <dt>Axes</dt><dd>weight 100–900 · width 62–125</dd>
+        <dt>Glyphs</dt><dd>640, Latin extended</dd>
+        <dt>Figures</dt><dd>tabular and oldstyle</dd>
+        <dt>Extras</dt><dd>a stencil set, for the days the signs are sprayed</dd>
+      </dl>
+      <blockquote>“A sign is read by someone who is not looking for it. The letters have one chance, and they get it
         from the white around them.”<cite>Mara Kiln, founder</cite></blockquote>
-      <p class="glyphs">AaBbCc 0123 &amp;?! GrØß</p>
-    </div>
-  </section>
-  <footer>Brutalist skill gallery · Kiln Type, Grotto Sans and Mara Kiln are fictional; the type shown is
-    Archivo (SIL Open Font License) · <a href="../../../">back to the gallery</a></footer>
+    </section>
+  </div>
 </main>
+<footer>Brutalist skill gallery · Kiln Type, Grotto Sans and Mara Kiln are fictional; the type shown is Archivo
+  (SIL Open Font License) · <a href="../../../">back to the gallery</a></footer>
 <script>
 (() => {
-  const root = document.documentElement, ladder = document.getElementById('ladder'), now = document.getElementById('now');
-  const names = {100:'Thin',200:'ExtraLight',300:'Light',400:'Regular',500:'Medium',600:'SemiBold',700:'Bold',800:'ExtraBold',900:'Black'};
-  const items = [...ladder.querySelectorAll('button')];
-  items.forEach(li => li.style.fontVariationSettings = `"wght" ${li.dataset.w}`);
-  const set = li => {
-    items.forEach(x => { x.classList.toggle('on', x === li); x.setAttribute('aria-pressed', String(x === li)); });
-    root.style.setProperty('--w', li.dataset.w);
-    now.textContent = `${names[li.dataset.w]} · ${li.dataset.w}`;
+  const root = document.documentElement;
+  const NAMES = {100:'Thin',200:'ExtraLight',300:'Light',400:'Regular',500:'Medium',600:'SemiBold',700:'Bold',800:'ExtraBold',900:'Black'};
+  const w = document.getElementById('w'), wd = document.getElementById('wd'), sz = document.getElementById('sz');
+  const wo = document.getElementById('wo'), wdo = document.getElementById('wdo'), szo = document.getElementById('szo'), name = document.getElementById('name');
+  const stairs = document.getElementById('stairs');
+  Object.keys(NAMES).forEach((k, i) => {
+    const li = document.createElement('li');
+    li.innerHTML = `<button type="button" data-w="${k}" aria-pressed="${k === '400'}" style="--i:${i};--bw:${k}">Grotto Sans ${NAMES[k]}<small>${k}</small></button>`;
+    stairs.append(li);
+  });
+  const steps = [...stairs.querySelectorAll('button')];
+  const setWeight = v => {
+    v = +v; w.value = v; wo.value = v; root.style.setProperty('--w', v);
+    const near = Math.round(v / 100) * 100;
+    name.textContent = `Grotto Sans ${NAMES[near]}${v % 100 ? ' (' + v + ')' : ''}`;
+    steps.forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.w === v)));
   };
-  items.forEach(li => { li.addEventListener('pointerenter', () => set(li)); li.addEventListener('focus', () => set(li)); li.addEventListener('click', () => set(li)); });
-  document.getElementById('wd').addEventListener('input', e => root.style.setProperty('--wd', e.target.value));
-  /* once, on load: sweep from Thin to Black and settle on Regular */
+  w.addEventListener('input', () => setWeight(w.value));
+  wd.addEventListener('input', () => { wdo.value = wd.value; root.style.setProperty('--wd', wd.value); });
+  sz.addEventListener('input', () => { szo.value = Math.round(sz.value * 100) + '%'; root.style.setProperty('--sz', sz.value); });
+  steps.forEach(b => b.addEventListener('click', () => setWeight(b.dataset.w)));
+  /* once, on load: climb the staircase and come back to Regular */
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    items.forEach((li, i) => setTimeout(() => set(li), 250 + i * 160));
-    setTimeout(() => set(items[3]), 250 + items.length * 160 + 300);
+    steps.forEach((b, i) => setTimeout(() => setWeight(b.dataset.w), 300 + i * 170));
+    setTimeout(() => setWeight(400), 300 + steps.length * 170 + 350);
   }
 })();
 </script>

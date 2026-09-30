@@ -5,102 +5,116 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>adrift — lectures on getting lost on purpose</title>
 <meta name="description" content="A fictional lecture series. Gallery page of the brutalist agent skill.">
-<!-- Gallery · adrift. Fictional content. Made with the skill's inspire command from a
-     third-party reference (#39, not included; principles only: one word's italic letters
-     scattered across a white page, small bold grotesk blocks in the corners, a grid of dates). -->
+<!-- Gallery · adrift. Fictional content. First made with the skill's inspire command from a
+     third-party reference (#39, not included). Recomposed after the second audit
+     (docs/audits/2026-09-30-second-audit.md) to move away from that reference's composition:
+     the letters now float on a horizon with their reflection under it, the menu runs along the
+     top and the dates are a numbered list. The one principle kept: one word's italic letters,
+     loose, on a white page. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,700;0,800;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,500;0,700;0,800;1,900&display=swap" rel="stylesheet">
 <style>
-  :root{--ink:#0b0b0b;--paper:#fff;--sans:"Inter Tight",Arial,sans-serif;--ease:cubic-bezier(.2,.8,.2,1)}
+  :root{--ink:#0b0b0b;--paper:#fff;--sans:"Inter Tight",Arial,sans-serif;--ease:cubic-bezier(.2,.8,.2,1);--line:58%}
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--paper);color:var(--ink)}
-  body{font:700 clamp(15px,1.25vw,19px)/1.22 var(--sans);letter-spacing:-.005em}
+  body{font:500 clamp(15px,1.2vw,18px)/1.3 var(--sans)}
   a{color:inherit;text-decoration:none}
   a:hover,a:focus-visible{text-decoration:underline;text-underline-offset:.15em}
   :focus-visible{outline:3px solid var(--ink);outline-offset:3px}
-  .page{position:relative;min-height:100vh;display:grid;
-    grid-template-columns:1fr 1fr 1fr;grid-template-rows:auto 1fr auto;gap:0 3vw;padding:clamp(18px,3vw,44px)}
-  .page p,.page ul{margin:0}
-  ul{list-style:none;padding:0}
-  nav a{display:inline-block;min-height:24px;line-height:24px}
-  .c2{text-align:left}
-  .c3{text-align:right}
-  nav{margin-top:1.3em}
-  .bottom{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:end;gap:3vw;margin-top:2em}
-  .dates h2{font:inherit;margin:0 0 1em}
-  .dates ul{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:0 1.1em}
-  .top{grid-column:3;text-align:right;align-self:end}
 
-  /* the word, scattered */
-  .word{position:absolute;inset:0;pointer-events:none;z-index:0}
-  .word span{position:absolute;display:block;font:italic 900 clamp(90px,15vw,250px)/.8 var(--sans);
-    transform:translate(-50%,-50%) rotate(var(--r)) skewX(var(--k)) scaleY(var(--sy,1));
-    left:var(--x);top:var(--y);will-change:transform;transition:transform 1.1s var(--ease),opacity .6s var(--ease)}
-  .js .word span.pre{opacity:0;transform:translate(-50%,calc(-50% - 40vh)) rotate(calc(var(--r) * -1)) skewX(var(--k))}
-  .page>*:not(.word):not(.sr-only){position:relative;z-index:1}
-  .foot{padding:14px clamp(18px,3vw,44px) 22px;border-top:2px solid var(--ink);font-size:13px}
-  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .top{display:flex;justify-content:space-between;align-items:center;gap:12px 24px;flex-wrap:wrap;padding:14px clamp(16px,3vw,40px);border-bottom:2px solid var(--ink);font-weight:700}
+  .top ul{display:flex;flex-wrap:wrap;gap:0 22px;list-style:none;margin:0;padding:0}
+  .top a{display:inline-block;min-height:24px;line-height:24px}
+
+  /* the sea: solid letters above the horizon, their reflections below it */
+  .sea{position:relative;height:min(60vh,600px);min-height:360px;border-bottom:2px solid var(--ink)}
+  .above,.below{position:absolute;left:0;right:0;overflow:hidden}
+  .above{top:0;height:var(--line);border-bottom:2px solid var(--ink)}
+  .below{top:var(--line);bottom:0}
+  .above b,.below b{position:absolute;left:var(--x);font:italic 900 clamp(80px,13vw,220px)/.78 var(--sans);transition:transform 1.3s var(--ease),opacity .8s var(--ease)}
+  .above b{bottom:var(--y);transform:translateX(-50%) rotate(var(--r))}
+  .below b{top:var(--y);color:transparent;-webkit-text-stroke:1.5px var(--ink);opacity:.5;
+    transform:translateX(calc(-50% + var(--sx))) scaleY(-.9) rotate(calc(var(--r) * -1));transform-origin:50% 50%}
+  .js .sea.pre .above b{transform:translateX(-50%) translateY(140%) rotate(var(--r))}
+  .js .sea.pre .below b{opacity:0}
+
+  .info{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(18px,3vw,48px);padding:clamp(22px,3vw,40px)}
+  .title{margin:0;font:800 clamp(32px,4vw,64px)/.98 var(--sans);letter-spacing:-.02em}
+  .title em{font-style:italic;font-weight:900}
+  .lede{margin:16px 0 0;max-width:40ch;font-size:clamp(17px,1.4vw,21px)}
+  .dates{border-left:2px solid var(--ink);padding-left:18px}
+  .dates h2{margin:0 0 10px;font:700 13px/1.3 var(--sans);text-transform:uppercase;letter-spacing:.1em}
+  .dates ol{list-style:none;margin:0;padding:0;counter-reset:n}
+  .dates li{display:grid;grid-template-columns:2.2em 4.2em 1fr;gap:10px;padding:6px 0;border-bottom:1px solid var(--ink);counter-increment:n}
+  .dates li::before{content:counter(n,decimal-leading-zero)}
+  .dates li b{font-weight:700}
+  .dates p{margin:12px 0 0;font-weight:700}
+  footer{padding:14px clamp(16px,3vw,40px) 22px;border-top:2px solid var(--ink);font-size:13px}
 
   @media (max-width:760px){
-    .page{grid-template-columns:1fr 1fr;gap:0 18px}
-    .c2{grid-column:1/-1;grid-row:2;margin-top:52vh}
-    .c3{grid-column:2;grid-row:1}
-    .bottom{grid-template-columns:1fr;gap:1.4em}
-    .top{grid-column:1;text-align:left}
-    .word span{font-size:clamp(84px,30vw,160px)}
+    .info{grid-template-columns:1fr}
+    .dates{border-left:0;padding-left:0;border-top:2px solid var(--ink);padding-top:16px}
+    .above b,.below b{font-size:clamp(60px,19vw,120px)}
   }
-  @media (prefers-reduced-motion:reduce){ .word span{transition:none} .js .word span.pre{opacity:1;transform:translate(-50%,-50%) rotate(var(--r)) skewX(var(--k))} }
+  @media (prefers-reduced-motion:reduce){ .above b,.below b{transition:none} .js .sea.pre .above b{transform:translateX(-50%) rotate(var(--r))} .js .sea.pre .below b{opacity:.5} }
 </style>
 </head>
 <body>
-<main class="page" id="top">
-  <h1 class="sr-only">adrift — a lecture series on getting lost on purpose</h1>
-  <div class="word" aria-hidden="true">
-    <span style="--x:37%;--y:33%;--r:-18deg;--k:-24deg">a</span>
-    <span style="--x:55%;--y:27%;--r:22deg;--k:-30deg;--sy:1.2">d</span>
-    <span style="--x:68%;--y:45%;--r:-34deg;--k:-18deg">r</span>
-    <span style="--x:46%;--y:57%;--r:28deg;--k:-26deg;--sy:.8">i</span>
-    <span style="--x:59%;--y:70%;--r:-12deg;--k:-34deg">f</span>
-    <span style="--x:77%;--y:80%;--r:40deg;--k:-20deg">t</span>
+<header class="top">
+  <span>City Walks Society · 2026</span>
+  <nav aria-label="Sections"><ul><li><a href="#">Theme</a></li><li><a href="#">Programme</a></li><li><a href="#">Speakers</a></li><li><a href="#">Maps</a></li><li><a href="#">Getting there</a></li><li><a href="#">Imprint</a></li></ul></nav>
+</header>
+
+<main>
+  <div class="sea pre" id="sea" aria-hidden="true">
+    <div class="above">
+      <b style="--x:11%;--y:-2vw;--r:-8deg">a</b><b style="--x:27%;--y:4vw;--r:7deg">d</b><b style="--x:43%;--y:-4vw;--r:-15deg">r</b>
+      <b style="--x:57%;--y:6vw;--r:10deg">i</b><b style="--x:72%;--y:.5vw;--r:-5deg">f</b><b style="--x:88%;--y:-3vw;--r:16deg">t</b>
+    </div>
+    <div class="below">
+      <b style="--x:11%;--y:-2vw;--r:-8deg;--sx:6px">a</b><b style="--x:27%;--y:4vw;--r:7deg;--sx:-5px">d</b><b style="--x:43%;--y:-4vw;--r:-15deg;--sx:8px">r</b>
+      <b style="--x:57%;--y:6vw;--r:10deg;--sx:-4px">i</b><b style="--x:72%;--y:.5vw;--r:-5deg;--sx:7px">f</b><b style="--x:88%;--y:-3vw;--r:16deg;--sx:-8px">t</b>
+    </div>
   </div>
 
-  <div class="c1">
-    <p>City Walks<br>Society<br>2026</p>
-    <nav aria-label="Sections">
-      <ul><li><a href="#">Theme</a></li><li><a href="#">Programme</a></li><li><a href="#">Speakers</a></li><li><a href="#">Maps</a></li><li><a href="#">Getting there</a></li><li><a href="#">Imprint</a></li></ul>
-    </nav>
-  </div>
-  <p class="c2">adrift — lectures<br>on getting lost<br>on purpose</p>
-  <p class="c3">03.10.2026 to<br>06.02.2027</p>
-
-  <div class="bottom">
+  <section class="info">
+    <div>
+      <h1 class="title"><em>adrift</em> — lectures on getting lost on purpose</h1>
+      <p class="lede">Eight evenings with walkers, sailors and mapmakers who stopped following the map. No slides with
+        arrows. Come without a plan; leave by a different door.</p>
+    </div>
     <section class="dates" aria-labelledby="d">
-      <h2 id="d">Dates</h2>
-      <ul><li>03 Oct</li><li>17 Oct</li><li>31 Oct</li><li>14 Nov</li><li>28 Nov</li><li>12 Dec</li><li>16 Jan</li><li>06 Feb</li></ul>
+      <h2 id="d">Dates · 03.10.2026 – 06.02.2027</h2>
+      <ol>
+        <li><b>03 Oct</b><span>Walking without a route</span></li>
+        <li><b>17 Oct</b><span>Tides, and other clocks</span></li>
+        <li><b>31 Oct</b><span>The wrong bus</span></li>
+        <li><b>14 Nov</b><span>Fog</span></li>
+        <li><b>28 Nov</b><span>Cities that renamed themselves</span></li>
+        <li><b>12 Dec</b><span>Maps drawn from memory</span></li>
+        <li><b>16 Jan</b><span>Drift, as a method</span></li>
+        <li><b>06 Feb</b><span>Finding the way back</span></li>
+      </ol>
+      <p>Eight evenings. No maps allowed.</p>
     </section>
-    <p>Eight evenings. No maps allowed.</p>
-    <a class="top" href="#top">back to top</a>
-  </div>
+  </section>
 </main>
-<footer class="foot">Brutalist skill gallery · adrift is fictional · <a href="../../../">back to the gallery</a></footer>
+<footer>Brutalist skill gallery · adrift is fictional · <a href="../../../">back to the gallery</a></footer>
 <script>
 (() => {
   document.documentElement.classList.add('js');
-  const letters = [...document.querySelectorAll('.word span')];
+  const sea = document.getElementById('sea');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  letters.forEach(l => l.classList.add('pre'));
-  /* the letters fall into place, one by one */
-  requestAnimationFrame(() => letters.forEach((l, i) =>
-    setTimeout(() => l.classList.remove('pre'), reduce ? 0 : 120 + i * 110)));
+  /* the letters surface; their reflections appear after them */
+  requestAnimationFrame(() => setTimeout(() => sea.classList.remove('pre'), reduce ? 0 : 150));
+  const tops = [...sea.querySelectorAll('.above b')], refl = [...sea.querySelectorAll('.below b')];
+  tops.forEach((b, i) => { b.style.transitionDelay = reduce ? '0s' : `${i * .1}s`; refl[i].style.transitionDelay = reduce ? '0s' : `${.5 + i * .1}s`; });
   if (reduce) return;
-  /* then drift a little with the pointer — never more than a few pixels */
+  /* the pointer is a light wind: letters and reflections drift a few pixels */
   addEventListener('pointermove', e => {
-    const dx = e.clientX / innerWidth - .5, dy = e.clientY / innerHeight - .5;
-    letters.forEach((l, i) => {
-      const f = (i % 2 ? 1 : -1) * (6 + i * 2);
-      l.style.translate = `${(dx * f).toFixed(1)}px ${(dy * f).toFixed(1)}px`;
-    });
+    const dx = e.clientX / innerWidth - .5;
+    tops.forEach((b, i) => { const m = (dx * (i % 2 ? 14 : -10)).toFixed(1) + 'px 0'; b.style.translate = m; refl[i].style.translate = m; });
   }, {passive: true});
 })();
 </script>

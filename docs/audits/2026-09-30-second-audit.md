@@ -25,7 +25,9 @@ the rules of the closed spec. Not verifiable from the repository: the maintainer
 | A9 | Updating overwrote an edited installed skill without warning | medium | fixed (`[proposal]`): an installed copy that differs from the new version is kept in `~/.brutalist-skill/backups/`, outside every skills folder |
 
 **Questions of judgement left to the maintainer:** how close `adrift` and `kiln-type` are,
-in composition, to their third-party references (no text, mark or image was copied); whether
+in composition, to their third-party references (no text, mark or image was copied) — the
+maintainer chose to move them away: both were recomposed (letters on a horizon with
+reflections; a live type tester with a staircase of weights); whether
 the post-round changes in the worked example respect the two-round limit (they are declared
 in its report).
 
