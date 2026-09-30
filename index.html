@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>brutalist — an agent skill for brutalist web design</title>
+<meta name="description" content="Screenshot in, brutalist site out. An agent skill that rebuilds raw, experimental web design from a single image — motion included — or uses it as a springboard.">
+<meta property="og:title" content="brutalist — an agent skill for brutalist web design">
+<meta property="og:description" content="Screenshot in, brutalist site out. Recreate brutalist interfaces from a single image, or take inspiration from them.">
+<meta property="og:image" content="https://135andres.github.io/brutalist-design-skill/examples/gallery/low-hours/cover.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0b0b0b;--paper:#fff;--signal:#ff3b1f;--rule:2px solid var(--ink);
+    --display:"Archivo","Arial Narrow",Impact,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;--ease:cubic-bezier(.2,.8,.2,1)}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--paper);color:var(--ink)}
+  body{font:15px/1.45 var(--mono)}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--signal);outline-offset:3px}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+  header.bar{display:flex;justify-content:space-between;border-bottom:var(--rule);font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+  header.bar>*{padding:10px 14px}
+  header.bar nav{display:flex;gap:0}
+  header.bar nav a{padding:10px 14px;border-left:var(--rule);text-decoration:none}
+  header.bar nav a:hover{background:var(--ink);color:var(--paper)}
+
+  .hero{border-bottom:var(--rule);padding:clamp(18px,3vw,40px) clamp(14px,3vw,40px) 0;overflow:hidden}
+  .word{margin:0;font:900 clamp(64px,19.5vw,330px)/.78 var(--display);font-stretch:62%;text-transform:uppercase;letter-spacing:-.01em;white-space:nowrap}
+  .word span{display:inline-block;transition:transform .7s var(--ease)}
+  .js .word span.pre{transform:translateY(110%)}
+  .under{height:clamp(8px,1.2vw,16px);background:var(--signal);transform-origin:left;transition:transform 1s var(--ease) .5s;margin-top:clamp(8px,1vw,14px)}
+  .js .under.pre{transform:scaleX(0)}
+  .intro{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(18px,3vw,48px);padding:22px 0 26px}
+  .intro p{margin:0;font:400 clamp(20px,2vw,30px)/1.15 var(--display);font-stretch:85%}
+  .install{align-self:end}
+  .install small{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+  .cmd{display:flex;border:var(--rule);font:600 clamp(12px,1.1vw,15px)/1 var(--mono)}
+  .cmd code{flex:1;padding:14px;white-space:nowrap;overflow-x:auto}
+  .cmd code::before{content:"$ ";color:var(--signal)}
+  .cmd button{border:0;border-left:var(--rule);background:var(--ink);color:var(--paper);font:inherit;text-transform:uppercase;letter-spacing:.08em;padding:0 16px;cursor:pointer}
+  .cmd button:hover{background:var(--signal);color:var(--ink)}
+
+  .tape{display:flex;align-items:stretch;border-bottom:var(--rule);background:var(--ink);color:var(--paper);overflow:hidden}
+  .tape .win{flex:1;overflow:hidden}
+  .tape .track{display:flex;white-space:nowrap;font:700 clamp(18px,2vw,28px)/1 var(--display);font-stretch:70%;text-transform:uppercase;padding:10px 0;width:max-content}
+  .js .tape .track{animation:tape 32s linear infinite}
+  .tape .track span{padding:0 .5em}
+  .tape .track b{color:var(--signal)}
+  .tape.paused .track{animation-play-state:paused}
+  @keyframes tape{to{transform:translateX(-50%)}}
+  .tape button{border:0;border-left:2px solid var(--paper);background:var(--ink);color:var(--paper);font:600 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.1em;padding:0 14px;cursor:pointer}
+
+  .section-h{display:flex;justify-content:space-between;align-items:baseline;padding:14px clamp(14px,3vw,40px);border-bottom:var(--rule);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+  .section-h h2{margin:0;font:900 clamp(28px,3.4vw,52px)/.9 var(--display);font-stretch:62%;letter-spacing:0}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr)}
+  .card{border-right:var(--rule);border-bottom:var(--rule);text-decoration:none;display:flex;flex-direction:column;background:var(--paper)}
+  .card:nth-child(3n){border-right:0}
+  .card figure{margin:0;overflow:hidden;border-bottom:var(--rule);aspect-ratio:16/10;background:#eee}
+  .card img{display:block;width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .6s var(--ease),filter .4s}
+  .card:hover img,.card:focus-visible img{transform:scale(1.04)}
+  .card .meta{padding:12px 14px 16px;display:grid;grid-template-columns:1fr auto;gap:4px 12px}
+  .card h3{margin:0;font:900 clamp(22px,2vw,30px)/.95 var(--display);font-stretch:70%;text-transform:uppercase}
+  .card .go{align-self:start;font-size:12px;text-transform:uppercase;letter-spacing:.08em;border:var(--rule);padding:4px 8px}
+  .card:hover .go{background:var(--ink);color:var(--paper)}
+  .card p{grid-column:1/-1;margin:0;font-size:13px}
+  .card .from{grid-column:1/-1;font-size:11px;color:#555}
+
+  .cmds{display:grid;grid-template-columns:repeat(3,1fr)}
+  .cmds div{border-right:var(--rule);border-bottom:var(--rule);padding:14px clamp(14px,2vw,22px) 18px}
+  .cmds div:nth-child(3n){border-right:0}
+  .cmds code{font-weight:600;font-size:15px}
+  .cmds .st{float:right;font-size:11px;text-transform:uppercase;letter-spacing:.08em;border:1.5px solid var(--ink);padding:2px 6px}
+  .cmds .st.ok{background:var(--ink);color:var(--paper)}
+  .cmds p{margin:8px 0 0;font-size:13px}
+  footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:14px clamp(14px,3vw,40px) 26px;font-size:12px}
+
+  @media (max-width:900px){
+    .intro{grid-template-columns:1fr}
+    .grid,.cmds{grid-template-columns:1fr}
+    .card,.cmds div{border-right:0}
+    header.bar nav a:nth-child(n+3){display:none}
+  }
+  @media (prefers-reduced-motion:reduce){ *{transition:none!important} .js .tape .track{animation:none} .js .word span.pre{transform:none} .js .under.pre{transform:none} }
+</style>
+</head>
+<body>
+<header class="bar">
+  <span>an agent skill · apache-2.0</span>
+  <nav aria-label="Site"><a href="#gallery">Gallery</a><a href="#commands">Commands</a><a href="https://github.com/135Andres/brutalist-design-skill">GitHub ↗</a></nav>
+</header>
+
+<section class="hero" aria-labelledby="title">
+  <h1 class="word" id="title" aria-label="brutalist">brutalist</h1>
+  <div class="under" aria-hidden="true"></div>
+  <div class="intro">
+    <p>Screenshot in, brutalist site out. Give your coding AI a picture of a raw, experimental website and it
+      rebuilds it as a working page — motion included — or uses it as a springboard for something new.
+      It measures instead of guessing, and says what it invented.</p>
+    <div class="install">
+      <small>Install into Claude Code, Codex, Cursor, Gemini CLI…</small>
+      <div class="cmd"><code id="cmd">npx github:135Andres/brutalist-design-skill</code><button type="button" id="copy">Copy</button></div>
+    </div>
+  </div>
+</section>
+
+<div class="tape" id="tape">
+  <div class="win" aria-hidden="true"><div class="track"></div></div>
+  <button type="button" id="tapeBtn" aria-pressed="false">Pause</button>
+</div>
+
+<section id="gallery" aria-labelledby="g">
+  <div class="section-h"><h2 id="g">Gallery</h2><span>live pages · every name and number is invented</span></div>
+  <div class="grid">
+    <a class="card" href="examples/gallery/low-hours/"><figure><img src="examples/gallery/low-hours/cover-720.jpg" alt="Low Hours: a giant condensed question with labels arriving from the right" loading="lazy"></figure>
+      <div class="meta"><h3>Low Hours</h3><span class="go">Live →</span><p>Night field recordings. Labels slide in as you scroll; the night log replays line by line; a type test switches the display face.</p><span class="from">made with inspire (digestible questions) + edit (type test)</span></div></a>
+    <a class="card" href="examples/gallery/adrift/"><figure><img src="examples/gallery/adrift/cover-720.jpg" alt="adrift: italic letters of one word scattered and skewed across a white page" loading="lazy"></figure>
+      <div class="meta"><h3>adrift</h3><span class="go">Live →</span><p>A lecture series on getting lost. The letters fall into place, then drift with the pointer.</p><span class="from">inspire · principles from a third-party reference</span></div></a>
+    <a class="card" href="examples/gallery/slow-media/"><figure><img src="examples/gallery/slow-media/cover-720.jpg" alt="Slow Media Archive: electric blue on white, filter columns and a blurred blue blob" loading="lazy"></figure>
+      <div class="meta"><h3>Slow Media</h3><span class="go">Live →</span><p>An archive in electric blue. The filters work; the blob follows you, slowly.</p><span class="from">inspire · principles from a third-party reference</span></div></a>
+    <a class="card" href="examples/gallery/lichen-office/"><figure><img src="examples/gallery/lichen-office/cover-720.jpg" alt="Lichen Office: a wordmark filling the full width above thin ruled rows" loading="lazy"></figure>
+      <div class="meta"><h3>Lichen Office</h3><span class="go">Live →</span><p>A landscape studio. The wordmark fits the width exactly at any size; rules draw as they appear.</p><span class="from">inspire · principles from a third-party reference</span></div></a>
+    <a class="card" href="examples/gallery/kiln-type/"><figure><img src="examples/gallery/kiln-type/cover-720.jpg" alt="Kiln Type: a type specimen with a black block, a weight ladder and a quote" loading="lazy"></figure>
+      <div class="meta"><h3>Kiln Type</h3><span class="go">Live →</span><p>A foundry specimen. Hover the weight ladder and the giant letters change weight.</p><span class="from">inspire · principles from a third-party reference</span></div></a>
+    <a class="card" href="examples/recreate-concrete-radio/build/"><figure><img src="examples/recreate-concrete-radio/screens/build.png" alt="Concrete Radio: the recreation of a still reference, with a marquee" loading="lazy"></figure>
+      <div class="meta"><h3>Concrete Radio</h3><span class="go">Live →</span><p>Recreated from one PNG, measured to within a few pixels. The whole method, step by step, is in the repository.</p><span class="from">recreate · worked example</span></div></a>
+  </div>
+</section>
+
+<section id="commands" aria-labelledby="c">
+  <div class="section-h"><h2 id="c">Commands</h2><span>/brutalist &lt;command&gt; &lt;target&gt;</span></div>
+  <div class="cmds">
+    <div><span class="st ok">ready</span><code>recreate &lt;image&gt;</code><p>Rebuild a reference as a working page: rights, inventory, build, comparison, report.</p></div>
+    <div><span class="st">review</span><code>motion &lt;page&gt;</code><p>Plan and build motion; from a still image it is declared invention.</p></div>
+    <div><span class="st">experimental</span><code>inspire &lt;images…&gt;</code><p>Divergent sketches and visual questions, taking principles, never copies.</p></div>
+    <div><span class="st">experimental</span><code>edit &lt;page&gt;</code><p>The smallest change first; escalate only if it is not enough.</p></div>
+    <div><span class="st">draft</span><code>verify &lt;page&gt;</code><p>Screenshots under fixed conditions, comparison, accessibility pass.</p></div>
+    <div><span class="st">draft</span><code>critique &lt;page&gt;</code><p>A review without scores. The human judges.</p></div>
+  </div>
+</section>
+
+<footer><span>brutalist · Apache-2.0 · reference images belong to their owners and are not included</span><a href="https://github.com/135Andres/brutalist-design-skill">github.com/135Andres/brutalist-design-skill</a></footer>
+
+<script>
+(() => {
+  document.documentElement.classList.add('js');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* the word rises letter by letter; the red bar draws under it */
+  const word = document.getElementById('title');
+  word.innerHTML = [...word.textContent].map(c => `<span aria-hidden="true">${c}</span>`).join('');
+  const letters = [...word.children], under = document.querySelector('.under');
+  letters.forEach(l => l.classList.add('pre')); under.classList.add('pre');
+  requestAnimationFrame(() => {
+    letters.forEach((l, i) => setTimeout(() => l.classList.remove('pre'), reduce ? 0 : 60 + i * 55));
+    setTimeout(() => under.classList.remove('pre'), reduce ? 0 : 60);
+  });
+  /* copy the install command */
+  const btn = document.getElementById('copy');
+  btn.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(document.getElementById('cmd').textContent); btn.textContent = 'Copied'; }
+    catch { btn.textContent = 'Select it'; }
+    setTimeout(() => { btn.textContent = 'Copy'; }, 1600);
+  });
+  /* the ticker: two identical halves loop without a jump; pausable (WCAG 2.2.2) */
+  const unit = ['recreate', 'motion', 'inspire', 'edit', 'verify', 'critique'].map(c => `<span>${c}</span><b>●</b>`).join('');
+  document.querySelector('.tape .track').innerHTML = unit.repeat(4) + unit.repeat(4);
+  const tape = document.getElementById('tape'), tb = document.getElementById('tapeBtn');
+  tb.addEventListener('click', () => {
+    const p = tape.classList.toggle('paused');
+    tb.textContent = p ? 'Play' : 'Pause'; tb.setAttribute('aria-pressed', String(p));
+  });
+})();
+</script>
+</body>
+</html>

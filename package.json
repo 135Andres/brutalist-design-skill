@@ -1,0 +1,22 @@
+{
+  "name": "brutalist-design-skill",
+  "version": "0.1.0",
+  "description": "An agent skill for brutalist web design: recreate brutalist interfaces from reference images, or take inspiration from them.",
+  "type": "module",
+  "bin": {
+    "brutalist-design-skill": "install.mjs"
+  },
+  "files": [
+    "install.mjs",
+    "skill/"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/135Andres/brutalist-design-skill.git"
+  },
+  "keywords": ["agent-skills", "brutalism", "web-design", "claude-code", "codex", "cursor"],
+  "license": "Apache-2.0"
+}

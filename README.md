@@ -1,17 +1,22 @@
 # brutalist
 
-**An agent skill for brutalist web design.** Give your coding AI a screenshot of a
-brutalist site and it rebuilds it as a working page — motion included — or uses it as a
-springboard for something new. One skill, six commands, measuring scripts, and a worked
-example you can check pixel by pixel.
+**An agent skill for brutalist web design.** Give your coding AI a screenshot of a raw,
+experimental website and it rebuilds it as a working page — motion included — or uses it
+as a springboard for something new. It measures instead of guessing, and says what it
+invented.
 
-> **Status: early draft.** `recreate` is fully specified and demonstrated end to end.
-> `motion` is under review; `inspire` and `edit` are experimental; `verify` and `critique`
-> are not specified yet. Nothing is packaged: install by copying a folder (see below).
+> **Quick start:** `npx github:135Andres/brutalist-design-skill`, restart your tool, then
+> `/brutalist recreate path/to/screenshot.png`. Live gallery:
+> **[135andres.github.io/brutalist-design-skill](https://135andres.github.io/brutalist-design-skill/)**
 
-| Reference (a still image) | What `recreate` built from it | Difference (black = identical) |
+| | | |
 |---|---|---|
-| ![reference](examples/references/ref-a-concrete-radio.png) | ![build](examples/recreate-concrete-radio/screens/build.png) | ![difference](examples/recreate-concrete-radio/screens/overlay-diff.png) |
+| [![Low Hours](examples/gallery/low-hours/cover-720.jpg)](https://135andres.github.io/brutalist-design-skill/examples/gallery/low-hours/) **[Low Hours](https://135andres.github.io/brutalist-design-skill/examples/gallery/low-hours/)** — labels slide in as you scroll; a night log replays line by line | [![adrift](examples/gallery/adrift/cover-720.jpg)](https://135andres.github.io/brutalist-design-skill/examples/gallery/adrift/) **[adrift](https://135andres.github.io/brutalist-design-skill/examples/gallery/adrift/)** — letters fall into place, then drift with the pointer | [![Slow Media](examples/gallery/slow-media/cover-720.jpg)](https://135andres.github.io/brutalist-design-skill/examples/gallery/slow-media/) **[Slow Media](https://135andres.github.io/brutalist-design-skill/examples/gallery/slow-media/)** — working filters; a blue blob follows you, slowly |
+| [![Lichen Office](examples/gallery/lichen-office/cover-720.jpg)](https://135andres.github.io/brutalist-design-skill/examples/gallery/lichen-office/) **[Lichen Office](https://135andres.github.io/brutalist-design-skill/examples/gallery/lichen-office/)** — a wordmark that fits the width exactly | [![Kiln Type](examples/gallery/kiln-type/cover-720.jpg)](https://135andres.github.io/brutalist-design-skill/examples/gallery/kiln-type/) **[Kiln Type](https://135andres.github.io/brutalist-design-skill/examples/gallery/kiln-type/)** — hover the weight ladder, the giant letters change | [![Concrete Radio](examples/recreate-concrete-radio/screens/build.png)](examples/recreate-concrete-radio/README.md) **[Concrete Radio](examples/recreate-concrete-radio/README.md)** — recreated from one PNG, every step documented |
+
+Every name and number in the gallery is invented. The pages were made with the skill's
+`inspire` and `edit` commands, several from third-party references — taking principles,
+never their text, marks or images ([more](examples/README.md)).
 
 ## Why
 
@@ -51,6 +56,43 @@ page more flavour" — and the skill picks the command.
 /brutalist edit src/pages/home.html
 ```
 
+## Install
+
+```bash
+npx github:135Andres/brutalist-design-skill
+```
+
+<img src="docs/media/installer.gif" alt="The installer: the word BRUTALIST drawn in blocks, a red bar, a ticker of commands, then a keyboard menu to choose where and which tools, and progress bars ending in DONE" width="620">
+
+No npm account, no dependencies: `npx` runs [`install.mjs`](install.mjs) straight from this
+repository. Pick **everywhere** (your home folder) or **this project**, then the tools; it
+copies [`skill/brutalist/`](skill/brutalist/SKILL.md) into each one's skills folder.
+
+| Option | Does |
+|---|---|
+| `--yes` | no questions: detected tools, everywhere |
+| `--tools=claude,codex,…` | choose tools (`claude`, `codex`, `cursor`, `gemini`, `copilot`, `opencode`, `hermes`) |
+| `--scope=global` / `--scope=project` | your home folder / the current folder |
+| `--list` | every tool, its folders, and whether it was detected |
+| `--dry-run` | show what would happen, change nothing |
+| `--uninstall` | remove the skill |
+| `--no-anim` | no animation (also off when not a terminal, in CI, or with `NO_MOTION`) |
+
+| Tool | Everywhere | This project |
+|---|---|---|
+| Claude Code | `~/.claude/skills/` | `.claude/skills/` |
+| Codex CLI | `~/.agents/skills/` | `.agents/skills/` |
+| Cursor | — | `.cursor/skills/` |
+| Gemini CLI | — | `.gemini/skills/` |
+| GitHub Copilot | — | `.github/skills/` |
+| OpenCode | — | `.opencode/skills/` |
+| Hermes Agent | `$HERMES_HOME/skills/` | — |
+
+The folders follow each tool's documented skills location. The copy was tested into the
+Claude Code, Codex and Hermes folders of a test home folder; loading inside each tool has
+not been tested yet.
+**Manual install:** copy `skill/brutalist` into any of the folders above.
+
 ## What makes it different
 
 - **Evidence, not vibes.** An inventory before any code, in three parts that never mix:
@@ -71,29 +113,19 @@ page more flavour" — and the skill picks the command.
 - **No lectures.** Recreating a reference faithfully is fine. The only limit is rights:
   unknown rights make the result a study, not for publication.
 
-## Worked example
+## The method, step by step
 
 [`examples/recreate-concrete-radio/`](examples/recreate-concrete-radio/README.md) — one
 PNG to a working page: measured inventory, font calibration, two comparison rounds (and
 the residuals reported, not hidden), a motion plan, accessibility checks, and every
-command to reproduce it. Two more original references to practise on are in
-[`examples/`](examples/README.md).
+command to reproduce it.
 
-## Install (manual, for now)
+| Reference (a still image) | What `recreate` built | Difference (black = identical) |
+|---|---|---|
+| ![reference](examples/references/ref-a-concrete-radio.png) | ![build](examples/recreate-concrete-radio/screens/build.png) | ![difference](examples/recreate-concrete-radio/screens/overlay-diff.png) |
 
-The skill is a folder in the open [Agent Skills](https://agentskills.io) format:
-[`skill/brutalist/`](skill/brutalist/SKILL.md). Copy it where your tool looks for skills,
-for example in Claude Code:
-
-```bash
-cp -r skill/brutalist ~/.claude/skills/            # all projects
-cp -r skill/brutalist your-project/.claude/skills/ # one project
-```
-
-Other tools that read Agent Skills have their own skills folder; a per-tool installer is
-planned. Installation has not been tested in every tool yet.
-
-**Scripts** (optional; without them the agent says which steps were done by eye):
+**Scripts** the skill uses (optional; without them the agent says which steps were done
+by eye):
 
 | Script | Does | Needs |
 |---|---|---|
@@ -109,7 +141,9 @@ planned. Installation has not been tested in every tool yet.
 | Path | Content |
 |---|---|
 | [`skill/brutalist/`](skill/brutalist/SKILL.md) | the skill: router, reference files, templates, scripts |
-| [`examples/`](examples/README.md) | original references and the worked example |
+| [`install.mjs`](install.mjs) | the installer (`npx github:135Andres/brutalist-design-skill`) |
+| [`index.html`](index.html) | the gallery site (GitHub Pages) |
+| [`examples/`](examples/README.md) | gallery pages, original references, the worked example |
 | [`docs/SPEC.md`](docs/SPEC.md) | status of each part, rationale, open questions |
 | [`docs/DECISIONS.md`](docs/DECISIONS.md) | the maintainer's decisions (append-only) |
 | [`docs/FINDINGS.md`](docs/FINDINGS.md) | lessons from experiments |
@@ -123,7 +157,7 @@ planned. Installation has not been tested in every tool yet.
 2. Finish the creative-mode experiments; specify `inspire`.
 3. Test `edit` on a page the agent did not write.
 4. Specify `verify`, `critique` and stack adaptation; write `spring_to_css`.
-5. Per-tool installer; tests on references nobody here authored.
+5. Test the install inside every tool; tests on references nobody here authored.
 
 ## Contributing
 
@@ -134,10 +168,11 @@ marked as such; no private content, and no third-party images in the repository.
 ## Credits
 
 Shaped by [Impeccable](https://github.com/pbakaus/impeccable) (playbooks, the two-round
-comparison limit, the README you are reading) and Anthropic's
+comparison limit, the idea of one skill with commands) and Anthropic's
 [frontend-design](https://github.com/anthropics/skills/tree/main/skills/frontend-design)
 skill. Describing motion as spring parameters is a concept from
-[Kinetics](https://kinetics.colorion.co); no code or values are copied.
+[Kinetics](https://kinetics.colorion.co); no code or values are copied. Fonts in the
+gallery are from Google Fonts (SIL Open Font License).
 
 ## License
 

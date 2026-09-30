@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Low Hours — night field recordings</title>
+<meta name="description" content="A fictional night sound-mapping project. Gallery page of the brutalist agent skill.">
+<!-- Gallery · Low Hours. Fictional content: every name, place and number is invented.
+     Design: the type-test sketch the maintainer liked most (docs/DECISIONS.md A-5), made with
+     the skill's inspire command (digestible questions) and edit (type test), rebuilt here with
+     new content. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;600;700&family=Instrument+Serif&family=Inter+Tight:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#000; --paper:#fff; --rule:1px solid var(--ink);
+    --display:"Archivo","Arial Narrow",Impact,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+    --ease:cubic-bezier(.2,.8,.2,1);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--paper);color:var(--ink)}
+  body{font:15px/1.5 var(--mono)}
+  a{color:inherit}
+  main>section{scroll-margin-top:38px}
+  :focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+
+  /* strip */
+  .strip{display:grid;grid-template-columns:auto 1fr auto auto;border-bottom:var(--rule);
+    position:sticky;top:0;background:var(--paper);z-index:5;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+  .strip>*{padding:10px 14px;border-right:var(--rule);white-space:nowrap}
+  .strip>*:last-child{border-right:0}
+  .strip .mark{background:var(--ink);color:var(--paper);font:900 15px/1 var(--display);font-stretch:62%;letter-spacing:.02em;display:flex;align-items:center}
+
+  /* the question: a tall track; the stage sticks while labels arrive */
+  .q-track{height:420vh;position:relative;border-bottom:var(--rule)}
+  .q-stage{position:sticky;top:37px;height:calc(100vh - 37px);display:flex;flex-direction:column;justify-content:center;
+    padding:0 clamp(14px,3vw,40px);overflow:hidden}
+  .q{margin:0;font-family:var(--display);font-weight:900;font-stretch:62%;text-transform:uppercase;
+    font-size:clamp(34px,7.4vw,118px);line-height:.88;letter-spacing:-.005em}
+  .ln{display:flex;align-items:flex-end;gap:14px}
+  .ln .t{flex:none}
+  .ln .aside{font-size:.42em;font-weight:500;font-stretch:80%;letter-spacing:.01em;align-self:center}
+  .lead{flex:1;border-bottom:var(--rule);margin-bottom:.14em;min-width:24px;transform-origin:left;
+    transition:transform .5s var(--ease)}
+  .tag{flex:none;font:600 12px/1.25 var(--mono);text-transform:uppercase;letter-spacing:.1em;text-align:left;
+    margin-bottom:.1em;width:17ch;transition:opacity .45s var(--ease),transform .55s var(--ease)}
+  .tag small{display:block;font-weight:400;text-transform:none;letter-spacing:0;font-size:12px}
+  .tag .k::before{content:"";display:inline-block;width:.75em;height:.75em;border:1.5px solid var(--ink);margin-right:.5em;vertical-align:-.05em}
+  .tag.o .k::before{background:var(--ink)}
+  .tag.a .k::before{border-style:dashed}
+  .tag.u .k::before{border-style:dotted;border-radius:50%}
+  /* without JS everything is visible; with JS the labels wait for the scroll */
+  .js .ln[data-step] .tag{opacity:0;transform:translateX(56px)}
+  .js .ln[data-step] .lead{transform:scaleX(0)}
+  .js .ln.in .tag{opacity:1;transform:none}
+  .js .ln.in .lead{transform:scaleX(1)}
+  /* the gap at the end of the question: silence */
+  .void{flex:none;width:clamp(60px,12vw,180px);height:.78em;margin-bottom:.06em;border:1.5px dashed var(--ink);
+    background:radial-gradient(var(--ink) .9px,transparent 1.2px) 0 0/6px 6px;opacity:.9;
+    clip-path:polygon(0 8%,18% 0,40% 10%,63% 2%,100% 12%,94% 44%,100% 78%,72% 100%,44% 90%,20% 100%,0 86%,6% 50%)}
+  .hint{position:absolute;right:clamp(14px,3vw,40px);bottom:18px;font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+
+  /* four sounds, one missing */
+  .words{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:var(--rule)}
+  .cell{border-right:var(--rule);padding:18px 16px 60px;min-height:46vh}
+  .cell h2{margin:0 0 10px;font:900 clamp(30px,4.4vw,70px)/.9 var(--display);font-stretch:62%;text-transform:uppercase}
+  .cell p{margin:0;max-width:26ch}
+  .cell.hole{border-right:0;position:relative;padding:0}
+  .hole .cut{position:absolute;inset:12% 10% 18% 8%;
+    background:radial-gradient(var(--ink) .9px,transparent 1.3px) 0 0/7px 7px;
+    clip-path:polygon(4% 10%,30% 0,52% 12%,78% 3%,100% 20%,92% 52%,100% 88%,70% 100%,46% 86%,18% 98%,0 70%,9% 40%)}
+  .hole .cap{position:absolute;left:16px;bottom:16px;right:16px;background:var(--paper);padding:4px 0}
+  .hole .cap b{font-weight:600;text-transform:uppercase;letter-spacing:.1em}
+
+  /* the night log */
+  .session{display:grid;grid-template-columns:minmax(220px,1fr) 3fr;border-bottom:var(--rule)}
+  .session .side{border-right:var(--rule);padding:18px 16px}
+  .session .side h2{margin:0 0 12px;font:900 clamp(28px,3.4vw,54px)/.9 var(--display);font-stretch:62%;text-transform:uppercase}
+  .run{font:600 13px/1 var(--mono);text-transform:uppercase;letter-spacing:.1em;background:var(--ink);color:var(--paper);
+    border:0;padding:14px 16px;cursor:pointer;width:100%;text-align:left}
+  .run:hover{background:var(--paper);color:var(--ink);outline:1px solid var(--ink)}
+  .note{font-size:12px;margin-top:12px}
+  .log{margin:0;white-space:normal;padding:18px 16px;font:13px/1.6 var(--mono);overflow-x:auto;min-height:60vh}
+  .log span{display:block;white-space:pre;transition:opacity .3s var(--ease),transform .35s var(--ease)}
+  .log .cmd{font-weight:600;margin-top:1em}
+  .log .cmd:first-child{margin-top:0}
+  .log .cmt{font-style:italic}
+  .log .l-o b{background:var(--ink);color:var(--paper);font-weight:400;padding:0 .2em}
+  .log .l-d b{outline:1px solid var(--ink);font-weight:400;padding:0 .2em}
+  .log .l-s b{outline:1.5px dashed var(--ink);font-weight:400;padding:0 .2em}
+  .js .log.armed span:not(.cursor){opacity:0;transform:translateX(28px)}
+  .js .log.armed span.shown{opacity:1;transform:none}
+  .cursor{display:inline-block;width:.6em;height:1.1em;background:var(--ink);vertical-align:-.2em;animation:blink 1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+
+  /* on the tapes */
+  .tapes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .tapes div{border-right:var(--rule);padding:18px 16px 28px}
+  .tapes div:last-child{border-right:0}
+  .tapes h3{margin:0 0 6px;font:900 clamp(22px,2.6vw,40px)/.9 var(--display);font-stretch:62%;text-transform:uppercase}
+  footer{border-top:var(--rule);padding:12px 16px;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+
+  @media (max-width:760px){
+    .strip{grid-template-columns:auto 1fr}
+    .strip>*:nth-child(n+3){display:none}
+    .ln{flex-wrap:wrap;gap:4px 10px}
+    .ln .t{flex:1 1 100%;min-width:0}
+    .q{font-size:clamp(30px,10.5vw,60px)}
+    .ln .lead{display:none}
+    .tag{width:auto;flex-basis:100%;margin:.2em 0 .5em}
+    .words{grid-template-columns:1fr 1fr}
+    .cell:nth-child(2n){border-right:0}
+    .cell{border-bottom:var(--rule);min-height:30vh}
+    .session,.tapes{grid-template-columns:1fr}
+    .session .side,.tapes div{border-right:0;border-bottom:var(--rule)}
+  }
+
+  /* type test: only the family and the scale of the display type change */
+  html[data-font="mono"]{--display:"IBM Plex Mono",ui-monospace,monospace}
+  html[data-font="mono"] :is(.q,.cell h2,.session .side h2,.tapes h3){font-weight:700;font-stretch:normal;letter-spacing:-.03em}
+  html[data-font="serif"]{--display:"Instrument Serif",Georgia,serif}
+  html[data-font="serif"] :is(.q,.cell h2,.session .side h2,.tapes h3){font-weight:400;font-stretch:normal;text-transform:none;letter-spacing:-.01em}
+  html[data-font="grotesk"]{--display:"Inter Tight",Arial,sans-serif}
+  html[data-font="grotesk"] :is(.q,.cell h2,.session .side h2,.tapes h3){font-weight:700;font-stretch:normal;letter-spacing:-.03em}
+  /* "large" = the largest that fits: wide families do not fit at 7.4vw */
+  html[data-font="mono"] .q{font-size:clamp(22px,4.6vw,68px)}
+  html[data-font="grotesk"] .q{font-size:clamp(26px,5.2vw,78px)}
+  html[data-scale="small"] .q{font-size:clamp(26px,4.2vw,66px);line-height:1.18}
+  html[data-font="mono"][data-scale="small"] .q{font-size:clamp(20px,3vw,44px)}
+  html[data-font="grotesk"][data-scale="small"] .q{font-size:clamp(24px,3.6vw,54px)}
+  html[data-scale="small"] .cell h2{font-size:clamp(24px,2.8vw,44px)}
+  html[data-scale="small"] .ln .aside{font-size:.55em}
+  @media (max-width:760px){
+    html[data-font="mono"] .q{font-size:clamp(20px,6.4vw,34px)}
+    html[data-font="grotesk"] .q{font-size:clamp(24px,8vw,44px)}
+    html[data-scale="small"] .q{font-size:clamp(24px,7vw,40px)}
+    html[data-font="mono"][data-scale="small"] .q{font-size:clamp(18px,5.2vw,28px)}
+    html[data-font="grotesk"][data-scale="small"] .q{font-size:clamp(22px,6.4vw,34px)}
+  }
+  .knobs{position:fixed;right:12px;top:48px;z-index:9;background:var(--paper);border:var(--rule);padding:8px 10px;font:11px/1.6 var(--mono)}
+  .knobs b{display:block;text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-top:4px}
+  .knobs label{display:block;cursor:pointer}
+  .knobs summary{cursor:pointer;text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important;animation:none!important}
+  }
+</style>
+</head>
+<body>
+<header class="strip">
+  <span class="mark">LOW HOURS</span>
+  <span>night field recordings</span>
+  <span>one city · 02:00–05:00</span>
+  <span>no music</span>
+</header>
+
+<main>
+  <section class="q-track" aria-label="The question">
+    <div class="q-stage">
+      <h1 class="q">
+        <span class="ln"><span class="t">When a city goes quiet</span></span>
+        <span class="ln" data-step="1"><span class="t">what can still be heard</span><span class="lead"></span>
+          <span class="tag o"><span class="k">traffic</span><small>a far hum that never quite stops</small></span></span>
+        <span class="ln"><span class="t">at three a.m.</span> <span class="aside">— and by whom —</span></span>
+        <span class="ln" data-step="2"><span class="t">from the bridges, the river</span><span class="lead"></span>
+          <span class="tag d"><span class="k">water</span><small>under the third bridge, 02:41</small></span></span>
+        <span class="ln" data-step="3"><span class="t">and the wires,</span><span class="lead"></span>
+          <span class="tag a"><span class="k">wires</span><small>the tram line cooling, clicking</small></span></span>
+        <span class="ln" data-step="4"><span class="t">and what is only</span> <span class="void" aria-hidden="true"></span><span class="lead"></span>
+          <span class="tag u"><span class="k">silence</span><small>the one thing a recorder cannot hold</small></span></span>
+      </h1>
+      <span class="hint" aria-hidden="true">scroll ↓</span>
+    </div>
+  </section>
+
+  <section class="words" aria-label="Four sounds">
+    <div class="cell"><h2>Traffic</h2><p>a far hum that never quite stops, even at four</p></div>
+    <div class="cell"><h2>Water</h2><p>against the stone steps under the third bridge</p></div>
+    <div class="cell"><h2>Wires</h2><p>the tram line cooling after the last car, clicking every few seconds</p></div>
+    <div class="cell hole" aria-label="Silence: nothing to record; the gap is left open">
+      <div class="cut" aria-hidden="true"></div>
+      <p class="cap"><b>Silence</b> — nothing to record. The gap is left open on purpose.</p>
+    </div>
+  </section>
+
+  <section class="session" aria-label="One night on tape">
+    <div class="side">
+      <h2>One night on tape</h2>
+      <button class="run" type="button" aria-controls="log">▶ Play the night log</button>
+      <p class="note">The log of a fictional recorder, replayed line by line. Three sites between 02:00 and 05:00:
+        the third bridge, the river steps and the tram depot.</p>
+      <p class="note">One mark says <code>silence</code>: the level fell under the recorder's own noise, so there was
+        nothing left to keep.</p>
+    </div>
+<pre class="log" id="log"><span class="cmd">$ rec start --site bridge-03 --gain 42</span>
+<span class="l-d"><b>level</b>  -47 dB  wind=2m/s  temp=9C  02:04</span>
+<span class="l-o"><b>heard</b>  tram, far side, heading to the depot  02:06</span>
+<span class="l-o"><b>heard</b>  traffic hum, steady, no single car  02:09</span>
+<span class="l-d"><b>level</b>  -49 dB  02:15</span>
+<span class="l-o"><b>heard</b>  a door, three streets away  02:21</span>
+<span class="cmd">$ rec stop</span>
+<span class="l-d"><b>level</b>  saved bridge-03.wav  17m 02s</span>
+<span class="cmt"># ... walked down to the river steps ...</span>
+<span class="cmd">$ rec start --site river-steps --gain 48</span>
+<span class="l-o"><b>heard</b>  water against stone, every 4 s  02:41</span>
+<span class="l-o"><b>heard</b>  a bicycle chain, one pass  02:44</span>
+<span class="l-d"><b>level</b>  -52 dB  02:46</span>
+<span class="l-o"><b>heard</b>  gulls, two, arguing  02:58</span>
+<span class="l-d"><b>level</b>  -55 dB  03:10</span>
+<span class="cmd">$ rec stop</span>
+<span class="l-d"><b>level</b>  saved river-steps.wav  31m 40s</span>
+<span class="cmt"># ... to the tram depot, after the last car ...</span>
+<span class="cmd">$ rec start --site tram-depot --gain 54</span>
+<span class="l-o"><b>heard</b>  overhead wire ticking as it cools  03:52</span>
+<span class="l-o"><b>heard</b>  ticking slows, every 9 s  04:05</span>
+<span class="l-d"><b>level</b>  -58 dB  04:12</span>
+<span class="l-d"><b>level</b>  -61 dB  04:20</span>
+<span class="cmd">$ rec mark silence</span>
+<span class="l-s"><b>silence</b>  -63 dB, under the recorder's own noise  04:26</span>
+<span class="l-o"><b>heard</b>  first bus warming up  04:51</span>
+<span class="cmd">$ rec stop</span>
+<span class="l-d"><b>level</b>  saved tram-depot.wav  58m 12s</span>
+<span class="cmd">$ rec summary</span>
+<span class="l-d"><b>level</b>  3 sites  1h 47m  11 heard  1 silence</span></pre>
+  </section>
+
+  <section class="tapes" aria-label="On the tapes">
+    <div><h3>Sites</h3><p>three: the third bridge, the river steps, the tram depot.</p></div>
+    <div><h3>Hours</h3><p>02:00 to 05:00, one night in October.</p></div>
+    <div><h3>Heard</h3><p>eleven marks, from a far tram to the first bus.</p></div>
+    <div><h3>Silence</h3><p>one mark, at 04:26. Left as a gap.</p></div>
+    <div><h3>Not kept</h3><p>voices and music: the recorder was told to skip them.</p></div>
+  </section>
+</main>
+
+<footer>Brutalist skill gallery · Low Hours is fictional: every name, place and number is invented · <a href="../../../">back to the gallery</a></footer>
+
+<script>
+(() => {
+  const root = document.documentElement;
+  root.classList.add('js');
+
+  /* type test: ?font=archivo|mono|serif|grotesk&scale=large|small */
+  const qs = new URLSearchParams(location.search);
+  const pick = {font: qs.get('font') || 'archivo', scale: qs.get('scale') || 'large'};
+  const opts = {font:[['archivo','A · Archivo condensed'],['mono','B · IBM Plex Mono'],['serif','C · Instrument Serif'],['grotesk','D · Inter Tight']],
+                scale:[['large','large'],['small','smaller']]};
+  const knobs = document.createElement('details'); knobs.className = 'knobs'; knobs.open = false;
+  knobs.innerHTML = '<summary>type test</summary>' + Object.entries(opts).map(([k,list]) => `<b>${k==='font'?'typeface':'scale'}</b>` +
+    list.map(([v,t]) => `<label><input type="radio" name="${k}" value="${v}" ${pick[k]===v?'checked':''}> ${t}</label>`).join('')).join('');
+  document.body.append(knobs);
+  const apply = () => { root.dataset.font = pick.font; root.dataset.scale = pick.scale; };
+  knobs.addEventListener('change', e => { pick[e.target.name] = e.target.value; apply(); onScroll(); });
+  apply();
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+
+  /* labels enter as the question track scrolls */
+  const track = document.querySelector('.q-track');
+  const steps = [...document.querySelectorAll('.ln[data-step]')];
+  const hint = document.querySelector('.hint');
+  function onScroll(){
+    const r = track.getBoundingClientRect();
+    const span = r.height - innerHeight;
+    const p = Math.min(1, Math.max(0, -r.top / span));
+    steps.forEach(el => el.classList.toggle('in', p >= (+el.dataset.step) * 0.18));
+    hint.style.opacity = p > 0.05 ? 0 : 1;
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  addEventListener('resize', onScroll);
+  onScroll();
+
+  /* replay the night log */
+  const log = document.getElementById('log');
+  const lines = [...log.querySelectorAll('span')];
+  const btn = document.querySelector('.run');
+  const cursor = document.createElement('span');
+  cursor.className = 'cursor'; cursor.setAttribute('aria-hidden','true');
+  let timer = null, i = 0;
+  log.classList.add('armed');
+  log.prepend(cursor);   /* idle prompt before the first play */
+
+  function setLabel(t){ btn.textContent = t; }
+  function stop(){ clearTimeout(timer); timer = null; }
+  function step(){
+    if (i >= lines.length){ stop(); cursor.remove(); setLabel('↺ Play again'); return; }
+    const el = lines[i++];
+    el.classList.add('shown');
+    el.after(cursor);
+    const delay = el.classList.contains('cmd') ? 520 : el.classList.contains('cmt') ? 700 : 160;
+    timer = setTimeout(step, delay);
+  }
+  btn.addEventListener('click', () => {
+    if (timer){ stop(); setLabel('▶ Resume'); return; }          /* pause: WCAG 2.2.2 */
+    if (i >= lines.length){ i = 0; lines.forEach(l => l.classList.remove('shown')); }
+    if (reduce.matches){ lines.forEach(l => l.classList.add('shown')); i = lines.length; setLabel('↺ Play again'); return; }
+    setLabel('❚❚ Pause'); step();
+  });
+})();
+</script>
+</body>
+</html>

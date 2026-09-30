@@ -1,7 +1,24 @@
 # examples/
 
 Everything here was made in this repository, so it can be published (Apache-2.0, like the
-rest). Third-party references used during design are described, not included, in
+rest).
+
+## Gallery
+
+Live pages with invented content, published on the
+[gallery site](https://135andres.github.io/brutalist-design-skill/) (the repository's root
+[`index.html`](../index.html)).
+
+| Page | Made with | Principles taken from |
+|---|---|---|
+| [`gallery/low-hours/`](gallery/low-hours/index.html) | `inspire` (digestible questions) + `edit` (type test) — the maintainer's favourite, rebuilt with new content | its own sketches |
+| [`gallery/adrift/`](gallery/adrift/index.html) | `inspire` | third-party reference #39 |
+| [`gallery/slow-media/`](gallery/slow-media/index.html) | `inspire` | #40 |
+| [`gallery/lichen-office/`](gallery/lichen-office/index.html) | `inspire` | #41 |
+| [`gallery/kiln-type/`](gallery/kiln-type/index.html) | `inspire` | #42 |
+
+References #39–#42 are described in [`../references/`](../references/README.md), not
+included. Each page's HTML header says what was taken from its reference. Third-party references used during design are described, not included, in
 [`../references/`](../references/README.md).
 
 ## Original references

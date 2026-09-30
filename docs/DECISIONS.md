@@ -97,6 +97,36 @@ más la skill», *structure the skill a bit more*; not separately approved): con
 reference files (one home per fact); `accessibility.md` and `glossary.md` are new; the
 spec keeps only status, rationale and open questions.
 
+## A-5 · A gallery, a live site, and the type-test design (2026-09-30)
+
+After seeing the worked example, the maintainer's words: «no me gustó tanto la que pusiste
+de ejemplo de recreado, entiendo eso pero pues es brutalismo, me gustaria mas algo como
+esto» (*I didn't like the recreate example as much — I get it, but it is brutalism; I'd
+like something more like this*), with four third-party references (#39–#42, described in
+`references/README.md`, not versioned). And of the type-test sketch from the private
+experiments: «es la que más me gustó que hicimos con esta skill» (*it's the one I liked
+most of what we made with this skill*).
+
+1. **Type-test design:** rebuilt with the **same design and invented content**; nothing
+   from the private project is published (A-3 stands).
+2. **Gallery:** new original pages in the spirit of #39–#42 (principles only) go at the top
+   of the README; the Concrete Radio example stays as the step-by-step method demo.
+3. **Live site:** the pages are published with GitHub Pages and linked from the README;
+   the agent asks before enabling it.
+
+## A-6 · A custom installer (2026-09-30)
+
+The maintainer's words: «nos faltó un comando para instalar la skill! veo que impeccable usa
+npx, pero me gustaria hacer algo un poco más custom, algo brutalista, con un diseño bonito,
+simple, animado» (*we were missing a command to install the skill — Impeccable uses npx, but
+I'd like something more custom, brutalist, with a beautiful, simple, animated design*).
+
+`[proposal]` applied: a single dependency-free `install.mjs` run with
+`npx github:135Andres/brutalist-design-skill` (no npm publishing needed); the word drawn in
+blocks, a signal-red bar, a command ticker, a keyboard menu (where → which tools) and progress
+bars; animation off outside a terminal, in CI, with `--no-anim` or `NO_MOTION`. Tool folders
+follow the locations documented by each tool, as listed in Impeccable's README.
+
 ## Open questions
 
 Kept in one place: [`SPEC.md` § Open questions](SPEC.md#open-questions). *(This section

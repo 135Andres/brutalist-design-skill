@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slow Media Archive — talks, seminars, walks</title>
+<meta name="description" content="A fictional institute's archive with working filters. Gallery page of the brutalist agent skill.">
+<!-- Gallery · Slow Media Archive. Fictional content. Made with the skill's inspire command from a
+     third-party reference (#40, not included; principles only: electric blue on white, thin blue
+     rules, filter columns with open and filled circles, a blurred blue blob, cards). -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--blue:#1f23ff;--paper:#fff;--pale:#a9abff;--sans:"Hanken Grotesk",Arial,sans-serif;--rule:1.5px solid var(--blue);--ease:cubic-bezier(.2,.8,.2,1)}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--paper);color:var(--blue)}
+  body{font:400 15px/1.3 var(--sans);overflow-x:hidden}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  .frame{border-left:12px solid var(--blue);border-right:12px solid var(--blue);min-height:100vh;position:relative}
+  header{display:grid;grid-template-columns:180px 1fr auto;border-bottom:var(--rule)}
+  .logo{border-right:var(--rule);padding:14px;font:500 11px/1.15 var(--sans);text-transform:uppercase;letter-spacing:.02em}
+  .logo b{display:block;font-size:17px;letter-spacing:.04em;margin:6px 0}
+  h1{margin:0;padding:12px 18px;font:400 clamp(30px,3.4vw,46px)/1.02 var(--sans);letter-spacing:-.01em}
+  header nav{padding:14px 18px;display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+  header nav a{font-size:14px;text-underline-offset:3px}
+  .bar{display:flex;align-items:center;gap:14px;padding:6px 18px;border-bottom:var(--rule);background:#f0f0f6;font-size:14px;flex-wrap:wrap}
+  .chip{border:0;background:none;color:inherit;font:inherit;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+  .chip::before{content:"✕ "}
+  .bar .count{margin-left:auto;font-size:12px}
+  .filters{display:grid;grid-template-columns:repeat(3,200px) 1fr;border-bottom:var(--rule);position:relative;min-height:240px;overflow:hidden}
+  fieldset{border:0;border-right:var(--rule);margin:0;padding:12px 14px 18px;min-width:0}
+  legend{padding:0;margin-bottom:14px;font-size:14px;float:left;width:100%}
+  label{display:flex;gap:6px;align-items:baseline;cursor:pointer;font-size:14px;line-height:1.25;clear:left}
+  label input{color:inherit;appearance:none;width:10px;height:10px;border:1.5px solid currentColor;border-radius:50%;margin:0;flex:none;transform:translateY(1px);cursor:pointer}
+  label input:checked{background:currentColor}
+  label.off{color:var(--pale)}
+  .blob{position:absolute;width:260px;height:260px;border-radius:50%;pointer-events:none;
+    background:radial-gradient(circle,var(--blue) 0 22%,rgba(31,35,255,.55) 38%,rgba(31,35,255,0) 68%);filter:blur(6px);
+    left:var(--bx,70%);top:var(--by,50%);transform:translate(-50%,-50%);transition:left 1.4s var(--ease),top 1.4s var(--ease)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr)}
+  .card{border-right:var(--rule);border-bottom:var(--rule);padding:0 0 22px;transition:opacity .35s var(--ease),transform .45s var(--ease)}
+  .card:nth-child(3n){border-right:0}
+  .card .date{display:inline-block;background:var(--blue);color:var(--paper);font-size:11px;padding:3px 7px}
+  .card h2{margin:18px 18px 12px;text-align:center;font:400 clamp(26px,2.6vw,40px)/1.05 var(--sans);letter-spacing:-.01em}
+  .card p{margin:0 18px;font-size:13px}
+  .card .tags{margin:12px 18px 0;font-size:11px;display:flex;gap:10px;flex-wrap:wrap}
+  .card.hidden{display:none}
+  .empty{padding:40px 18px;font-size:18px}
+  footer{padding:12px 18px;font-size:12px;border-top:var(--rule)}
+  @media (max-width:860px){
+    header{grid-template-columns:1fr}
+    .logo{border-right:0;border-bottom:var(--rule)}
+    header nav{flex-direction:row;flex-wrap:wrap;justify-content:flex-start;padding-top:0}
+    .filters{grid-template-columns:1fr 1fr}
+    fieldset:nth-of-type(2){border-right:0}
+    fieldset{border-bottom:var(--rule)}
+    .cards{grid-template-columns:1fr}
+    .card{border-right:0}
+    .frame{border-width:6px}
+  }
+  @media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+</style>
+</head>
+<body>
+<div class="frame">
+  <header>
+    <div class="logo">Institute for<br>Slow Media<b>SLOW MEDIA</b>Archive · since 2009</div>
+    <h1>Slow Media<br>&amp; the Public</h1>
+    <nav aria-label="Sections"><a href="#">Collections</a><a href="#">Listening room</a><a href="#">Residencies</a><a href="#">About</a></nav>
+  </header>
+  <div class="bar" role="group" aria-label="Active filters"><span id="chips"></span><span class="count" aria-live="polite" id="count"></span></div>
+  <form class="filters" id="filters" aria-label="Filter the archive">
+    <fieldset><legend>Department</legend>
+      <label><input type="checkbox" name="dep" value="listening" checked> Listening</label>
+      <label><input type="checkbox" name="dep" value="print" checked> Print &amp; paper</label>
+      <label><input type="checkbox" name="dep" value="walks" checked> Walks</label>
+    </fieldset>
+    <fieldset><legend>Format</legend>
+      <label><input type="checkbox" name="fmt" value="talk" checked> Talk</label>
+      <label><input type="checkbox" name="fmt" value="seminar" checked> Seminar</label>
+      <label><input type="checkbox" name="fmt" value="walk" checked> Walk</label>
+      <label><input type="checkbox" name="fmt" value="interview" checked> Interview</label>
+    </fieldset>
+    <fieldset><legend>Year</legend>
+      <label><input type="checkbox" name="yr" value="2024" checked> 2024</label>
+      <label><input type="checkbox" name="yr" value="2025" checked> 2025</label>
+      <label><input type="checkbox" name="yr" value="2026" checked> 2026</label>
+    </fieldset>
+    <div class="blob" aria-hidden="true"></div>
+  </form>
+  <section class="cards" id="cards" aria-label="Archive entries">
+    <article class="card" data-dep="listening" data-fmt="talk" data-yr="2026"><span class="date">14 March 2026</span><h2>A Year of Listening to One Tree</h2><p>Recordings from a single plane tree, one hour a week, and what changed.</p><div class="tags"><span>Listening</span><span>Talk</span></div></article>
+    <article class="card" data-dep="print" data-fmt="seminar" data-yr="2025"><span class="date">2 October 2025</span><h2>Letters That Took a Year to Arrive</h2><p>A seminar on delayed correspondence and the patience it teaches.</p><div class="tags"><span>Print &amp; paper</span><span>Seminar</span></div></article>
+    <article class="card" data-dep="walks" data-fmt="walk" data-yr="2025"><span class="date">21 June 2025</span><h2>The Longest Day, Walked Slowly</h2><p>Sixteen hours, eleven kilometres, no phones.</p><div class="tags"><span>Walks</span><span>Walk</span></div></article>
+    <article class="card" data-dep="listening" data-fmt="interview" data-yr="2024"><span class="date">9 November 2024</span><h2>Radio for One Listener</h2><p>An interview with a broadcaster who knows exactly who is tuned in.</p><div class="tags"><span>Listening</span><span>Interview</span></div></article>
+    <article class="card" data-dep="print" data-fmt="talk" data-yr="2026"><span class="date">30 January 2026</span><h2>Newspapers Read a Week Late</h2><p>What news is left once it has stopped being news.</p><div class="tags"><span>Print &amp; paper</span><span>Talk</span></div></article>
+    <article class="card" data-dep="walks" data-fmt="seminar" data-yr="2024"><span class="date">5 April 2024</span><h2>Maps Drawn After the Walk</h2><p>A seminar in remembering routes instead of planning them.</p><div class="tags"><span>Walks</span><span>Seminar</span></div></article>
+  </section>
+  <p class="empty" id="empty" hidden>Nothing matches. Slow down: clear a filter.</p>
+  <footer>Brutalist skill gallery · the Institute for Slow Media is fictional · <a href="../../../">back to the gallery</a></footer>
+</div>
+<script>
+(() => {
+  const form = document.getElementById('filters');
+  const cards = [...document.querySelectorAll('.card')];
+  const chips = document.getElementById('chips'), count = document.getElementById('count'), empty = document.getElementById('empty');
+  function update(){
+    const on = n => [...form.querySelectorAll(`input[name="${n}"]:checked`)].map(i => i.value);
+    const dep = on('dep'), fmt = on('fmt'), yr = on('yr');
+    let shown = 0;
+    cards.forEach(c => {
+      const ok = dep.includes(c.dataset.dep) && fmt.includes(c.dataset.fmt) && yr.includes(c.dataset.yr);
+      c.classList.toggle('hidden', !ok); if (ok) shown++;
+    });
+    form.querySelectorAll('label').forEach(l => l.classList.toggle('off', !l.querySelector('input').checked));
+    const off = [...form.querySelectorAll('input:not(:checked)')];
+    chips.innerHTML = off.length ? off.map(i => `<button type="button" class="chip" data-v="${i.name}:${i.value}" aria-label="Show ${i.parentElement.textContent.trim()} again">${i.parentElement.textContent.trim()}</button>`).join(' ')
+                                 : '<span>All entries</span>';
+    count.textContent = `${shown} ${shown === 1 ? 'entry' : 'entries'}`;
+    empty.hidden = shown > 0;
+  }
+  form.addEventListener('change', update);
+  chips.addEventListener('click', e => {
+    const b = e.target.closest('.chip'); if (!b) return;
+    const [n, v] = b.dataset.v.split(':');
+    form.querySelector(`input[name="${n}"][value="${v}"]`).checked = true; update();
+  });
+  update();
+  /* the blob drifts towards the pointer, slowly — slow media */
+  const blob = form.querySelector('.blob');
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches)
+    form.addEventListener('pointermove', e => {
+      const r = form.getBoundingClientRect();
+      blob.style.setProperty('--bx', ((e.clientX - r.left) / r.width * 100).toFixed(1) + '%');
+      blob.style.setProperty('--by', ((e.clientY - r.top) / r.height * 100).toFixed(1) + '%');
+    });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lichen Office — Parking Lot No. 7</title>
+<meta name="description" content="A fictional landscape studio's project page. Gallery page of the brutalist agent skill.">
+<!-- Gallery · Lichen Office. Fictional content. Made with the skill's inspire command from a
+     third-party reference (#41, not included; principles only: a neo-grotesk wordmark filling the
+     full width, thin ruled metadata rows, a large paragraph, two small text columns). -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#141414;--paper:#f3f1eb;--mute:#6e6c66;--sans:"Inter Tight",Arial,sans-serif;--ease:cubic-bezier(.2,.8,.2,1)}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--paper);color:var(--ink)}
+  body{font:400 14px/1.35 var(--sans);padding:0 clamp(14px,2.2vw,32px) 40px}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+  .mark{margin:0;font:400 23vw/.8 var(--sans);letter-spacing:-.045em;white-space:nowrap;padding-top:.06em;overflow:hidden}
+  .mark span{display:inline-block;transition:transform .9s var(--ease)}
+  .js .mark span.pre{transform:translateY(105%)}
+  .rows{margin-top:10px}
+  .row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;padding:5px 0;position:relative;font-size:14px}
+  .row::before{content:"";position:absolute;left:0;right:0;top:0;border-top:1px solid var(--ink);transform-origin:left;transition:transform .8s var(--ease)}
+  .js .row.pre::before{transform:scaleX(0)}
+  .row.head{color:var(--mute)}
+  .row nav{grid-column:span 2;display:flex;gap:16px}
+  .row nav a{text-decoration:none}
+  .row nav a:hover,.row nav a:focus-visible{text-decoration:underline}
+  .row:last-of-type::after{content:"";position:absolute;left:0;right:0;bottom:0;border-top:1px solid var(--ink)}
+  .credits{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:14px 0 26px;font-size:11px;line-height:1.35}
+  .credits dl{grid-column:span 2;display:grid;grid-template-columns:auto 1fr;gap:0 14px;margin:0}
+  .credits dt{color:var(--mute)}
+  .credits dd{margin:0}
+  .lead{font:400 clamp(24px,2.55vw,38px)/1.12 var(--sans);letter-spacing:-.012em;max-width:48ch;margin:0 0 .6em}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,48px);margin-top:26px;font-size:15px;line-height:1.4}
+  .cols p{margin:0 0 1em;max-width:60ch}
+  footer{margin-top:40px;padding-top:10px;border-top:1px solid var(--ink);font-size:12px;color:var(--mute)}
+  @media (max-width:760px){
+    .row{grid-template-columns:1fr 1fr}
+    .row.head{display:none}
+    .row>span:nth-child(n+3){display:none}
+    .row nav{grid-column:1/-1}
+    .credits{grid-template-columns:1fr}
+    .credits dl{grid-column:auto}
+    .cols{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){ *{transition:none!important} .js .mark span.pre{transform:none} .js .row.pre::before{transform:none} }
+</style>
+</head>
+<body>
+<h1 class="mark" id="mark" aria-label="Lichen">Lichen</h1>
+<div class="rows">
+  <div class="row"><span>Landscapes for leftover places</span><nav aria-label="Sections"><a href="#">About</a><a href="#">Projects</a><a href="#">Contact</a></nav></div>
+  <div class="row head"><span>Name</span><span>Location</span><span>Type</span><span>Client</span><span>Year</span></div>
+  <div class="row"><span>Parking Lot No. 7</span><span>Riverside, north bank</span><span>Car park to meadow</span><span>Self-initiated</span><span>2026</span></div>
+</div>
+<div class="credits">
+  <dl><dt>Services</dt><dd>Survey · Seed mixes · Slow planting · Signage</dd>
+      <dt>Team</dt><dd>Lichen Office with the residents of blocks C and D</dd>
+      <dt>Duration</dt><dd>Three growing seasons, and counting</dd></dl>
+  <span></span>
+  <span>Field notes<br>Seed list<br>Map</span>
+</div>
+<p class="lead">Parking Lot No. 7 was 212 spaces of asphalt that nobody used after the station moved. We cut the tarmac into strips, left the white lines where they fell, and let the ground decide what came back.</p>
+<p class="lead">Three seasons later the strips are clover, yarrow and wild carrot; the lines still show where the cars used to stand. Nothing was planted in straight rows. The lamp posts stayed; the bats like them.</p>
+<div class="cols">
+  <p>We did not design a park. We designed the conditions for one: which strips to open first, where water should stand after rain, what to mow once a year and what never to touch. The residents chose the paths by walking them.</p>
+  <p>The site is monitored with a single fixed camera, one photograph each dawn. The archive of 900 mornings is open to anyone who asks for it. Every name, number and place on this page is invented — Lichen Office is a demonstration.</p>
+</div>
+<footer>Brutalist skill gallery · Lichen Office is fictional · <a href="../../../">back to the gallery</a></footer>
+<script>
+(() => {
+  document.documentElement.classList.add('js');
+  const mark = document.getElementById('mark');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* the wordmark fills the width exactly, whatever the font and the screen */
+  const text = mark.textContent;
+  mark.innerHTML = [...text].map(c => `<span aria-hidden="true">${c}</span>`).join('');
+  const fit = () => {
+    mark.style.fontSize = '100px';
+    const a = mark.firstElementChild.getBoundingClientRect(), z = mark.lastElementChild.getBoundingClientRect();
+    const w = z.right - a.left, avail = mark.clientWidth;
+    mark.style.fontSize = (100 * avail / w * 0.995).toFixed(2) + 'px';
+  };
+  document.fonts.ready.then(fit); addEventListener('resize', fit); fit();
+  /* letters rise one by one; rules draw as they scroll into view */
+  const letters = [...mark.children];
+  letters.forEach(l => l.classList.add('pre'));
+  requestAnimationFrame(() => letters.forEach((l, i) => setTimeout(() => l.classList.remove('pre'), reduce ? 0 : 80 + i * 70)));
+  const rows = document.querySelectorAll('.row');
+  rows.forEach(r => r.classList.add('pre'));
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.remove('pre'); io.unobserve(e.target); } }));
+  rows.forEach((r, i) => setTimeout(() => io.observe(r), reduce ? 0 : 500 + i * 140));
+})();
+</script>
+</body>
+</html>
