@@ -24,12 +24,13 @@ directions; the human chooses.
 |---|---|---|
 | **Digestible questions** | 4–5 questions, each option shown as a small ASCII sketch, then one built sketch | inspiring; the user sometimes answers with an idea of their own instead of an option — leave room for it |
 | **Sketches first, from images** | 4–6 divergent sketches without asking, each inspired by a different reference; then ask | reaction pending |
-| **Provocations** | 3 unexpected premises, one sentence + one sketch each | tried once, from zero (see below); reaction pending |
+| **Provocations** | 3 unexpected premises, one sentence + one sketch each | tried once, from zero (see below); disliked by the user |
 | **Derive** | one reference → explicit principles → 3 directions | not tried |
 
 ## From zero, no reference (draft, under test)
 
-For a brief with no images. A first attempt, not a settled procedure.
+For a brief with no images. A first attempt, not a settled procedure; its first run was
+not liked, so treat every step as a hypothesis.
 
 1. **State the brief.** Real content if the user gave it; otherwise invent a neutral one and
    say so in the file header and in the page footer.

@@ -21,7 +21,7 @@ this repository; the exceptions are listed at the end.
 
 ## Work that can start
 
-- `inspire`: record the reaction to the provocations from zero ([`experiments/provocations/`](../examples/experiments/provocations/README.md)); then try format 4 (classic derive) and, later, the same flow with reference images — see
+- `inspire` from zero: re-run it on the maintainer's own projects (see the open question on where they live and what may be published), then the same flow with reference images; format 4 (classic derive) later — see
   [`inspire.md`](../skill/brutalist/references/inspire.md); record reactions in FINDINGS.
 - `edit`: a second test on a page the agent did not write.
 - Test `stacks.md` §2 on a modular project (React/Vue/Svelte/Vite) and on an empty folder.

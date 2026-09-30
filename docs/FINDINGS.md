@@ -12,7 +12,7 @@
 |---|---|---|
 | 1 · Digestible questions | 5 questions whose options are **visual** (ASCII sketches as previews), then one built sketch | Reaction to the format: "It inspired me". To the sketch: good and smooth; "It looks a lot like what the terminal showed"; the huge type, "Way too much noise" |
 | 2 · Sketches first, from images | 4 divergent sketches without asking, **each inspired by a different reference image** (#35–#38), taking principles, not text or marks | reaction pending |
-| 3 · Provocations | 3 unexpected premises, one sentence + one sketch each | tried once from zero, no reference (2026-09-30); reaction pending |
+| 3 · Provocations | 3 unexpected premises, one sentence + one sketch each | tried once from zero, no reference (2026-09-30); the maintainer did not like the three sketches; deleted |
 | 4 · Classic derive | one reference → explicit principles → 3 directions | not tried |
 
 Lessons:
@@ -40,17 +40,17 @@ Built as [`examples/gallery/estatica/`](../examples/gallery/estatica/index.html)
 
 ## Creative mode from zero — format 3, first run (2026-09-30)
 
-No reference images; invented neutral brief (a community tool library), same content in
-three sketches: [`examples/experiments/provocations/`](../examples/experiments/provocations/README.md).
-Premises taken from objects with a function, not from aesthetic genres, after the reaction to
-Radio Estática (generic; not intuitive for new visitors). Each has a written first-visitor cue.
-Draft procedure added to [`inspire.md`](../skill/brutalist/references/inspire.md). Reaction pending.
+No reference images; one invented neutral brief (a community tool library) in three sketches
+(a shadow board, a tear-off flyer, a loan slip), each with a written first-visitor cue.
+Reaction: "I really didn't like them" (the maintainer's words, translated). The sketches were
+deleted. Asked for next: run the tests on the maintainer's own projects instead of an invented
+brief.
 
-Checked: Chromium (headless) at 1440, 390 and 320 px, no horizontal overflow, no console errors;
-reduced motion emulated on the flyer; the interactions were driven by script. One bug found and
-fixed: a scaled stamp in the loan slip widened the mobile layout (checked with the viewport
-warning of `shots.mjs`). **Not checked:** screen reader, axe-core, a real keyboard pass, real
-devices. The agent does not judge whether the designs are good.
+- `INFERENCE`: an invented brief with utilitarian content, however well it passes a
+  first-visitor check, did not give the maintainer anything to care about; the test needs a
+  brief the maintainer knows.
+- The draft procedure in [`inspire.md`](../skill/brutalist/references/inspire.md) came out of
+  this run and is **unvalidated**.
 
 ## Editing an existing page — first test
 
