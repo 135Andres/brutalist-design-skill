@@ -148,6 +148,23 @@ The maintainer accepted the agent's proposals for A, B, D and E as decisions.
 8. **No code for now:** until told otherwise, the agent writes and edits documents only;
    it runs no tests and writes no programs.
 
+## A-12 · The skill holds no judgements; an optional setup (2026-09-30)
+
+The maintainer's direction: the skill must not carry the maintainer's own judgements (for
+example that giant type is noise); that depends on the user of the skill, and not every
+project ends up with giant letters while some do. Instead, when the user is still imagining
+the page, the skill offers a **setup**: optional questions about colours, whether to add
+elements or keep pure brutalism, typography and the like. Answering is never required.
+
+1. **Applied:** new [`setup.md`](../skill/brutalist/references/setup.md), loaded by `inspire`;
+   linked from `SKILL.md`. Unanswered questions become declared `DECISION`s; answers are
+   recorded as `stated by the user`.
+2. **Applied:** the judgements that had entered the skill text (about type scale, accent
+   colours, which results were liked or rejected, a "brutalist check") were removed from
+   `inspire.md` and `edit.md`. Reactions and lessons stay in [`FINDINGS.md`](FINDINGS.md),
+   which records the maintainer's experiments, not the skill's rules.
+3. Untested until run with a user.
+
 ## Open questions
 
 Kept in one place: [`SPEC.md` § Open questions](SPEC.md#open-questions). *(This section

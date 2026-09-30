@@ -17,6 +17,7 @@
 | Accessibility | [`accessibility.md`](../skill/brutalist/references/accessibility.md) | **new draft** from the audit; pending review |
 | Glossary | [`glossary.md`](../skill/brutalist/references/glossary.md) | new; collects existing definitions |
 | `inspire` | [`inspire.md`](../skill/brutalist/references/inspire.md) | **experimental** (A-1): formats 2–4 still to test |
+| Setup | [`setup.md`](../skill/brutalist/references/setup.md) | **new, experimental** (A-12): optional questions before sketching |
 | `edit` | [`edit.md`](../skill/brutalist/references/edit.md) | **experimental**: needs a test on a page the agent did not write |
 | `verify` | [`verify.md`](../skill/brutalist/references/verify.md) | not specified (interim rules) |
 | `critique` | [`critique.md`](../skill/brutalist/references/critique.md) | not specified |

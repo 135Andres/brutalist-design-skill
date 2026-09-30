@@ -12,7 +12,9 @@ description: Recreate brutalist and experimental web interfaces from reference i
 ## Principles
 
 1. **Impose nothing on the user.** `recreate` reproduces faithfully, with no lecture about
-   originality. The only limit is rights hygiene, which protects the user.
+   originality. The only limit is rights hygiene, which protects the user. The skill holds
+   no taste of its own: scale, colour, type, ornament and how strict "brutalist" is are the
+   user's to decide; ask ([setup](references/setup.md)) and record their words.
 2. **Say how you know.** Every property read from a reference carries an evidence state;
    everything you infer or choose is marked `INFERENCE` or `DECISION`. See
    [glossary](references/glossary.md).
@@ -31,7 +33,7 @@ description: Recreate brutalist and experimental web interfaces from reference i
 |---|---|---|---|
 | `recreate <image>` | rebuild a reference image as a working interface, with inventory and report | [recreate](references/recreate.md) → [effects](references/effects.md) → [motion](references/motion.md) | specified |
 | `motion <page>` | plan and build motion, from an animated source or declared as invention | [motion](references/motion.md) → [effects](references/effects.md) | under review |
-| `inspire <images…>` | turn references into divergent sketches and digestible visual questions | [inspire](references/inspire.md) | experimental |
+| `inspire <images…>` | turn references (or just an idea) into divergent sketches and digestible visual questions; starts with an optional [setup](references/setup.md) | [inspire](references/inspire.md) → [setup](references/setup.md) | experimental |
 | `edit <page>` | change an existing page: smallest change first, escalate only if needed | [edit](references/edit.md) | experimental |
 | `verify <page>` | screenshots under fixed conditions, comparison, accessibility pass | [verify](references/verify.md) | not yet specified |
 | `critique <page>` | a review without scores | [critique](references/critique.md) | not yet specified |
