@@ -40,7 +40,9 @@ description: Recreate brutalist and experimental web interfaces from reference i
 
 Every command that writes code also loads [accessibility](references/accessibility.md)
 and [stacks](references/stacks.md) (output format: one file or modular).
-Load [glossary](references/glossary.md) whenever a term is unclear.
+Load [glossary](references/glossary.md) whenever a term is unclear. `inspire`, `edit` and
+(once specified) `critique` may also load [field-map](references/field-map.md), a descriptive
+map of positions in the field; `recreate` never does.
 
 **No command given?** Infer it: an image plus "build this" → `recreate`; images plus
 "ideas" / "inspire me" → `inspire`; an existing page plus "improve" / "more flavour" →

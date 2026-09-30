@@ -165,6 +165,28 @@ elements or keep pure brutalism, typography and the like. Answering is never req
    which records the maintainer's experiments, not the skill's rules.
 3. Untested until run with a user.
 
+## A-13 · A descriptive map of positions; a marker removed (2026-09-30)
+
+1. `[proposal]` — **clarifies A-12, which stands.** The skill never imposes a definition of
+   brutalism or a taste on the user's work or references; `recreate` is unchanged. The skill
+   may carry a **map of positions** in the field, descriptive and sourced, with contested
+   points marked, which agents may **offer** as options. Offering is not imposing. When the
+   brief is silent and the agent picks a position, it is a `DECISION` with its reason, taken
+   from the brief, the reference or the map (cited), not from silent preference. The map is
+   never prescriptive and no command scores adherence to a position.
+2. **Applied as a draft:** [`field-map.md`](../skill/brutalist/references/field-map.md)
+   (experimental, reviewed 2026-09-30), a "Field terms" section in `glossary.md`, a
+   "Positions" format in `inspire.md` (not tried), and one line in `SKILL.md`. The
+   maintainer said to use the sources given by an earlier research; **the agent did not
+   re-read the primary texts** (the session's network policy blocked them) and the map says so.
+3. **Corrects A-12 item 1:** the marker `stated by the user` is dropped, because the
+   vocabulary is closed (`INFERENCE`, `DECISION`). The user's answers are recorded in a
+   "User's words" section of the notes instead. `setup.md` and `inspire.md` updated.
+4. **Correction of a mistake:** `recreate.md`, which is closed, had been edited earlier in
+   the session; it was restored to its closed text.
+5. Open: whether `critique` may read a user's own page (question F in `SPEC.md`); how the
+   setup question on strictness and the map relate; the map is untested with a user.
+
 ## Open questions
 
 Kept in one place: [`SPEC.md` § Open questions](SPEC.md#open-questions). *(This section

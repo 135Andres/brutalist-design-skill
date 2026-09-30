@@ -15,7 +15,7 @@ ornament and how strict "brutalist" is are the user's to decide ([setup](setup.m
   testimonials to fill a layout. If content must be invented, say so in the file header and
   on the page.
 - Every choice you make on your own is a `DECISION` in the notes (fonts, colors, which
-  device maps to which content). A choice the user made is recorded as `stated by the user`.
+  device maps to which content). A choice the user made is recorded in a "User's words" section of the notes.
 - Sketches are cheap and disposable. Build them for real (they run in a browser) and
   verify them; say what you did not verify.
 - The user's reaction is recorded verbatim. You do not score, and you do not pass judgement
@@ -35,6 +35,14 @@ or in part; what is skipped becomes your declared `DECISION`.
 | **Sketches first, from images** | 4–6 divergent sketches without asking, each inspired by a different reference; then ask | the user brings images |
 | **Provocations** | 3 unexpected premises, one sentence + one sketch each | the user asks for surprise |
 | **Derive** | one reference → explicit principles → 3 directions | one strong reference |
+| **Positions** | 3–4 sketches of one real brief, each from a different position in [field-map](field-map.md), every axis value a `DECISION`; *not tried* | the user wants to see how the same content reads from different stances |
+
+Positions, protocol: ask for a real brief and two to four references (never invented);
+declare the position and each axis value of a sketch as a `DECISION` with its reason; keep
+its origin visible ("position X; principles taken: …"); build and verify it for real and say
+what was not checked; load [accessibility](accessibility.md) and declare any cost a position
+carries; record the user's reaction verbatim and treat a choice made from a preview as a
+hypothesis. The map names and asks; it never scores.
 
 The user sometimes answers with an idea of their own instead of an option: leave room for it.
 

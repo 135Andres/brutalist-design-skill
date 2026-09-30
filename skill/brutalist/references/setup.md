@@ -16,8 +16,9 @@ user decides them. This step only makes those choices easy to state.
   as a small ASCII sketch or a short example so it can be picked without design vocabulary.
 - **Leave room**: always allow "something else" in the user's own words, and a free-text
   answer such as a colour code, a font name or a reference.
-- **Record the answers as the user's words**, marked `stated by the user`, apart from your
-  `DECISION`s. Do not paraphrase them into a judgement.
+- **Record the answers as the user's words**, in their own section of the notes titled
+  "User's words", apart from your `DECISION`s. No marker: the section is the record. Do not
+  paraphrase them into a judgement.
 - **Do not steer.** Offer options neutrally; do not call one more or less "real" brutalism.
   If a choice has a cost (contrast, legibility, performance), say the cost once, plainly,
   and follow the user's decision ([accessibility](accessibility.md) still applies and is
@@ -26,7 +27,8 @@ user decides them. This step only makes those choices easy to state.
 
 ## Questions (pick the ones that help; skip the rest)
 
-1. **How strict is the brutalism?**
+1. **How strict is the brutalism?** (To show the named positions found in the field, offer
+   [field-map](field-map.md); it is an option, not a rule.)
    *pure* (raw structure and material, nothing added for looks) · *with elements* (brutalist
    structure plus chosen devices such as marquees, stickers, collage) · *a mix* · *I don't
    know — show me both*. If the user uses the word in their own sense, take theirs.
@@ -48,6 +50,6 @@ user decides them. This step only makes those choices easy to state.
 
 ## What to do with the answers
 
-Write them at the top of the sketch's notes as `stated by the user`; build from them; list
+Write them at the top of the sketch's notes under "User's words"; build from them; list
 your own `DECISION`s for everything left open. If a later answer contradicts an earlier one,
 the later one wins and the earlier is kept in the notes.
