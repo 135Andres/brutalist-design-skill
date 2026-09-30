@@ -24,7 +24,7 @@
 | Stacks | [`stacks.md`](../skill/brutalist/references/stacks.md) | not specified |
 | Templates | [`templates/`](../skill/brutalist/templates/) | new; follow the closed vocabulary |
 | Scripts | `sample_palette.py`, `find_rules.py`, `ink_bbox.py`, `overlay.html`, `shots.mjs` | written; used in the worked example. `spring_to_css`: planned |
-| Per-tool installer | [`install.mjs`](../install.mjs) (`npx github:135Andres/brutalist-design-skill`) | done (A-6); copy tested into Claude Code, Codex and Hermes folders of a test home; loading inside each tool not tested |
+| Per-tool installer | [`install.mjs`](../install.mjs) (`npx brutalist-design-skill`) | done (A-6, A-7); copy tested into Claude Code, Codex and Hermes folders of a test home; loading inside each tool not tested |
 | Gallery and site | [`examples/gallery/`](../examples/gallery/), [`index.html`](../index.html) | done (A-5); GitHub Pages pending the maintainer's go-ahead |
 | Worked example | [`examples/recreate-concrete-radio/`](../examples/recreate-concrete-radio/README.md) | done; not an independent test (same author as its reference) |
 | Tests against real references | — | planned (DR5-5) |

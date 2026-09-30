@@ -17,6 +17,18 @@
     "type": "git",
     "url": "git+https://github.com/135Andres/brutalist-design-skill.git"
   },
-  "keywords": ["agent-skills", "brutalism", "web-design", "claude-code", "codex", "cursor"],
-  "license": "Apache-2.0"
+  "keywords": [
+    "agent-skills",
+    "brutalism",
+    "web-design",
+    "claude-code",
+    "codex",
+    "cursor"
+  ],
+  "license": "Apache-2.0",
+  "homepage": "https://135andres.github.io/brutalist-design-skill/",
+  "bugs": {
+    "url": "https://github.com/135Andres/brutalist-design-skill/issues"
+  },
+  "author": "135andres"
 }

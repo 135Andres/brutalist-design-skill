@@ -60,6 +60,9 @@ Lessons for `edit`:
 - Mobile emulation widens the layout viewport when content is too wide, so
   `scrollWidth − innerWidth` reports 0 while the screenshot shows clipped text (found in the
   worked example). Check that `innerWidth` is the width asked for.
+- Test the **real** install path. The installer worked from a local package, but
+  `npx github:…` failed on npm 12, which disables git packages by default
+  (`allow-git = "none"`); only running the exact public command showed it.
 - A fix in the last comparison round can regress something else (a wider headline pushed a
   grid track): re-run the whole comparison after every round.
 

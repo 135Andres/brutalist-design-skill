@@ -122,10 +122,16 @@ simple, animado» (*we were missing a command to install the skill — Impeccabl
 I'd like something more custom, brutalist, with a beautiful, simple, animated design*).
 
 `[proposal]` applied: a single dependency-free `install.mjs` run with
-`npx github:135Andres/brutalist-design-skill` (no npm publishing needed); the word drawn in
+`npx github:135Andres/brutalist-design-skill` (no npm publishing needed — *changed by A-7*); the word drawn in
 blocks, a signal-red bar, a command ticker, a keyboard menu (where → which tools) and progress
 bars; animation off outside a terminal, in CI, with `--no-anim` or `NO_MOTION`. Tool folders
 follow the locations documented by each tool, as listed in Impeccable's README.
+
+## A-7 · Published on npm (2026-09-30)
+
+npm 12 refuses packages fetched from git by default (`allow-git = "none"`), so
+`npx github:…` fails for its users. Offered three ways (npm, a flag, a curl script), the
+maintainer chose **publishing on npm**: the command is `npx brutalist-design-skill`.
 
 ## Open questions
 

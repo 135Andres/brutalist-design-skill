@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 // brutalist — installer for the agent skill in skill/brutalist/.
 //
-//   npx github:135Andres/brutalist-design-skill            interactive
-//   npx github:135Andres/brutalist-design-skill --yes      detected tools, global scope, no questions
+//   npx brutalist-design-skill            interactive
+//   npx brutalist-design-skill --yes      detected tools, global scope, no questions
 //
 // Options: --tools=claude,codex,…  --scope=global|project  --dry-run  --uninstall  --no-anim  --list  --help
 // No dependencies. Animation is skipped when output is not a terminal, in CI, with --no-anim,
@@ -162,7 +162,7 @@ async function uninstall(tool, scope, dry) {
 // ── main ─────────────────────────────────────────────────────────────────
 async function main() {
   if (args.help) {
-    w(`brutalist — install the agent skill\n\n  npx github:135Andres/brutalist-design-skill [options]\n
+    w(`brutalist — install the agent skill\n\n  npx brutalist-design-skill [options]\n
   --tools=${TOOLS.map(t => t.id).join(',')}
   --scope=global|project   global: your home folder · project: the current folder
   --yes                    no questions: detected tools (or --tools), global scope unless --scope

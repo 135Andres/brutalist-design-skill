@@ -5,7 +5,7 @@ experimental website and it rebuilds it as a working page — motion included �
 as a springboard for something new. It measures instead of guessing, and says what it
 invented.
 
-> **Quick start:** `npx github:135Andres/brutalist-design-skill`, restart your tool, then
+> **Quick start:** `npx brutalist-design-skill`, restart your tool, then
 > `/brutalist recreate path/to/screenshot.png`. Live gallery:
 > **[135andres.github.io/brutalist-design-skill](https://135andres.github.io/brutalist-design-skill/)**
 
@@ -59,13 +59,13 @@ page more flavour" — and the skill picks the command.
 ## Install
 
 ```bash
-npx github:135Andres/brutalist-design-skill
+npx brutalist-design-skill
 ```
 
 <img src="docs/media/installer.gif" alt="The installer: the word BRUTALIST drawn in blocks, a red bar, a ticker of commands, then a keyboard menu to choose where and which tools, and progress bars ending in DONE" width="620">
 
-No npm account, no dependencies: `npx` runs [`install.mjs`](install.mjs) straight from this
-repository. Pick **everywhere** (your home folder) or **this project**, then the tools; it
+No dependencies: `npx` runs [`install.mjs`](install.mjs), published on npm as
+[`brutalist-design-skill`](https://www.npmjs.com/package/brutalist-design-skill). Pick **everywhere** (your home folder) or **this project**, then the tools; it
 copies [`skill/brutalist/`](skill/brutalist/SKILL.md) into each one's skills folder.
 
 | Option | Does |
@@ -141,7 +141,7 @@ by eye):
 | Path | Content |
 |---|---|
 | [`skill/brutalist/`](skill/brutalist/SKILL.md) | the skill: router, reference files, templates, scripts |
-| [`install.mjs`](install.mjs) | the installer (`npx github:135Andres/brutalist-design-skill`) |
+| [`install.mjs`](install.mjs) | the installer (`npx brutalist-design-skill`) |
 | [`index.html`](index.html) | the gallery site (GitHub Pages) |
 | [`examples/`](examples/README.md) | gallery pages, original references, the worked example |
 | [`docs/SPEC.md`](docs/SPEC.md) | status of each part, rationale, open questions |
