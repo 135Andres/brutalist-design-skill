@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>overlay — reference over build</title>
+<!-- recreate §5. Open with ?ref=REFERENCE.png&build=BUILD.png (paths relative to this file,
+     or absolute URLs). Add &mode=diff to start in difference blend, &opacity=0..100 to set
+     the build's opacity. A hint for the comparison, never a score. -->
+<style>
+  body{margin:0;font:13px/1.4 ui-monospace,monospace;background:#777;color:#111}
+  .bar{display:flex;flex-wrap:wrap;gap:14px;align-items:center;padding:8px 12px;background:#111;color:#eee}
+  .bar label{display:flex;gap:6px;align-items:center}
+  .stage{position:relative;display:inline-block;vertical-align:top}
+  .stage img{display:block;max-width:none}
+  #build{position:absolute;inset:0}
+  .diff #build{mix-blend-mode:difference;opacity:1 !important}
+</style>
+</head>
+<body>
+<div class="bar">
+  <label>build opacity <input id="op" type="range" min="0" max="100" value="50"> <output id="ov">50 %</output></label>
+  <label><input id="df" type="checkbox"> difference blend</label>
+  <span id="info"></span>
+</div>
+<div class="stage"><img id="ref" alt="reference"><img id="build" alt="build"></div>
+<script>
+  const q = new URLSearchParams(location.search);
+  const ref = document.getElementById('ref'), build = document.getElementById('build');
+  const op = document.getElementById('op'), ov = document.getElementById('ov'), df = document.getElementById('df');
+  const setOpacity = v => { build.style.opacity = v / 100; op.value = v; ov.value = v + ' %'; };
+  const setDiff = on => { df.checked = on; document.body.classList.toggle('diff', on); };
+  ref.src = q.get('ref') || '';
+  build.src = q.get('build') || '';
+  setOpacity(+(q.get('opacity') ?? 50));
+  setDiff(q.get('mode') === 'diff');
+  op.addEventListener('input', () => setOpacity(op.value));
+  df.addEventListener('change', () => setDiff(df.checked));
+  Promise.all([ref, build].map(i => i.decode().catch(() => null))).then(() => {
+    const same = ref.naturalWidth === build.naturalWidth && ref.naturalHeight === build.naturalHeight;
+    document.getElementById('info').textContent =
+      `reference ${ref.naturalWidth}×${ref.naturalHeight} · build ${build.naturalWidth}×${build.naturalHeight}` +
+      (same ? '' : ' · SIZES DIFFER');
+    document.body.dataset.ready = same ? 'same-size' : 'sizes-differ';
+  });
+</script>
+</body>
+</html>

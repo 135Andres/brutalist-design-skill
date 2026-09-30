@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concrete Radio 94.1</title>
+<!-- recreate · fidelity build of ../../references/ref-a-concrete-radio.png.
+     Built from ../inventory.md. Round 2 (final) + a layout fix for a regression it introduced (see ../report.md). -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --concrete:#d8d5cc; --ink:#121212; --signal:#ff3b1f;          /* measured palette */
+    --display:"Anton","Bebas Neue",Impact,sans-serif;             /* D2 */
+    --mono:"Space Mono","IBM Plex Mono",ui-monospace,monospace;  /* D3 */
+    --rule:3px solid var(--ink);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--concrete);color:var(--ink);font:400 13.7px/1.4 var(--mono);
+    min-height:100vh;display:grid;grid-template-rows:44px 1fr 56px}   /* band 44 · footer 56 */
+  a{color:inherit}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  :focus-visible{outline:3px solid var(--ink);outline-offset:3px}                         /* ADDED */
+
+  /* top band — marquee (I1, D5) */
+  .air{background:var(--ink);color:var(--concrete);position:relative;overflow:hidden;display:flex;align-items:center;cursor:pointer}
+  .track{display:flex;flex:none;white-space:nowrap;font:700 14px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;
+    padding-left:24px}
+  .js .track{animation:air 27s linear infinite}                                      /* loop only once JS has doubled the track */
+  .track span{flex:none;padding-right:0}
+  .track b{color:var(--signal);font-weight:700;margin:0 1.95em}
+  .air.paused .track{animation-play-state:paused}
+  @keyframes air{to{transform:translateX(-50%)}}
+  .pause{position:absolute;right:8px;top:6px;bottom:6px;font:700 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;
+    background:var(--concrete);color:var(--ink);border:0;padding:0 10px;opacity:0;pointer-events:none}
+  .pause:focus-visible{opacity:1;outline-color:var(--signal)}                             /* ADDED: visible only on focus */
+
+  /* main — 0.625 / 0.375 split, 3 px rule */
+  main{display:grid;grid-template-columns:minmax(0,903fr) minmax(0,537fr);border-bottom:var(--rule);min-height:0}
+  .left{border-right:var(--rule);position:relative;display:flex;flex-direction:column;justify-content:flex-end;
+    padding:0 28px 15px}
+  .kicker{position:absolute;top:22px;left:28px;margin:0;letter-spacing:.082em;text-transform:uppercase}
+  h1{margin:0;font:400 238px/.824 var(--display);letter-spacing:-.006em;text-transform:uppercase}
+  .badge{position:absolute;top:40px;right:48px;width:150px;height:150px;border-radius:50%;background:var(--signal);
+    display:grid;place-items:center;font:400 44px/1 var(--display);text-transform:uppercase}
+  .badge span{transform:rotate(-16.6deg);display:block}
+
+  .right{display:grid;grid-template-rows:45px auto 1fr;min-height:0}
+  .right h2{margin:0;padding:0 24px;display:flex;align-items:center;font:700 13.7px/1 var(--mono);letter-spacing:.094em;text-transform:uppercase}
+  .right hr{margin:0;border:0;border-top:var(--rule)}
+  table{width:100%;height:100%;border-collapse:collapse}
+  caption{padding:0}
+  td{vertical-align:top;border-top:1px solid var(--ink);padding:15px 0 0}
+  tr:first-child td{border-top:0}
+  td.t{width:131px;padding-left:24px;padding-top:14px;font-weight:700}
+  td.n{font:400 25px/1 var(--display);letter-spacing:.018em;text-transform:uppercase}
+  tr.now td{background:var(--ink);color:var(--concrete)}
+  tr.now .dot{display:inline-block;width:20px;height:20px;border-radius:50%;background:var(--signal);margin-left:8px;vertical-align:top;position:relative;top:5px}
+
+  footer{display:grid;grid-template-columns:1fr 158px 95px}
+  footer>*{display:flex;align-items:center;padding:0 23px;border-right:var(--rule);font-size:11px;letter-spacing:.15em;text-transform:uppercase;margin:0}
+  footer>*:not(:first-child){justify-content:center;padding:0}
+  footer>*:last-child{border-right:0}
+  footer .donate{background:var(--signal);font-weight:700;text-decoration:none}
+  footer .donate:hover{text-decoration:underline}                                        /* INVENTED state */
+
+  @media (prefers-reduced-motion:reduce){ .js .track{animation:none} }                       /* ADDED */
+
+  /* mobile — INVENTED (D8), derived from: same palette, rules, headline as identity, schedule after */
+  @media (max-width:760px){
+    body{grid-template-rows:44px auto auto}
+    main{grid-template-columns:minmax(0,1fr)}
+    .left{border-right:0;border-bottom:var(--rule);min-height:72vh;padding:72px 20px 15px}
+    h1{font-size:clamp(56px,23vw,238px)}
+    .badge{width:96px;height:96px;font-size:26px;right:20px;top:64px}
+    .kicker{left:20px;right:130px;white-space:normal}
+    .right{grid-template-rows:45px auto auto}
+    td.n{font-size:22px}
+    td{padding-bottom:18px}
+    footer{grid-template-columns:1fr 1fr}
+    footer>*:first-child{grid-column:1/-1;border-right:0;border-bottom:var(--rule);padding:14px 20px}
+    footer>*{min-height:48px}
+  }
+</style>
+</head>
+<body>
+<div class="air" id="air">
+  <p class="sr-only">On air: Night Shift with the Concrete Choir. Requests open until 02:00.</p>
+  <div class="track" aria-hidden="true"><span>On air</span><b>●</b><span>Night Shift with the Concrete Choir</span><b>●</b><span>Requests open until 02:00</span><b>●</b><span>On air</span><b>●</b><span>Night Shift with the Concrete Choir</span><b>●</b><span>Requests open until 02:00</span><b>●</b><span>On air</span><b>●</b><span>Night Shift with the Concrete Choir</span><b>●</b><span>Requests open until 02:00</span><b>●</b></div>
+  <button class="pause" type="button" aria-pressed="false">Pause ticker</button>
+</div>
+<main>
+  <section class="left" aria-labelledby="title">
+    <p class="kicker">Community radio · 94.1 FM · since 1987</p>
+    <div class="badge"><span>Live</span></div>
+    <h1 id="title">Concrete<br>Radio</h1>
+  </section>
+  <section class="right" aria-labelledby="tonight">
+    <h2 id="tonight">Tonight</h2>
+    <hr>
+    <table>
+      <caption class="sr-only">Tonight's schedule</caption>
+      <tr><td class="t">20:00</td><td class="n">Tape Hiss Hour</td></tr>
+      <tr><td class="t">21:30</td><td class="n">Brass &amp; Rust</td></tr>
+      <tr class="now"><td class="t">23:00</td><td class="n">Night Shift<span class="dot" role="img" aria-label="on air now"></span></td></tr>
+      <tr><td class="t">02:00</td><td class="n">Static Until Dawn</td></tr>
+      <tr><td class="t">05:00</td><td class="n">Morning Grain</td></tr>
+    </table>
+  </section>
+</main>
+<footer>
+  <p>Listener-funded. No ads. No algorithm.</p>
+  <p>Call 555 0194</p>
+  <a class="donate" href="#">Donate</a>
+</footer>
+<script>
+  /* marquee: the static HTML holds three units (visible without JS); doubling them gives
+     two identical halves, so translateX(-50%) loops without a jump */
+  document.documentElement.classList.add('js');
+  const track = document.querySelector('.track');
+  track.innerHTML += track.innerHTML;
+  const air = document.getElementById('air'), pause = air.querySelector('.pause');
+  const toggle = () => {                                  /* WCAG 2.2.2 — ADDED */
+    const p = air.classList.toggle('paused');
+    pause.setAttribute('aria-pressed', String(p));
+    pause.textContent = p ? 'Play ticker' : 'Pause ticker';
+  };
+  air.addEventListener('click', e => { if (e.target !== pause) toggle(); });
+  pause.addEventListener('click', toggle);
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>type calibration — candidates at 100px</title>
+<!-- Candidate fonts rendered at 100px, one per row (row i starts at y = i*160, text at x=20).
+     ink_bbox measures each row's width/cap-height ratio to compare with the reference. -->
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=League+Gothic&family=Oswald:wght@700&family=Space+Mono:wght@700&family=IBM+Plex+Mono:wght@700&family=JetBrains+Mono:wght@700&family=Courier+Prime:wght@700&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#fff;color:#000}
+  div{position:absolute;left:20px;height:160px;line-height:160px;font-size:100px;white-space:pre}
+</style>
+</head>
+<body>
+<script>
+  const rows = [
+    ['Anton', 400, 'CONCRETE'], ['Bebas Neue', 400, 'CONCRETE'], ['League Gothic', 400, 'CONCRETE'], ['Oswald', 700, 'CONCRETE'],
+    ['Anton', 400, 'TAPE HISS HOUR'], ['Bebas Neue', 400, 'TAPE HISS HOUR'], ['League Gothic', 400, 'TAPE HISS HOUR'], ['Oswald', 700, 'TAPE HISS HOUR'],
+    ['Space Mono', 700, '20:00'], ['IBM Plex Mono', 700, '20:00'], ['JetBrains Mono', 700, '20:00'], ['Courier Prime', 700, '20:00']
+  ];
+  rows.forEach(([f, w, t], i) => {
+    const d = document.createElement('div');
+    d.style.cssText = `top:${i * 160}px;font-family:'${f}';font-weight:${w}`;
+    d.textContent = t; d.dataset.font = f; document.body.append(d);
+  });
+</script>
+</body>
+</html>

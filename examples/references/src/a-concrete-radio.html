@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concrete Radio 94.1 — original reference A</title>
+<!-- Original reference made for this repository (fictional station). Apache-2.0 with the repo.
+     Rendered to ../ref-a-concrete-radio.png at 1440×900, DPR 1. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#d8d5cc;--ink:#121212;--red:#ff3b1f}
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{background:var(--bg);color:var(--ink);font:14px/1.4 "Space Mono",monospace;display:grid;grid-template-rows:44px 1fr 56px;height:100vh;overflow:hidden}
+  .air{background:var(--ink);color:var(--bg);display:flex;align-items:center;white-space:nowrap;overflow:hidden;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+  .air span{padding-left:24px}
+  .air b{color:var(--red);margin:0 18px}
+  main{display:grid;grid-template-columns:58fr 42fr;border-bottom:3px solid var(--ink)}
+  .big{border-right:3px solid var(--ink);padding:18px 28px;position:relative;display:flex;flex-direction:column;justify-content:flex-end}
+  .big h1{margin:0;font:400 238px/.82 Anton,Impact,sans-serif;text-transform:uppercase;letter-spacing:-.01em}
+  .big .freq{position:absolute;top:22px;left:28px;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+  .live{position:absolute;top:40px;right:48px;width:150px;height:150px;border-radius:50%;background:var(--red);display:grid;place-items:center;
+    transform:rotate(-14deg);font:400 44px/1 Anton,Impact,sans-serif;letter-spacing:.02em}
+  .sched{display:grid;grid-template-rows:auto 1fr}
+  .sched h2{margin:0;padding:16px 22px;border-bottom:3px solid var(--ink);font:700 13px/1 "Space Mono",monospace;letter-spacing:.14em;text-transform:uppercase}
+  table{width:100%;border-collapse:collapse}
+  td{padding:14px 22px;border-bottom:1.5px solid var(--ink);vertical-align:top}
+  td.t{width:110px;font-weight:700}
+  td.n{font:400 26px/1.05 Anton,Impact,sans-serif;text-transform:uppercase}
+  tr.now td{background:var(--ink);color:var(--bg)}
+  tr.now td.n::after{content:" ●";color:var(--red)}
+  footer{display:grid;grid-template-columns:1fr auto auto;align-items:center}
+  footer>*{padding:0 22px;height:100%;display:flex;align-items:center;border-right:3px solid var(--ink);text-transform:uppercase;letter-spacing:.1em;font-size:12px}
+  footer>*:last-child{border-right:0;background:var(--red);font-weight:700}
+</style>
+</head>
+<body>
+<div class="air" aria-hidden="true"><span>On air <b>●</b> Night Shift with the Concrete Choir <b>●</b> Requests open until 02:00 <b>●</b> On air <b>●</b> Night Shift with the Concrete Choir <b>●</b> Requests open until 02:00 <b>●</b> On air</span></div>
+<main>
+  <section class="big">
+    <span class="freq">Community radio · 94.1 FM · since 1987</span>
+    <div class="live">LIVE</div>
+    <h1>Concrete<br>Radio</h1>
+  </section>
+  <section class="sched">
+    <h2>Tonight</h2>
+    <table>
+      <tr><td class="t">20:00</td><td class="n">Tape Hiss Hour</td></tr>
+      <tr><td class="t">21:30</td><td class="n">Brass &amp; Rust</td></tr>
+      <tr class="now"><td class="t">23:00</td><td class="n">Night Shift</td></tr>
+      <tr><td class="t">02:00</td><td class="n">Static Until Dawn</td></tr>
+      <tr><td class="t">05:00</td><td class="n">Morning Grain</td></tr>
+    </table>
+  </section>
+</main>
+<footer><span>Listener-funded. No ads. No algorithm.</span><span>Call 555 0194</span><span>Donate</span></footer>
+</body>
+</html>

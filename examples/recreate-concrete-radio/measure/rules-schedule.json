@@ -1,0 +1,53 @@
+{
+  "image": "examples/references/ref-a-concrete-radio.png",
+  "size": [
+    1440,
+    900
+  ],
+  "crop": [
+    903,
+    44,
+    537,
+    797
+  ],
+  "method": "share of pixels darker than 60 >= 0.9 along the line",
+  "vertical": [],
+  "horizontal": [
+    {
+      "from_px": 89,
+      "to_px": 91,
+      "thickness_px": 3,
+      "center_fraction": 0.1
+    },
+    {
+      "from_px": 240,
+      "to_px": 240,
+      "thickness_px": 1,
+      "center_fraction": 0.2667
+    },
+    {
+      "from_px": 390,
+      "to_px": 406,
+      "thickness_px": 17,
+      "center_fraction": 0.4422
+    },
+    {
+      "from_px": 429,
+      "to_px": 540,
+      "thickness_px": 112,
+      "center_fraction": 0.5383
+    },
+    {
+      "from_px": 690,
+      "to_px": 690,
+      "thickness_px": 1,
+      "center_fraction": 0.7667
+    },
+    {
+      "from_px": 840,
+      "to_px": 840,
+      "thickness_px": 1,
+      "center_fraction": 0.9333
+    }
+  ]
+}

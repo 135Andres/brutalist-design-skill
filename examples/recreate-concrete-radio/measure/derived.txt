@@ -1,0 +1,5 @@
+LIVE principal-axis angle: -16.6 deg (negative = counter-clockwise), ink pixels 1403
+marquee red dot centers x: [111.5, 505.0, 804.0, 925.0, 1318.0]
+gaps between dots: [393.5, 299.0, 121.0, 393.0]
+marquee text runs (x0,x1): [(25, 77), (146, 471), (539, 770), (838, 891), (959, 1284), (1352, 1439)]
+text ink touching right edge: True

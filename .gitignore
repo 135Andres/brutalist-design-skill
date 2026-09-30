@@ -1,21 +1,20 @@
-# Imágenes de referencia: derechos desconocidos, no se publican (DECISIONS.md A-3)
+# Third-party reference images: unknown rights, never published (docs/DECISIONS.md A-3)
 references/images/
 
-# Capturas de verificación y salidas locales
-shots/
-**/shots/
+# Local screenshots and scratch output (examples keep theirs in examples/**/screens/)
+/shots/
 *.log
 
 # Node
 node_modules/
 
-# Sistema y editores
+# OS and editors
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
 *.swp
 
-# Notas y borradores locales
+# Local notes and drafts
 *.local.md
 .scratch/

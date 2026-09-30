@@ -1,0 +1,25 @@
+{
+  "image": "examples/references/ref-a-concrete-radio.png",
+  "crop": [
+    1030,
+    395,
+    400,
+    140
+  ],
+  "color": "#ff3b1f",
+  "tol": 60.0,
+  "pixels": 292,
+  "method": "pixels within RGB distance 60.0 of #ff3b1f",
+  "bbox_px": [
+    1155,
+    413,
+    20,
+    19
+  ],
+  "bbox_fraction": [
+    0.8021,
+    0.4589,
+    0.0139,
+    0.0211
+  ]
+}

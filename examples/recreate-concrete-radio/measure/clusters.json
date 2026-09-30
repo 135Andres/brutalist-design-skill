@@ -1,0 +1,35 @@
+{
+  "image": "examples/references/ref-a-concrete-radio.png",
+  "size": [
+    1440,
+    900
+  ],
+  "regions": [],
+  "contrast": [],
+  "clusters": [
+    {
+      "hex": "#d8d5cc",
+      "pixels": 915009,
+      "share": 0.706,
+      "method": "k-means, k=4, seed=0"
+    },
+    {
+      "hex": "#121212",
+      "pixels": 349350,
+      "share": 0.2696,
+      "method": "k-means, k=4, seed=0"
+    },
+    {
+      "hex": "#fe3b1f",
+      "pixels": 21642,
+      "share": 0.0167,
+      "method": "k-means, k=4, seed=0"
+    },
+    {
+      "hex": "#74716d",
+      "pixels": 9999,
+      "share": 0.0077,
+      "method": "k-means, k=4, seed=0"
+    }
+  ]
+}

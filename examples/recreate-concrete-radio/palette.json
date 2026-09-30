@@ -1,0 +1,147 @@
+{
+  "image": "examples/references/ref-a-concrete-radio.png",
+  "size": [
+    1440,
+    900
+  ],
+  "regions": [
+    {
+      "name": "concrete",
+      "hex": "#d8d5cc",
+      "rgb": [
+        216,
+        213,
+        204
+      ],
+      "pixels": 100000,
+      "box": [
+        100,
+        150,
+        500,
+        200
+      ],
+      "method": "median of flat patch",
+      "mean_abs_deviation": 0.0
+    },
+    {
+      "name": "ink",
+      "hex": "#121212",
+      "rgb": [
+        18,
+        18,
+        18
+      ],
+      "pixels": 4000,
+      "box": [
+        200,
+        1,
+        500,
+        8
+      ],
+      "method": "median of flat patch",
+      "mean_abs_deviation": 0.0
+    },
+    {
+      "name": "signal",
+      "hex": "#ff3b1f",
+      "rgb": [
+        255,
+        59,
+        31
+      ],
+      "pixels": 300,
+      "box": [
+        740,
+        95,
+        20,
+        15
+      ],
+      "method": "median of flat patch",
+      "mean_abs_deviation": 0.0
+    },
+    {
+      "name": "ink_row",
+      "hex": "#121212",
+      "rgb": [
+        18,
+        18,
+        18
+      ],
+      "pixels": 9000,
+      "box": [
+        1250,
+        470,
+        150,
+        60
+      ],
+      "method": "median of flat patch",
+      "mean_abs_deviation": 0.0
+    },
+    {
+      "name": "signal_block",
+      "hex": "#ff3b1f",
+      "rgb": [
+        255,
+        59,
+        31
+      ],
+      "pixels": 1020,
+      "box": [
+        1350,
+        846,
+        85,
+        12
+      ],
+      "method": "median of flat patch",
+      "mean_abs_deviation": 0.0
+    }
+  ],
+  "contrast": [
+    {
+      "pair": [
+        "ink",
+        "concrete"
+      ],
+      "ratio": 12.77,
+      "AA_normal_4.5": true,
+      "AA_large_3": true
+    },
+    {
+      "pair": [
+        "ink",
+        "signal"
+      ],
+      "ratio": 5.26,
+      "AA_normal_4.5": true,
+      "AA_large_3": true
+    },
+    {
+      "pair": [
+        "concrete",
+        "ink_row"
+      ],
+      "ratio": 12.77,
+      "AA_normal_4.5": true,
+      "AA_large_3": true
+    },
+    {
+      "pair": [
+        "signal",
+        "ink"
+      ],
+      "ratio": 5.26,
+      "AA_normal_4.5": true,
+      "AA_large_3": true
+    },
+    {
+      "pair": [
+        "concrete",
+        "signal"
+      ],
+      "ratio": 2.43,
+      "AA_normal_4.5": false,
+      "AA_large_3": false
+    }
+  ],
+  "clusters": []
+}

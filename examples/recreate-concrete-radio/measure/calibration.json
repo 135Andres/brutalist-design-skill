@@ -1,0 +1,122 @@
+[
+  {
+    "font": "Anton",
+    "text": "CONCRETE",
+    "width_px": 357,
+    "cap_px": 87,
+    "ratio": 4.103,
+    "reference_ratio": 4.074,
+    "error_pct": 0.7,
+    "cap_per_em": 0.87
+  },
+  {
+    "font": "Bebas Neue",
+    "text": "CONCRETE",
+    "width_px": 302,
+    "cap_px": 72,
+    "ratio": 4.194,
+    "reference_ratio": 4.074,
+    "error_pct": 3.0,
+    "cap_per_em": 0.72
+  },
+  {
+    "font": "League Gothic",
+    "text": "CONCRETE",
+    "width_px": 273,
+    "cap_px": 75,
+    "ratio": 3.64,
+    "reference_ratio": 4.074,
+    "error_pct": -10.6,
+    "cap_per_em": 0.75
+  },
+  {
+    "font": "Oswald",
+    "text": "CONCRETE",
+    "width_px": 414,
+    "cap_px": 83,
+    "ratio": 4.988,
+    "reference_ratio": 4.074,
+    "error_pct": 22.4,
+    "cap_per_em": 0.83
+  },
+  {
+    "font": "Anton",
+    "text": "TAPE HISS HOUR",
+    "width_px": 577,
+    "cap_px": 87,
+    "ratio": 6.632,
+    "reference_ratio": 6.773,
+    "error_pct": -2.1,
+    "cap_per_em": 0.87
+  },
+  {
+    "font": "Bebas Neue",
+    "text": "TAPE HISS HOUR",
+    "width_px": 472,
+    "cap_px": 72,
+    "ratio": 6.556,
+    "reference_ratio": 6.773,
+    "error_pct": -3.2,
+    "cap_per_em": 0.72
+  },
+  {
+    "font": "League Gothic",
+    "text": "TAPE HISS HOUR",
+    "width_px": 433,
+    "cap_px": 75,
+    "ratio": 5.773,
+    "reference_ratio": 6.773,
+    "error_pct": -14.8,
+    "cap_per_em": 0.75
+  },
+  {
+    "font": "Oswald",
+    "text": "TAPE HISS HOUR",
+    "width_px": 673,
+    "cap_px": 85,
+    "ratio": 7.918,
+    "reference_ratio": 6.773,
+    "error_pct": 16.9,
+    "cap_per_em": 0.85
+  },
+  {
+    "font": "Space Mono",
+    "text": "20:00",
+    "width_px": 295,
+    "cap_px": 73,
+    "ratio": 4.041,
+    "reference_ratio": 4.0,
+    "error_pct": 1.0,
+    "cap_per_em": 0.73
+  },
+  {
+    "font": "IBM Plex Mono",
+    "text": "20:00",
+    "width_px": 293,
+    "cap_px": 72,
+    "ratio": 4.069,
+    "reference_ratio": 4.0,
+    "error_pct": 1.7,
+    "cap_per_em": 0.72
+  },
+  {
+    "font": "JetBrains Mono",
+    "text": "20:00",
+    "width_px": 287,
+    "cap_px": 75,
+    "ratio": 3.827,
+    "reference_ratio": 4.0,
+    "error_pct": -4.3,
+    "cap_per_em": 0.75
+  },
+  {
+    "font": "Courier Prime",
+    "text": "20:00",
+    "width_px": 285,
+    "cap_px": 60,
+    "ratio": 4.75,
+    "reference_ratio": 4.0,
+    "error_pct": 18.8,
+    "cap_per_em": 0.6
+  }
+]

@@ -1,0 +1,24 @@
+mobile-390 overflowX 0 
+mobile-390 js {"innerWidth":390,"clipped":[],"h1":"89.7px"}
+mobile-390-schedule overflowX 0 
+reflow-320 overflowX 0 
+reflow-320 js {"innerWidth":320,"clipped":[],"h1":"73.6px"}
+zoom200-640 overflowX 0 
+zoom200-640 js {"innerWidth":640,"clipped":[],"h1":"147.2px"}
+console errors: none
+motion overflowX 0 
+motion js {"px_per_s":91,"paused_drift_px":0,"pressed":"true"}
+console errors: none
+focus-pause overflowX 0 
+focus-pause js {"active":"pause","visible":"1"}
+focus-donate overflowX 0 
+focus-donate js {"active":"donate","outline":"solid 3px","focusable":["Pause ticker","Donate"]}
+console errors: none
+axe-scratch overflowX 0 
+axe-scratch js {"violations":[],"passes":24,"incomplete":["color-contrast"]}
+console errors: none
+reduced-motion overflowX 0 
+reduced-motion js {"animations":0,"transform":"none"}
+console errors: none
+no-js overflowX 0 
+console errors: none
