@@ -32,6 +32,28 @@ tests behind each). Free to use, as the repository is. To scope before building:
 - Each template is accessible (accessibility.md) and says what was and was not verified.
 - A landing section that presents them, separate from the existing gallery of experiments.
 
+## Idea from the maintainer: beautiful pages with few tokens (to research)
+
+Extend "Efficiency" beyond a style: make good-looking web pages while spending few tokens. Not
+started; the maintainer wants a research first. Open design question: a **mode inside `brutalist`**
+or a **separate skill**.
+
+- Agent's view (`[proposal]`): start as a mode inside this skill, because the scope is unknown until
+  the research is done and a separate skill must be self-contained (the installer copies one skill
+  folder, so links to another skill's files break), which means duplicating shared files
+  (glossary, accessibility, stacks, setup). Extract to its own skill if it proves to be useful
+  without brutalism.
+- Efficiency is better seen as an **axis that combines with any style** than as a style itself.
+- First numbers (estimates, about 4 characters per token): `SKILL.md` ≈ 1.2k tokens, always loaded;
+  all skill text ≈ 14k tokens if everything were loaded, a typical command loads roughly 6–8k; the
+  gallery pages are ≈ 1.6k–4.5k tokens each. So the skill's own context can cost more than the page
+  it produces; iterations and screenshots are further costs. To be measured, not assumed.
+- Questions for the research: what drives the cost of generating a page (output size, rounds of
+  revision, screenshots, skill context); what levers exist (a tokens/design-system file first,
+  reusable templates, system fonts, CSS-only effects, diffs instead of rewrites); what makes a
+  small page look good; how to measure quality and cost together.
+- Connects to the templates collection: a template turns a page into filling in content.
+
 ## The project site (later, once the skill is polished)
 
 When the skill is polished there will be many designs from many points of view, and the site will
