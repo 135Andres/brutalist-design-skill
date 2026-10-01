@@ -27,7 +27,7 @@ style, also invite the user to look the name up before designing.
 Look up: "web brutalism", Brutalist Web Design, "l'Internet brut".
 ```
 ┌───────────────────┐
-│ TITLE            │
+│ TITLE             │
 ├─────────┬─────────┤
 │ text    │ text    │
 └─────────┴─────────┘
@@ -64,7 +64,7 @@ designers, clashing colour, "wrong" spacing (look up "New Ugly design", "interne
 like buttons. Look up: "neubrutalism", "neobrutalism UI".
 ```
 ╔════════╗  ┌────────┐█
-║ TITLE ║  │ button │█
+║ TITLE  ║  │ button │█
 ╚════════╝  └────────┘█
 ```
 
@@ -74,9 +74,9 @@ late 1990s and early 2000s. Polished, not raw; the sources link it to brutalism 
 trend articles. Look up: "Y2K aesthetic", "Y2K futurism" or "cyber Y2K" (excludes the fashion sense),
 "Y2K web design". Some archives use "Y2K" for the whole Flash era, a wider sense.
 ```
-╭━━━━━━━━━━━━━━━━╮
+╭━━━━━━━━━━━━━━━╮
 ┃ ▓▒░ TITLE ░▒▓ ┃
-╰━━━━━━━━━━━━━━━━╯
+╰━━━━━━━━━━━━━━━╯
   ( pill button )
 ```
 *Variant — Frutiger Aero:* glossy glass interfaces, water, bubbles, sky, green and blue; the

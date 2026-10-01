@@ -274,6 +274,25 @@ elements or keep pure brutalism, typography and the like. Answering is never req
 5. The full research text is not in the repository (the maintainer's copy); its sources that
    matter are listed in `field-map.md`.
 
+## A-20 · Branch v0.2; review of A-17–A-19 (2026-10-01)
+
+1. `brutalist-design-skill@0.2.0` is on npm (published by the maintainer). From now on the
+   agent's commits go to the branch **`v0.2`**, at the maintainer's request.
+2. The maintainer asked for a full review ("no errors, no contradictions, nothing that could
+   affect the user"). Fixed: published 0.2.0 still said "fluorescent on black" for Rave and
+   `critique.md` named an internal decision id; the skill files named decision ids again
+   (they must stay self-contained); `inspire.md` called every style a kind of brutalism; the
+   Styles format was still marked inconclusive; `critique.md` said both "never the user's taste"
+   and "the user's own page" without reconciling them; ASCII previews were misaligned.
+3. `[proposal]`, added in the review: with eight styles, a **variant is mentioned only when the
+   user leans towards its style**; for Rave the agent **offers both looks** and, if the user does
+   not choose, picks one as a `DECISION` (setup questions are skippable, so "ask which one" was
+   not enough).
+4. A second research prompt, on how each style is built (methods, resources with licences,
+   mistakes, accessibility, cost), is in
+   [`prompts/research-styles-craft.md`](prompts/research-styles-craft.md), so the agent follows
+   sourced methods instead of inventing them.
+
 ## Open questions
 
 Kept in one place: [`SPEC.md` § Open questions](SPEC.md#open-questions). *(This section
