@@ -23,7 +23,7 @@ style, also invite the user to look the name up before designing.
 Look up: "web brutalism", Brutalist Web Design, "l'Internet brut".
 ```
 ┌───────────────────┐
-│ UMBRAL            │
+│ TITLE            │
 ├─────────┬─────────┤
 │ text    │ text    │
 └─────────┴─────────┘
@@ -32,7 +32,7 @@ Look up: "web brutalism", Brutalist Web Design, "l'Internet brut".
 produce, a working page with the indispensable parts. Not an established style name: it is the
 research's label for the "UX minimalists" and for performance-first sites.
 ```
-UMBRAL
+TITLE
 one clear line of text
 [ button ]
 ```
@@ -40,7 +40,7 @@ one clear line of text
 to unsettle or to break convention. Legibility is the usual cost. Look up: "antidesign" (NN/g),
 "l'Internet fou", Italian anti-design (a different, older movement).
 ```
- UMBRAL▒▒▒▒
+ TITLE▒▒▒▒
    text over ▒▒▒
  ▒▒ odd order ▒▒
 ```
@@ -48,7 +48,7 @@ to unsettle or to break convention. Legibility is the usual cost. Look up: "anti
 like buttons. Look up: "neubrutalism", "neobrutalism UI".
 ```
 ╔════════╗  ┌────────┐█
-║ UMBRAL ║  │ button │█
+║ TITLE ║  │ button │█
 ╚════════╝  └────────┘█
 ```
 
