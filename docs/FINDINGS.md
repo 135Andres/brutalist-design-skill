@@ -95,6 +95,8 @@ maintainer's words (translated), seen on a phone:
   reference imagery replaced), not about the positions; the three questions about the map (names,
   whether it helped, what is missing) went unanswered, so the experiment does not show whether the
   map helps. B, which changed least between versions, was the one left as is.
+- Asked again afterwards (2026-10-01), the maintainer said the map "helped quite a lot" and asked
+  for Y2K and Rave; both were researched and added, with Webcore, Terminal and five variants.
 - Applied to the skill as neutral process rules (`inspire.md`, "Iterating on a sketch"; `verify.md`).
 - Mistake found while building: text columns in C first had contrast between 1.2:1 and 3.4:1
   against the colour blurs; a readable variant was needed (measured 7.55:1).

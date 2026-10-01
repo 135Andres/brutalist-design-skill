@@ -1,6 +1,6 @@
 # field-map — styles in the field of brutalism
 
-> **Status: experimental**, reviewed 2026-09-30. Descriptive, not prescriptive. Loaded by
+> **Status: experimental**, reviewed 2026-10-01. Descriptive, not prescriptive. Loaded by
 > [inspire](inspire.md), [edit](edit.md) and, once specified, [critique](critique.md);
 > **never by [recreate](recreate.md)**. Source grades and claims are as compiled by the research
 > behind this file.
@@ -12,6 +12,10 @@ and you pick a style, it is a `DECISION` with its reason, taken from the brief, 
 reference or this map (cited).
 
 ## Eight styles (a piece may combine several)
+
+The first four are readings of brutalism found in the sources; the other four (Y2K, Rave,
+Webcore, Terminal) are nearby aesthetics that people ask for alongside it. Show each by name;
+mention a variant only when the user leans towards the style it belongs to.
 
 They use the names people already search for, so the user can look them up before deciding.
 The user sees these names only when the agent says them in the conversation ([setup](setup.md),
@@ -31,6 +35,7 @@ Look up: "web brutalism", Brutalist Web Design, "l'Internet brut".
 *Variant — Swiss:* strict grid, asymmetric layout, flush-left sans, photography, white space;
 it serves legibility, where brutalism is raw. Look up: "International Typographic Style",
 "Swiss style web design".
+
 **Efficiency** — what you would see: the essentials and nothing else; light, quick and cheap to
 produce, a working page with the indispensable parts. Not an established style name: it is the
 research's label for the "UX minimalists" and for performance-first sites.
@@ -41,7 +46,8 @@ one clear line of text
 ```
 *Variant — Low-tech:* default typefaces, dithered images, a static page, sometimes a battery
 indicator; built for low energy use. Look up: "low-tech website", "solar powered website".
-Efficiency is also a mode that combines with any style (planned; A-19).
+Efficiency is also planned as a mode that combines with any style.
+
 **Antidesign** — what you would see: overlapping or oddly ordered text, type over texture; made
 to unsettle or to break convention. Legibility is the usual cost. Look up: "antidesign" (NN/g),
 "l'Internet fou", Italian anti-design (a different, older movement).
@@ -51,8 +57,9 @@ to unsettle or to break convention. Legibility is the usual cost. Look up: "anti
  ▒▒ odd order ▒▒
 ```
 *Variants — Glitch:* RGB split, corrupted images, scanlines; failure used as material (look up
-"glitch art", "Glitch Studies Manifesto"). *New Ugly:* feigned-amateur layouts by trained
+"glitch art", "Glitch Studies Manifesto"); flicker must pass WCAG 2.3.1. *New Ugly:* feigned-amateur layouts by trained
 designers, clashing colour, "wrong" spacing (look up "New Ugly design", "internet ugly").
+
 **Neobrutalism** — what you would see: thick borders, flat colour, hard shadows, buttons that look
 like buttons. Look up: "neubrutalism", "neobrutalism UI".
 ```
@@ -63,8 +70,8 @@ like buttons. Look up: "neubrutalism", "neobrutalism UI".
 
 **Y2K** — what you would see: chrome and metallic type, gradients and gloss, translucent
 candy-coloured plastic, rounded pills and bevelled windows; the friendly-technology look of the
-late 1990s and early 2000s. Polished, not raw: it is grouped with brutalism only by trend
-articles. Look up: "Y2K aesthetic", "Y2K futurism" or "cyber Y2K" (excludes the fashion sense),
+late 1990s and early 2000s. Polished, not raw; the sources link it to brutalism only through
+trend articles. Look up: "Y2K aesthetic", "Y2K futurism" or "cyber Y2K" (excludes the fashion sense),
 "Y2K web design". Some archives use "Y2K" for the whole Flash era, a wider sense.
 ```
 ╭━━━━━━━━━━━━━━━━╮
@@ -74,9 +81,10 @@ articles. Look up: "Y2K aesthetic", "Y2K futurism" or "cyber Y2K" (excludes the 
 ```
 *Variant — Frutiger Aero:* glossy glass interfaces, water, bubbles, sky, green and blue; the
 softer, later look (late 2000s). Look up: "Frutiger Aero", "Windows Vista Aero".
+
 **Rave** — what you would see: loud or fluorescent colour, collage and dense layers, warped or
 mismatched lettering (sometimes a different typeface per letter), the smiley. Two looks share
-the name; ask which one: the **1980s–90s rave and acid house flyer** (look up "rave flyer 1990s",
+the name; offer both, and if the user does not choose, pick one as a `DECISION`: the **1980s–90s rave and acid house flyer** (look up "rave flyer 1990s",
 "acid house flyers", "Designers Republic WipEout") and **acid graphics**, a 2010s revival with
 chrome type and stretched textures (look up "acid graphics", "acidgrafix"). Legibility is the
 usual cost; flashing effects must pass WCAG 2.3.1 ([accessibility](accessibility.md)).
@@ -87,6 +95,7 @@ usual cost; flashing effects must pass WCAG 2.3.1 ([accessibility](accessibility
 │ date · place│
 └─────────────┘
 ```
+
 **Webcore** — what you would see: the hand-made personal web of the 1990s and its revival:
 tiled backgrounds, visitor counters, "under construction" GIFs, pixel art, small 88×31 badges,
 webrings. Raw like brutalism but decorative and maximal. Look up: "Neocities", "GeoCities
@@ -96,6 +105,7 @@ aesthetic", "webcore", "web revival".
  visitors: 000417
 [88x31][88x31][88x31]
 ```
+
 **Terminal** — what you would see: monospace everywhere, a dark background, phosphor green or
 amber text, box-drawing borders, a blinking cursor, `[ OK ]` status lines. Look up: "terminal
 aesthetic website", "TUI web design", "CRT phosphor UI".
@@ -112,19 +122,19 @@ aesthetic website", "TUI web design", "CRT phosphor UI".
 | Efficiency | efficiency | "UX minimalists" (Deville); Copeland on performance |
 | Antidesign | clash | "Anti-ists" (Deville); O'Brien's *fou*; NN/g "Antidesign" |
 | Neobrutalism | legible distinction | Neobrutalism (mostly trade blogs) |
-| Y2K | — (added in A-17) | Wikipedia "Y2K aesthetic"; CARI; Web Design Museum (Flash-era sense) |
-| Rave | — (added in A-17) | Eye on Design and Mixmag (flyers); CARI "Acidgrafix" (2010s) |
-| Webcore | — (added in A-19) | press on Neocities (The Verge, Xataka); a university blog on the "web revival" |
-| Terminal | — (added in A-19) | trade catalogues and design kits only (grade B) |
+| Y2K | — (added later) | Wikipedia "Y2K aesthetic"; CARI; Web Design Museum (Flash-era sense) |
+| Rave | — (added later) | Eye on Design and Mixmag (flyers); CARI "Acidgrafix" (2010s) |
+| Webcore | — (added later) | press on Neocities (The Verge, via an excerpt; Xataka); a university blog on the "web revival" |
+| Terminal | — (added later) | trade catalogues and design kits only (grade B) |
 
 `INFERENCE` (from aligning four taxonomies): Efficiency has no name of its own in the other
-taxonomies, and none of the pre-2020 ones covers Neobrutalism. Four may not be the right number.
-The names are a proposal; the first run showed that the research labels were not understood.
-Y2K and Rave were added at the maintainer's request (A-17) and researched separately
-(2026-10-01): both are **adjacent aesthetics**, not kinds of brutalism. Y2K is linked to it only
-by trend articles; Rave borrows antidesign's density and rule-breaking. Webcore and Terminal
-(A-19) are close to brutalism (hand-made raw pages; text-first monospace); Terminal rests on
-grade B sources only. The variants come from the same research and sit inside the nearest style
+taxonomies, and none of the pre-2020 ones covers Neobrutalism; a later research found
+Efficiency the weakest of the styles as a look, closer to an axis. The research labels were not
+understood by users, so the names people search for are used instead.
+Y2K, Rave, Webcore and Terminal were added on request and researched separately (2026-10-01).
+The sources treat Y2K and Rave as **adjacent aesthetics**: Y2K is linked to brutalism only by
+trend articles; Rave borrows antidesign's density and rule-breaking. Webcore and Terminal are
+closer (hand-made raw pages; text-first monospace); Terminal rests on grade B sources only. The variants come from the same research and sit inside the nearest style
 so the list stays short. Considered and left out: Vaporwave (not brutalist), Memphis,
 maximalism and broken grid (an axis: layout formality), kinetic type (a motion setting).
 
@@ -197,7 +207,7 @@ They are not evidence states.
 - **S** Wikipedia, "Y2K aesthetic" — <https://en.wikipedia.org/wiki/Y2K_aesthetic>
 - **S** AIGA Eye on Design, "What rave culture is teaching modern graphic designers" — <https://eyeondesign.aiga.org/what-rave-culture-is-teaching-modern-graphic-designers/>
 - **S** Mixmag, acid house flyers — <https://mixmag.net/feature/we-turned-your-favourite-festival-line-ups-into-acid-house-flyers>
-- **P** Low-tech Magazine, "How to build a low-tech website" — <https://solar.lowtechmagazine.com/about/the-solar-website/>
+- **P** Low-tech Magazine, on its solar-powered website — <https://solar.lowtechmagazine.com/about/the-solar-website/>
 - **P** Menkman, *Glitch Studies Manifesto* — <https://artcornwall.org/features/Glitch_Studies_Manifesto.htm>
 - **A** Martín-Sanromán et al. (2024), New Ugly and postmodernism, *Universum* — <https://uloyola.es/en/scientific-offer/publications/intersecciones-entre-posmodernismo-new-ugly-y-grafica-popular-en-el-diseno-grafico-contemporaneo-article>
 - **S** Dazed on Frutiger Aero — <https://www.dazeddigital.com/life-culture/article/58103/1/what-is-frutiger-aero-aesthetic-tiktok-msn-messenger-windows-vista-noughties>

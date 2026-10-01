@@ -5,7 +5,12 @@
 - **Eight styles and five variants on the map**, researched: Webcore and Terminal are new; Swiss,
   Low-tech, Glitch, New Ugly and Frutiger Aero are variants inside the nearest style. Y2K and
   Rave were corrected (Rave now names two looks: the 1990s flyer and 2010s acid graphics).
-  *Experimental.*
+  *Experimental.* Variants are mentioned only when you lean towards their style, so the list stays
+  short.
+- **Fixed from 0.2.0:** the Rave description said "fluorescent on black", which the stronger
+  sources do not support; `critique.md` pointed to an internal decision id that users cannot
+  see; `critique` now says plainly that it reviews the piece (yours or the skill's), never your
+  taste.
 
 ## 0.2.0 — 2026-10-01
 

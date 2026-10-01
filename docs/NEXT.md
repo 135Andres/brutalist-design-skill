@@ -1,4 +1,4 @@
-# Next — where the work stands (2026-09-30)
+# Next — where the work stands (2026-10-01)
 
 Handoff for whoever continues (a remote Claude session, or anyone). Everything needed is in
 this repository; the exceptions are listed at the end.
@@ -6,8 +6,9 @@ this repository; the exceptions are listed at the end.
 ## State
 
 - Repository: `main` on GitHub; site live on GitHub Pages
-  (`https://135andres.github.io/brutalist-design-skill/`); npm `brutalist-design-skill@0.1.0`
-  published (0.2.0 is prepared in `package.json`; publish after the merge), `npx brutalist-design-skill` works.
+  (`https://135andres.github.io/brutalist-design-skill/`); npm `brutalist-design-skill@0.2.0`
+  published (2026-10-01), `npx brutalist-design-skill` works. Work continues on the branch `v0.2`
+  (the maintainer's request); what is on it and not on npm is listed under 0.3.0 in `CHANGELOG.md`.
 - Two audits answered: [`audits/`](audits/). axe-core: 0 violations on every page.
 
 ## Waiting for the maintainer
@@ -87,6 +88,13 @@ share different kinds of brutalism. Goals recorded by the maintainer:
 - **More modular** than today (separate files for styles and scripts, per
   [`stacks.md`](../skill/brutalist/references/stacks.md) §2) so that speed is prioritised.
 - Starts after the skill is more polished; the templates collection above is part of it.
+
+## Research to run (maintainer)
+
+- How each style is built (methods, resources with licences, mistakes, accessibility, cost):
+  prompt in [`prompts/research-styles-craft.md`](prompts/research-styles-craft.md). Results go
+  into `field-map.md`, `resources.md` and `effects.md`, so the agent follows sourced methods
+  instead of inventing them.
 
 ## Open after the Styles experiment
 
