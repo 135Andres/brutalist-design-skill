@@ -247,6 +247,16 @@ elements or keep pure brutalism, typography and the like. Answering is never req
    maintainer's request: **Y2K** and **Rave** ("acid graphics"), from a short search, with weaker
    sources than the four from the research.
 
+## A-18 · The efficient mode lives inside the skill (2026-10-01)
+
+1. The maintainer decided that "beautiful pages with few tokens" is a **mode inside `brutalist`**,
+   not a separate skill. This closes the open design question in `NEXT.md`; the agent's earlier
+   view (decide after measuring) no longer applies to *where* it lives, only to *what* it contains.
+2. Its content goes in one reference file loaded only when the mode is used, so it costs nothing
+   otherwise. Which levers it includes is still decided by measurement (protocol in `NEXT.md`).
+3. A research prompt on Y2K, Rave and further candidate styles is in
+   [`prompts/research-styles-y2k-rave.md`](prompts/research-styles-y2k-rave.md).
+
 ## Open questions
 
 Kept in one place: [`SPEC.md` § Open questions](SPEC.md#open-questions). *(This section

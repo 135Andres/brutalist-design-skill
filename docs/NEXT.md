@@ -34,8 +34,8 @@ tests behind each). Free to use, as the repository is. To scope before building:
 ## Idea from the maintainer: beautiful pages with few tokens (to research)
 
 Extend "Efficiency" beyond a style: make good-looking web pages while spending few tokens. Not
-started; the maintainer wants a research first. Open design question: a **mode inside `brutalist`**
-or a **separate skill**.
+started; the maintainer wants a research first. **Decided (A-18): a mode inside `brutalist`**, in
+one reference file loaded only when used. The next bullet is the earlier view, kept as history.
 
 - Agent's view (`[proposal]`, revised after the research): decide **after measuring**. For now the
   content can live in one reference file of this skill (cost zero until used), written so it can be
@@ -87,6 +87,12 @@ share different kinds of brutalism. Goals recorded by the maintainer:
 - **More modular** than today (separate files for styles and scripts, per
   [`stacks.md`](../skill/brutalist/references/stacks.md) §2) so that speed is prioritised.
 - Starts after the skill is more polished; the templates collection above is part of it.
+
+## Research to run (maintainer)
+
+- Y2K, Rave and which other styles to map: prompt in
+  [`prompts/research-styles-y2k-rave.md`](prompts/research-styles-y2k-rave.md); results go into
+  `field-map.md`.
 
 ## Open after the Styles experiment
 
