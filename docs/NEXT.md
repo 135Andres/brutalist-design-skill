@@ -63,6 +63,11 @@ or a **separate skill**.
   file before the page (the open `DESIGN.md` format is one; see open question C in `SPEC.md`),
   templates, a script that builds a page from a small tokens JSON, system fonts, CSS-only effects,
   edits by diff, fewer verification screenshots, a smaller model.
+- First real measurement (2026-10-01, Claude Code on Opus 5.5, 1M window, the installed 0.1.0 skill,
+  after invoking `/brutalist` with no command): 42.3k tokens used in total: system tools 13.5k,
+  skills 9.1k for 76 skills (about 120 tokens per skill's metadata), messages 16k, memory files
+  0.2k, the rest system prompt and instructions. Not isolated yet: how much of the messages is the
+  skill body, because there is no baseline taken before invoking it.
 - Measuring: `/context` after invoking the skill and `/skill-doctor` in Claude Code show what the
   skill costs; `/usage` shows tokens by model and cache. The research's protocol (same brief,
   one variable at a time, several runs, record input, cache and output tokens, rounds and
