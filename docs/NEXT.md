@@ -19,6 +19,19 @@ this repository; the exceptions are listed at the end.
 3. Radio Estática was **not liked** (recorded in [`FINDINGS.md`](FINDINGS.md)); it stays out
    of the landing.
 
+## Idea from the maintainer: a templates collection
+
+On the project's GitHub Pages site, a collection of **open-source templates** that people can
+start from or draw inspiration from, made together with the skill (the code, the tokens and the
+tests behind each). Free to use, as the repository is. To scope before building:
+
+- Where they live (for example `examples/templates/<name>/`) and what each holds: the page, a
+  tokens file (CSS custom properties), a short README on how to adapt it, and the command that
+  produced it.
+- Content invented or neutral (A-3), principles taken from references, never their text or marks.
+- Each template is accessible (accessibility.md) and says what was and was not verified.
+- A landing section that presents them, separate from the existing gallery of experiments.
+
 ## Open after the Positions experiment
 
 - Whether the field map helps is **unanswered** (the user's feedback was about execution). Ask the

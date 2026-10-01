@@ -2,8 +2,8 @@
 
 > **Status: experimental**, reviewed 2026-09-30. Descriptive, not prescriptive. Loaded by
 > [inspire](inspire.md), [edit](edit.md) and, once specified, [critique](critique.md);
-> **never by [recreate](recreate.md)**. Source grades below come from a prior research; the
-> agent did not re-read the primary texts (see "Sources").
+> **never by [recreate](recreate.md)**. Source grades and claims are as compiled by the research
+> behind this file.
 
 Sources use "brutalism" for several different things. This file names the positions so they
 can be **offered as options** ([setup](setup.md)). Offering is not imposing: the skill never
@@ -11,17 +11,51 @@ tells a user that their work or reference is, or is not, brutalism. When the bri
 and you pick a position, it is a `DECISION` with its reason, taken from the brief, the
 reference or this map (cited).
 
-## Four positions of intent (provisional names; a piece may combine several)
+## Four positions, in plain words (a piece may combine several)
 
-| Position | Central idea | Sources that describe it |
-|---|---|---|
-| **A · Honest medium** | Be faithful to what the medium is; structure and controls in plain view | Copeland; the "purists" (Deville, via O'Brien); O'Brien's *brut*; NN/g "Brutalism" |
-| **B · Efficiency** | Limit radically in order to perform better | "UX minimalists" (Deville); Copeland on performance |
-| **C · Clash** | Subvert conventions or unsettle on purpose | "Anti-ists" (Deville); O'Brien's *fou*; NN/g "Antidesign" |
-| **D · Legible distinction** | Visible structure plus colour plus working controls | Neobrutalism (mostly trade blogs) |
+Show a user these plain names and previews, not the research labels in brackets.
+
+**A · Structure and type only** *(research label: honest medium)* — what you would see: text,
+lines and a visible grid; nothing added for decoration, the page looks like its own structure.
+```
+┌───────────────────┐
+│ UMBRAL            │
+├─────────┬─────────┤
+│ text    │ text    │
+└─────────┴─────────┘
+```
+**B · Just what's needed** *(research label: efficiency)* — what you would see: the essentials
+and nothing else; light, quick and cheap to produce, a working page with the indispensable parts.
+```
+UMBRAL
+one clear line of text
+[ button ]
+```
+**C · Breaks the rules** *(research label: clash)* — what you would see: overlapping or oddly
+ordered text, type over texture; made to unsettle. Legibility is the usual cost.
+```
+ UMBRAL▒▒▒▒
+   text over ▒▒▒
+ ▒▒ odd order ▒▒
+```
+**D · Bold look, clear controls** *(research label: legible distinction; often called
+neobrutalism)* — what you would see: thick borders, flat colour, buttons that look like buttons.
+```
+╔════════╗  ┌────────┐█
+║ UMBRAL ║  │ button │█
+╚════════╝  └────────┘█
+```
+
+| Position | Sources that describe it |
+|---|---|
+| A | Copeland; the "purists" (Deville, via O'Brien); O'Brien's *brut*; NN/g "Brutalism" |
+| B | "UX minimalists" (Deville); Copeland on performance |
+| C | "Anti-ists" (Deville); O'Brien's *fou*; NN/g "Antidesign" |
+| D | Neobrutalism (mostly trade blogs) |
 
 `INFERENCE` (from aligning four taxonomies): B has no name of its own in the other
-taxonomies, and none of the pre-2020 ones covers D. Four may not be the right number.
+taxonomies, and none of the pre-2020 ones covers D. Four may not be the right number. The
+plain names are a proposal; the first run showed the research labels were not understood.
 
 ## Axes that vary inside a position
 
@@ -84,5 +118,4 @@ They are not evidence states.
 - **A/S/B** further sources: Harvard GSD 2024 exhibition, SAH Archipedia, a 2022 usability
   study, press pieces, and trade blogs on neobrutalism.
 
-Not read by the research: Banham 1966, the Smithsons' texts, early-web primary sources. Not
-re-read by the agent: any of the above. Review before relying on a claim.
+Not read by the research: Banham 1966, the Smithsons' texts, early-web primary sources.

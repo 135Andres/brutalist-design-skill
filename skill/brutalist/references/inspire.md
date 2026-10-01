@@ -37,7 +37,10 @@ or in part; what is skipped becomes your declared `DECISION`.
 | **Derive** | one reference → explicit principles → 3 directions | one strong reference |
 | **Positions** | 3–4 sketches of one real brief, each from a different position in [field-map](field-map.md), every axis value a `DECISION`; *tried once, inconclusive* | the user wants to see how the same content reads from different stances |
 
-Positions, protocol: ask for a real brief and two to four references (never invented);
+Positions, protocol: first explain the step in plain words: what the positions are and why they
+are being offered. Show each by its plain name, one line of what the user would see and a small
+ASCII preview, before asking anything; ask one question at a time and never use the research
+labels with the user. Then ask for a real brief and two to four references (never invented);
 declare the position and each axis value of a sketch as a `DECISION` with its reason; keep
 its origin visible ("position X; principles taken: …"); build and verify it for real and say
 what was not checked; load [accessibility](accessibility.md) and declare any cost a position

@@ -187,6 +187,21 @@ elements or keep pure brutalism, typography and the like. Answering is never req
 5. Open: whether `critique` may read a user's own page (question F in `SPEC.md`); how the
    setup question on strictness and the map relate; the map is untested with a user.
 
+## A-14 · Plain names for the positions; a templates idea (2026-10-01)
+
+1. The maintainer found the names of the four positions unintelligible except the second
+   ("efficiency": some people want a cheap, light, working placeholder design) and, partly,
+   the third, which is easier to understand while seeing previews in the CLI. They also said that
+   neither their opinion nor anyone's should define what brutalism is: the skill is a helper for
+   people who want to build it with AI.
+2. **Applied as a draft (`[proposal]`):** `field-map.md` now uses plain names with a line of what
+   you would see and an ASCII preview ("Structure and type only", "Just what's needed", "Breaks
+   the rules", "Bold look, clear controls"); the research labels stay in brackets for traceability.
+   The next Positions test starts by explaining the step in plain words (`inspire.md`).
+3. The maintainer vouches for the sources of the research, so the map no longer carries a note that
+   the agent did not re-read them.
+4. **Idea recorded, not started:** a templates collection on the project site (see `NEXT.md`).
+
 ## Open questions
 
 Kept in one place: [`SPEC.md` § Open questions](SPEC.md#open-questions). *(This section

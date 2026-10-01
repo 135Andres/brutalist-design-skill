@@ -27,8 +27,8 @@ user decides them. This step only makes those choices easy to state.
 
 ## Questions (pick the ones that help; skip the rest)
 
-1. **How strict is the brutalism?** (To show the named positions found in the field, offer
-   [field-map](field-map.md); it is an option, not a rule.)
+1. **How strict is the brutalism?** (To show the positions found in the field, offer
+   [field-map](field-map.md) by their plain names and previews; it is an option, not a rule.)
    *pure* (raw structure and material, nothing added for looks) · *with elements* (brutalist
    structure plus chosen devices such as marquees, stickers, collage) · *a mix* · *I don't
    know — show me both*. If the user uses the word in their own sense, take theirs.
