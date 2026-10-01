@@ -17,7 +17,7 @@
 | Accessibility | [`accessibility.md`](../skill/brutalist/references/accessibility.md) | **new draft** from the audit; pending review |
 | Glossary | [`glossary.md`](../skill/brutalist/references/glossary.md) | new; collects existing definitions |
 | `inspire` | [`inspire.md`](../skill/brutalist/references/inspire.md) | **experimental** (A-1): formats 2–4 still to test |
-| Field map (Positions tried once, inconclusive) | [`field-map.md`](../skill/brutalist/references/field-map.md) | **new, experimental** (A-13, proposal): positions and axes, sources not re-read |
+| Field map (Styles tried once, inconclusive) | [`field-map.md`](../skill/brutalist/references/field-map.md) | **new, experimental** (A-13, proposal): styles and axes, as compiled by the research |
 | Setup | [`setup.md`](../skill/brutalist/references/setup.md) | **new, experimental** (A-12): optional questions before sketching |
 | `edit` | [`edit.md`](../skill/brutalist/references/edit.md) | **experimental**: needs a test on a page the agent did not write |
 | `verify` | [`verify.md`](../skill/brutalist/references/verify.md) | not specified (interim rules) |

@@ -62,7 +62,7 @@ evidence · method. No totals, percentages or scores.
 
 ## Field terms
 
-Definitions only; no rules. Positions built on them: [field-map](field-map.md).
+Definitions only; no rules. Styles built on them: [field-map](field-map.md).
 
 - **Béton brut** — concrete cast in place that keeps the imprint of its formwork (Le Corbusier).
 - **Art brut** — "raw art" (Dubuffet); one root of the new brutalism according to Banham.

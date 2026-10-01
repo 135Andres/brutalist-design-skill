@@ -1,22 +1,26 @@
-# field-map — positions in the field of brutalism
+# field-map — styles in the field of brutalism
 
 > **Status: experimental**, reviewed 2026-09-30. Descriptive, not prescriptive. Loaded by
 > [inspire](inspire.md), [edit](edit.md) and, once specified, [critique](critique.md);
 > **never by [recreate](recreate.md)**. Source grades and claims are as compiled by the research
 > behind this file.
 
-Sources use "brutalism" for several different things. This file names the positions so they
+Sources use "brutalism" for several different things. This file names the styles so they
 can be **offered as options** ([setup](setup.md)). Offering is not imposing: the skill never
 tells a user that their work or reference is, or is not, brutalism. When the brief is silent
-and you pick a position, it is a `DECISION` with its reason, taken from the brief, the
+and you pick a style, it is a `DECISION` with its reason, taken from the brief, the
 reference or this map (cited).
 
-## Four positions, in plain words (a piece may combine several)
+## Four styles (a piece may combine several)
 
-Show a user these plain names and previews, not the research labels in brackets.
+They use the names people already search for, so the user can look them up before deciding.
+The user sees these names only when the agent says them in the conversation ([setup](setup.md),
+[inspire](inspire.md)); this file is for the agent. The user can answer by typing a name or
+describing what they want in their own words; no command or flag is needed. When offering a
+style, also invite the user to look the name up before designing.
 
-**A · Structure and type only** *(research label: honest medium)* — what you would see: text,
-lines and a visible grid; nothing added for decoration, the page looks like its own structure.
+**Brutalism** — what you would see: text, lines and a visible grid; nothing added for decoration.
+Look up: "web brutalism", Brutalist Web Design, "l'Internet brut".
 ```
 ┌───────────────────┐
 │ UMBRAL            │
@@ -24,40 +28,42 @@ lines and a visible grid; nothing added for decoration, the page looks like its 
 │ text    │ text    │
 └─────────┴─────────┘
 ```
-**B · Just what's needed** *(research label: efficiency)* — what you would see: the essentials
-and nothing else; light, quick and cheap to produce, a working page with the indispensable parts.
+**Efficiency** — what you would see: the essentials and nothing else; light, quick and cheap to
+produce, a working page with the indispensable parts. Not an established style name: it is the
+research's label for the "UX minimalists" and for performance-first sites.
 ```
 UMBRAL
 one clear line of text
 [ button ]
 ```
-**C · Breaks the rules** *(research label: clash)* — what you would see: overlapping or oddly
-ordered text, type over texture; made to unsettle. Legibility is the usual cost.
+**Antidesign** — what you would see: overlapping or oddly ordered text, type over texture; made
+to unsettle or to break convention. Legibility is the usual cost. Look up: "antidesign" (NN/g),
+"l'Internet fou", Italian anti-design (a different, older movement).
 ```
  UMBRAL▒▒▒▒
    text over ▒▒▒
  ▒▒ odd order ▒▒
 ```
-**D · Bold look, clear controls** *(research label: legible distinction; often called
-neobrutalism)* — what you would see: thick borders, flat colour, buttons that look like buttons.
+**Neobrutalism** — what you would see: thick borders, flat colour, hard shadows, buttons that look
+like buttons. Look up: "neubrutalism", "neobrutalism UI".
 ```
 ╔════════╗  ┌────────┐█
 ║ UMBRAL ║  │ button │█
 ╚════════╝  └────────┘█
 ```
 
-| Position | Sources that describe it |
-|---|---|
-| A | Copeland; the "purists" (Deville, via O'Brien); O'Brien's *brut*; NN/g "Brutalism" |
-| B | "UX minimalists" (Deville); Copeland on performance |
-| C | "Anti-ists" (Deville); O'Brien's *fou*; NN/g "Antidesign" |
-| D | Neobrutalism (mostly trade blogs) |
+| Style | Research label | Sources that describe it |
+|---|---|---|
+| Brutalism | honest medium | Copeland; the "purists" (Deville, via O'Brien); O'Brien's *brut*; NN/g "Brutalism" |
+| Efficiency | efficiency | "UX minimalists" (Deville); Copeland on performance |
+| Antidesign | clash | "Anti-ists" (Deville); O'Brien's *fou*; NN/g "Antidesign" |
+| Neobrutalism | legible distinction | Neobrutalism (mostly trade blogs) |
 
-`INFERENCE` (from aligning four taxonomies): B has no name of its own in the other
-taxonomies, and none of the pre-2020 ones covers D. Four may not be the right number. The
-plain names are a proposal; the first run showed the research labels were not understood.
+`INFERENCE` (from aligning four taxonomies): Efficiency has no name of its own in the other
+taxonomies, and none of the pre-2020 ones covers Neobrutalism. Four may not be the right number.
+The names are a proposal; the first run showed that the research labels were not understood.
 
-## Axes that vary inside a position
+## Axes that vary inside a style
 
 | Axis | Values seen in sources |
 |---|---|

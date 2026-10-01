@@ -202,6 +202,23 @@ elements or keep pure brutalism, typography and the like. Answering is never req
    the agent did not re-read them.
 4. **Idea recorded, not started:** a templates collection on the project site (see `NEXT.md`).
 
+## A-15 · Styles are named by what people call them; "styles" replaces "positions" (2026-10-01)
+
+1. The maintainer did not like the plain names proposed in A-14 (too long, or not convincing) and
+   asked to use the names people already use: brutalism for brutalism, neobrutalism for the one
+   with bold borders and clear controls, and the real name of the clash one, so that the user is
+   encouraged to **research what a style means before asking the agent to design**. For the
+   efficiency one the maintainer preferred the original name.
+2. **Applied as a draft (`[proposal]`):** `field-map.md` names the four styles Brutalism,
+   Efficiency, Antidesign and Neobrutalism, with a look-up hint and a preview each.
+3. The word "positions" is replaced by **"styles"** in the skill files (a proposal; other words
+   considered: modes, approaches, directions — "directions" is already used by the Derive format).
+4. The user sees a style's name only when the agent says it in the conversation; they can pick it
+   by typing the name or describing it, with no command. `field-map.md` is for the agent.
+5. **Recorded in `NEXT.md`:** the project site should later be modular and optimised for fluid,
+   animated, intuitive, fast and above all beautiful navigation.
+6. Earlier entries (A-13, A-14) still say "positions"; they are history.
+
 ## Open questions
 
 Kept in one place: [`SPEC.md` § Open questions](SPEC.md#open-questions). *(This section

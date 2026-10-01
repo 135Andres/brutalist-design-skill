@@ -32,7 +32,17 @@ tests behind each). Free to use, as the repository is. To scope before building:
 - Each template is accessible (accessibility.md) and says what was and was not verified.
 - A landing section that presents them, separate from the existing gallery of experiments.
 
-## Open after the Positions experiment
+## The project site (later, once the skill is polished)
+
+When the skill is polished there will be many designs from many points of view, and the site will
+share different kinds of brutalism. Goals recorded by the maintainer:
+
+- Optimised for **fluid, animated, intuitive, fast and beautiful** navigation, above all beautiful.
+- **More modular** than today (separate files for styles and scripts, per
+  [`stacks.md`](../skill/brutalist/references/stacks.md) §2) so that speed is prioritised.
+- Starts after the skill is more polished; the templates collection above is part of it.
+
+## Open after the Styles experiment
 
 - Whether the field map helps is **unanswered** (the user's feedback was about execution). Ask the
   three questions again, or leave the map experimental.
