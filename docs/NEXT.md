@@ -7,7 +7,7 @@ this repository; the exceptions are listed at the end.
 
 - Repository: `main` on GitHub; site live on GitHub Pages
   (`https://135andres.github.io/brutalist-design-skill/`); npm `brutalist-design-skill@0.1.0`
-  published, `npx brutalist-design-skill` works.
+  published (0.2.0 is prepared in `package.json`; publish after the merge), `npx brutalist-design-skill` works.
 - Two audits answered: [`audits/`](audits/). axe-core: 0 violations on every page.
 
 ## Waiting for the maintainer

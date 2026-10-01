@@ -219,6 +219,18 @@ elements or keep pure brutalism, typography and the like. Answering is never req
    animated, intuitive, fast and above all beautiful navigation.
 6. Earlier entries (A-13, A-14) still say "positions"; they are history.
 
+## A-16 · Proposals approved; release path (2026-10-01)
+
+1. The maintainer approved as decisions the proposals marked `[proposal]` in **A-13** (item 1: the
+   map of styles is descriptive, offered and never imposed), **A-14** (item 2: plain names with
+   previews, superseded in detail by A-15) and **A-15** (items 2 and 3: the four style names and the
+   word "styles"). The `[proposal]` marker in those entries is history; they now stand.
+2. **Not covered:** the `[proposal]` in A-10 item 2 (the user's words override detection; sketches
+   stay one file; `edit` keeps a page's format) is still unreviewed.
+3. **Release path:** the work on `claude/dev` goes to `main` through a pull request, which lists what
+   improves the quality of use for users; the npm package is to be updated (version 0.2.0). Publishing
+   needs the maintainer's account and 2FA, so it is the maintainer's step after the merge.
+
 ## Open questions
 
 Kept in one place: [`SPEC.md` § Open questions](SPEC.md#open-questions). *(This section
