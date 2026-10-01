@@ -38,16 +38,36 @@ Extend "Efficiency" beyond a style: make good-looking web pages while spending f
 started; the maintainer wants a research first. Open design question: a **mode inside `brutalist`**
 or a **separate skill**.
 
-- Agent's view (`[proposal]`): start as a mode inside this skill, because the scope is unknown until
-  the research is done and a separate skill must be self-contained (the installer copies one skill
-  folder, so links to another skill's files break), which means duplicating shared files
-  (glossary, accessibility, stacks, setup). Extract to its own skill if it proves to be useful
-  without brutalism.
-- Efficiency is better seen as an **axis that combines with any style** than as a style itself.
-- First numbers (estimates, about 4 characters per token): `SKILL.md` ≈ 1.2k tokens, always loaded;
-  all skill text ≈ 14k tokens if everything were loaded, a typical command loads roughly 6–8k; the
-  gallery pages are ≈ 1.6k–4.5k tokens each. So the skill's own context can cost more than the page
-  it produces; iterations and screenshots are further costs. To be measured, not assumed.
+- Agent's view (`[proposal]`, revised after the research): decide **after measuring**. For now the
+  content can live in one reference file of this skill (cost zero until used), written so it can be
+  lifted out. Reasons: a separate skill must be self-contained (the installer copies one skill
+  folder, so links to another skill's files break), which means duplicating shared files; and the
+  cost of one more skill is small (about 100 tokens of metadata per session, per vendor docs), so the
+  real risk is overlapping descriptions, not tokens. Against staying a mode: the goal is
+  beautiful pages with few tokens in **any** style, and someone who wants that would not search for
+  a skill called "brutalist"; if that is the audience, a separate skill is the better home.
+- Efficiency is better seen as an **axis that combines with any style** than as a style itself,
+  though some styles are cheaper to generate and serve than others.
+- Corrected numbers (the first estimates here were wrong in two ways): only a skill's metadata
+  (about 100 tokens) is always loaded; the `SKILL.md` body enters when the skill is invoked and then
+  **stays in the conversation**, so every line is a recurring cost. And models since Claude 4.7 use
+  a tokenizer that yields about 30% more tokens for the same text, so the "4 characters per token"
+  estimates (`SKILL.md` ≈ 1.2k, a typical command 6–8k, gallery pages 1.6k–4.5k) are lower bounds
+  until counted with the model in use. For scale at list prices, output tokens cost five times input
+  tokens and cache reads a tenth, so a page's output can cost more than reading the skill once.
+- Costs easy to miss: reasoning ("thinking") tokens are billed as output and cannot be switched off
+  in the newest models; each verification screenshot costs about 1.3k–2.7k input tokens; every tool
+  call resends the history. Scripts that run without loading their code into the context are the
+  best-documented saving, and `scripts/` already works that way.
+- Candidate levers to test (none has independent evidence of saving for generating a page): a tokens
+  file before the page (the open `DESIGN.md` format is one; see open question C in `SPEC.md`),
+  templates, a script that builds a page from a small tokens JSON, system fonts, CSS-only effects,
+  edits by diff, fewer verification screenshots, a smaller model.
+- Measuring: `/context` after invoking the skill and `/skill-doctor` in Claude Code show what the
+  skill costs; `/usage` shows tokens by model and cache. The research's protocol (same brief,
+  one variable at a time, several runs, record input, cache and output tokens, rounds and
+  screenshots, judge quality by a person) is the way to compare; it is in the maintainer's private
+  research, not in this repository.
 - Questions for the research: what drives the cost of generating a page (output size, rounds of
   revision, screenshots, skill context); what levers exist (a tokens/design-system file first,
   reusable templates, system fonts, CSS-only effects, diffs instead of rewrites); what makes a
