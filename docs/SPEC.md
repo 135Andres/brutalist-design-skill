@@ -17,7 +17,7 @@
 | Accessibility | [`accessibility.md`](../skill/brutalist/references/accessibility.md) | **new draft** from the audit; pending review |
 | Glossary | [`glossary.md`](../skill/brutalist/references/glossary.md) | new; collects existing definitions |
 | `inspire` | [`inspire.md`](../skill/brutalist/references/inspire.md) | **experimental** (A-1): formats 2–4 still to test |
-| Field map (Styles tried once, inconclusive) | [`field-map.md`](../skill/brutalist/references/field-map.md) | **new, experimental** (A-13, approved in A-16): six styles (Y2K and Rave added in A-17, weaker sources) and axes; the maintainer says it helped |
+| Field map (Styles tried once, inconclusive) | [`field-map.md`](../skill/brutalist/references/field-map.md) | **new, experimental** (A-13, approved in A-16): eight styles and five variants (A-17, A-19) and axes; the maintainer says it helped |
 | Setup | [`setup.md`](../skill/brutalist/references/setup.md) | **new, experimental** (A-12): optional questions before sketching |
 | `edit` | [`edit.md`](../skill/brutalist/references/edit.md) | **experimental**: needs a test on a page the agent did not write |
 | `verify` | [`verify.md`](../skill/brutalist/references/verify.md) | not specified (interim rules) |
@@ -26,6 +26,7 @@
 | Templates | [`templates/`](../skill/brutalist/templates/) | new; follow the closed vocabulary |
 | Scripts | `sample_palette.py`, `find_rules.py`, `ink_bbox.py`, `overlay.html`, `shots.mjs` | written; used in the worked example. `spring_to_css`: planned |
 | Per-tool installer | [`install.mjs`](../install.mjs) (`npx brutalist-design-skill`) | done (A-6, A-7); **published on npm, 0.1.0**, and `npx brutalist-design-skill` tested from the registry; copy tested into Claude Code, Codex and Hermes folders of a test home; loading inside each tool not tested |
+| Efficient mode | — | **decided** (A-18, A-19): a modifier inside the skill, one reference file; content to be measured |
 | Templates collection | — | **idea** (A-14), not started: open-source starting points on the project site |
 | Gallery and site | [`examples/gallery/`](../examples/gallery/), [`index.html`](../index.html) | live on GitHub Pages (A-5, A-8); axe-core: 0 violations on every page after the second audit |
 | Worked example | [`examples/recreate-concrete-radio/`](../examples/recreate-concrete-radio/README.md) | done; not an independent test (same author as its reference) |

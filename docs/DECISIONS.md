@@ -257,6 +257,23 @@ elements or keep pure brutalism, typography and the like. Answering is never req
 3. A research prompt on Y2K, Rave and further candidate styles is in
    [`prompts/research-styles-y2k-rave.md`](prompts/research-styles-y2k-rave.md).
 
+## A-19 · The map grows to eight styles; the efficient mode is a modifier (2026-10-01)
+
+1. The research on Y2K and Rave was answered (the maintainer ran the prompt in
+   `prompts/research-styles-y2k-rave.md`). Corrections applied to `field-map.md`: Y2K is polished,
+   not raw, and is grouped with brutalism only by trend articles; Rave names **two looks** (the
+   1980s–90s flyer and the 2010s "acid graphics"), and "on black" was dropped as unsupported.
+2. **Added at the maintainer's choice:** two styles, **Webcore** and **Terminal** (Terminal on
+   grade B sources only), and five **variants** inside existing styles: Swiss (Brutalism),
+   Low-tech (Efficiency), Glitch and New Ugly (Antidesign), Frutiger Aero (Y2K).
+3. **Not taken:** Vaporwave, and grouping the list by stance and era. Left out by the research:
+   Memphis, maximalism, broken grid, kinetic type.
+4. **The efficient mode is a modifier** that combines with any command and any style ("inspire in
+   efficient mode"), not a command of its own. The research also found Efficiency weakest as a
+   style and better read as an axis; it stays on the map as a look for now.
+5. The full research text is not in the repository (the maintainer's copy); its sources that
+   matter are listed in `field-map.md`.
+
 ## Open questions
 
 Kept in one place: [`SPEC.md` § Open questions](SPEC.md#open-questions). *(This section
