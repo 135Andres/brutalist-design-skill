@@ -17,7 +17,7 @@
 | Accessibility | [`accessibility.md`](../skill/brutalist/references/accessibility.md) | **new draft** from the audit; pending review |
 | Glossary | [`glossary.md`](../skill/brutalist/references/glossary.md) | new; collects existing definitions |
 | `inspire` | [`inspire.md`](../skill/brutalist/references/inspire.md) | **experimental** (A-1): formats 2–4 still to test |
-| Field map (Styles tried once, inconclusive) | [`field-map.md`](../skill/brutalist/references/field-map.md) | **new, experimental** (A-13, approved in A-16): styles and axes, as compiled by the research |
+| Field map (Styles tried once, inconclusive) | [`field-map.md`](../skill/brutalist/references/field-map.md) | **new, experimental** (A-13, approved in A-16): six styles (Y2K and Rave added in A-17, weaker sources) and axes; the maintainer says it helped |
 | Setup | [`setup.md`](../skill/brutalist/references/setup.md) | **new, experimental** (A-12): optional questions before sketching |
 | `edit` | [`edit.md`](../skill/brutalist/references/edit.md) | **experimental**: needs a test on a page the agent did not write |
 | `verify` | [`verify.md`](../skill/brutalist/references/verify.md) | not specified (interim rules) |
@@ -53,15 +53,15 @@ Decided on 2026-09-30 ([A-11](DECISIONS.md)):
 - **D.** `accessibility.md` is loaded by every command that writes code.
 - **E.** Two builds (fidelity and `build-a11y`) only when they differ; otherwise one.
 
-Still open:
+Decided on 2026-10-01 ([A-17](DECISIONS.md)):
 
-- **F.** May `critique` read a user's own page? `critique.md` says it reviews what the skill
-  produced, never the user's taste or references. Idea to test: questions about a piece
-  relative to itself (which position it reads as, whether its decisions hold together, what
-  it costs in usability and whether that is declared), never a checklist or verdict.
+- **C.** `recreate` does not export `DESIGN.md` for now.
+- **F.** `critique` may review a user's own page only by rendering it and looking at it
+  (screenshots plus content), never its look from text or code alone; if it cannot render it,
+  it reviews the quality of the code. Questions about the piece
+  relative to itself, never a checklist or verdict; still to specify.
 
-- **C.** Should `recreate` also export the inventory as `DESIGN.md`? Agent's view
-  (`[proposal]`): not now; see A-11.
+None open.
 
 ## Next
 

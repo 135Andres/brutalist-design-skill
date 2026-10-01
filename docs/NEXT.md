@@ -12,8 +12,7 @@ this repository; the exceptions are listed at the end.
 
 ## Waiting for the maintainer
 
-1. **Open question C** (`DESIGN.md` export) in [`SPEC.md`](SPEC.md#open-questions). A, B, D
-   and E were decided in A-11.
+1. Open questions: none (C and F decided in A-17).
 2. **Approval** of the drafts `motion.md`, `effects.md`, `resources.md`, `accessibility.md`
    (reviewed and corrected 2026-09-30, see A-10) and of `stacks.md` §2 (new).
 3. Radio Estática was **not liked** (recorded in [`FINDINGS.md`](FINDINGS.md)); it stays out
@@ -91,9 +90,9 @@ share different kinds of brutalism. Goals recorded by the maintainer:
 
 ## Open after the Styles experiment
 
-- Whether the field map helps is **unanswered** (the user's feedback was about execution). Ask the
-  three questions again, or leave the map experimental.
-- C of the four sketches was dropped; sources of the map are still not re-read by the agent.
+- The maintainer says the map helped (A-17). Y2K and Rave were added; next `inspire` run should
+  show them to the maintainer as sketches.
+- C of the four sketches was dropped.
 
 ## Work that can start
 

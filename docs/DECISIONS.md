@@ -231,6 +231,22 @@ elements or keep pure brutalism, typography and the like. Answering is never req
    improves the quality of use for users; the npm package is to be updated (version 0.2.0). Publishing
    needs the maintainer's account and 2FA, so it is the maintainer's step after the merge.
 
+## A-17 · Questions C and F decided (2026-10-01)
+
+1. **C.** `recreate` does not export the inventory as `DESIGN.md` for now; the maintainer agreed
+   with the agent's view (A-11). It can be reopened by the low-token research, where a tokens file
+   before the page is one of the levers to test.
+2. **F.** `critique` may review a user's own page **only if it renders it and looks at it**
+   (screenshots, read together with the content). Reading the page's text or code alone is not
+   enough: the maintainer's view is that it "would not be of much use". The rest of F stands as an
+   idea to test: questions about the piece relative to itself, never a checklist or a verdict.
+   If the page cannot be rendered, `critique` reviews the **quality of the code** instead and says
+   it could not see the page. `critique.md` is still not specified.
+3. **Field map:** the maintainer says the map of styles "helped quite a lot" (answer to the open
+   question of the first Styles run). It stays experimental, and two styles are added at the
+   maintainer's request: **Y2K** and **Rave** ("acid graphics"), from a short search, with weaker
+   sources than the four from the research.
+
 ## Open questions
 
 Kept in one place: [`SPEC.md` § Open questions](SPEC.md#open-questions). *(This section

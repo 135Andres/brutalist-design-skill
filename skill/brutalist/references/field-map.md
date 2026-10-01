@@ -11,7 +11,7 @@ tells a user that their work or reference is, or is not, brutalism. When the bri
 and you pick a style, it is a `DECISION` with its reason, taken from the brief, the
 reference or this map (cited).
 
-## Four styles (a piece may combine several)
+## Six styles (a piece may combine several)
 
 They use the names people already search for, so the user can look them up before deciding.
 The user sees these names only when the agent says them in the conversation ([setup](setup.md),
@@ -52,16 +52,43 @@ like buttons. Look up: "neubrutalism", "neobrutalism UI".
 ╚════════╝  └────────┘█
 ```
 
+**Y2K** — what you would see: chrome and liquid-silver type, translucent candy-coloured
+plastic, glossy pill buttons, the late-1990s desktop and early-web look. Often mixed with
+brutalist rawness (pixel fonts, hard borders, visible windows). Look up: "Y2K aesthetic",
+"Y2K web design", "Frutiger Aero" (a related, softer look).
+```
+╭━━━━━━━━━━━━━━━━╮
+┃ ▓▒░ TITLE ░▒▓ ┃
+╰━━━━━━━━━━━━━━━━╯
+  ( pill button )
+```
+**Rave** — what you would see: fluorescent colour on black, warped or stretched lettering,
+dense layers and distortion, like a 1990s rave flyer; today often called "acid graphics".
+Legibility is the usual cost, so one plain panel usually holds the practical details. Look up:
+"acid graphics", "rave flyer design", "acid house flyers".
+```
+ ≋T≋I≋T≋L≋E≋
+ ░▒ warped ▒░▓
+┌─────────────┐
+│ date · place│
+└─────────────┘
+```
+
 | Style | Research label | Sources that describe it |
 |---|---|---|
 | Brutalism | honest medium | Copeland; the "purists" (Deville, via O'Brien); O'Brien's *brut*; NN/g "Brutalism" |
 | Efficiency | efficiency | "UX minimalists" (Deville); Copeland on performance |
 | Antidesign | clash | "Anti-ists" (Deville); O'Brien's *fou*; NN/g "Antidesign" |
 | Neobrutalism | legible distinction | Neobrutalism (mostly trade blogs) |
+| Y2K | — (added 2026-10-01) | trade blogs only (Webflow, Setproduct); not in the research |
+| Rave | — (added 2026-10-01) | AIGA Eye on Design on acid graphics; DJ Mag; trade blogs; not in the research |
 
 `INFERENCE` (from aligning four taxonomies): Efficiency has no name of its own in the other
 taxonomies, and none of the pre-2020 ones covers Neobrutalism. Four may not be the right number.
 The names are a proposal; the first run showed that the research labels were not understood.
+Y2K and Rave were added at the maintainer's request (A-17) from a short search, not from the
+research: they are adjacent aesthetics that often borrow brutalist traits, not taxonomies of
+brutalism, and their sources are weaker (grade B, one S).
 
 ## Axes that vary inside a style
 
@@ -121,6 +148,8 @@ They are not evidence states.
 - **P** NN/g, "Brutalism and Antidesign" (2017) — <https://www.nngroup.com/articles/brutalism-antidesign/>
 - **P** O'Brien, Smashing Magazine (Jan 2020) — <https://www.smashingmagazine.com/2020/01/split-personality-brutalist-web-development/> (cites Deville's three micro-styles)
 - **P\*** neobrutalism.dev styling page — excerpt only.
+- **S** AIGA Eye on Design, "Acid graphics are the new psychedelia" — <https://eyeondesign.aiga.org/acid-graphics-are-the-new-psychedelia-with-a-heady-dose-of-cynicism/>
+- **B** Webflow, "Y2K aesthetic for web design" — <https://webflow.com/blog/y2k-aesthetic>; Setproduct, "Retro and brutalist UI design" — <https://setproduct.com/blog/retro-brutalist-ui-design-2026>
 - **A/S/B** further sources: Harvard GSD 2024 exhibition, SAH Archipedia, a 2022 usability
   study, press pieces, and trade blogs on neobrutalism.
 

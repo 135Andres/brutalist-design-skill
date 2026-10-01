@@ -15,12 +15,15 @@ with many users yet.
   colour, typography, elements, motion, who reads the page first, content, and what to avoid. Answer
   some, all or none; what you skip is decided by the agent and declared. Your answers are kept in
   your own words. *Experimental.*
-- **Styles by the names people use.** Brutalism, Efficiency, Antidesign and Neobrutalism, each with
+- **Styles by the names people use.** Brutalism, Efficiency, Antidesign, Neobrutalism, Y2K and Rave, each with
   a one-line description, a small preview and what to look up, offered as options and never imposed.
   You can pick by typing a name or describing what you want. *Experimental.*
 - **Fewer wrong turns when iterating.** The agent says what it understood before building a motion
   (what triggers it, what moves, what stays), changes only what you asked and says what stays,
   checks a phone-sized viewport first, and reads annotated screenshots as feedback.
+
+- **`critique` on your own page** (rule recorded, command still unspecified): the agent renders the
+  page and looks at it; if it cannot render it, it reviews the quality of the code and says so.
 
 ### Accessibility and checks
 
