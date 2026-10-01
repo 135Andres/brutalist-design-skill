@@ -4,10 +4,12 @@
 > skill; what matters is folded into that section, and only the pointer and license stay
 > here.
 
-The skill depends on none of these at runtime. Style catalogs: study them to name the
+The skill depends on none of these at runtime. The column "Consulted by" names the section
+that *points here*; the skill text itself names no tool (only the concept from Kinetics is
+folded in, in [motion](motion.md) §2). Style catalogs: study them to name the
 default you are subverting; never clone a catalog style as the design.
 
-| Use | Resource | Folded into | License (as recorded 2026-09-29) |
+| Use | Resource | Consulted by | License (as recorded 2026-09-29) |
 |---|---|---|---|
 | Describing motion as spring parameters (concept only) | kinetics.colorion.co · github.com/ckissi/kinetics | [motion](motion.md) §2 | **none found** (no LICENSE file, no package.json field, not in README) → all rights reserved: do not copy code or parameter values |
 | Rung-1 type effects | text-effects.colorion.co · github.com/ckissi/colorion-text-effects | [effects](effects.md) | **declared MIT** in its README and site footer; **no LICENSE file** in the repo |

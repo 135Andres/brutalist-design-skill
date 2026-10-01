@@ -1,11 +1,9 @@
 # Pre-publication audit — 2026-09-29
 
-> Requested by the maintainer: «antes de publicarlo quiero que hagamos una auditoría,
-> veamos la accesibilidad y entendibilidad de la skill» (*before publishing, let's audit
-> the skill's accessibility and understandability*). Done by the agent on commit
+> Requested by the maintainer: "Before publishing, let's audit > the skill's accessibility and understandability". Done by the agent on commit
 > `5a4ba36`; **line references point to that commit**. It proposes; it does not decide.
 > Comparison point: the README of [pbakaus/impeccable](https://github.com/pbakaus/impeccable)
-> (read 2026-09-29). *Translated from Spanish (A-4); the response is at the end.*
+> (read 2026-09-29). The response is at the end.
 
 ## Summary
 
@@ -127,7 +125,7 @@ publishable examples. Applied:
 | Finding | Response |
 |---|---|
 | E1 | `SKILL.md` with a command table; README rebuilt around commands and a quick start |
-| E2 | all public documents translated to English; markers now `BUILT · SUBSTITUTED · ADDED · INVENTED · OMITTED` and `REPRODUCED · APPROXIMATE · DIVERGENT · NOT COMPARED` |
+| E2 | all public documents in English; markers now `BUILT · SUBSTITUTED · ADDED · INVENTED · OMITTED` and `REPRODUCED · APPROXIMATE · DIVERGENT · NOT COMPARED` |
 | E3 | one name (`brutalist`) and one command list everywhere |
 | E4 | three original references and one worked example in `examples/` — with a limitation: the same agent made the reference and the recreation, so it demonstrates the method, not its difficulty |
 | E5 | `[prev]` and `[CD]` citations removed from the skill; rules stand on their own |

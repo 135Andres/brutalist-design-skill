@@ -3,8 +3,7 @@
 > Working document. The **content** of the skill lives in
 > [`skill/brutalist/`](../skill/brutalist/SKILL.md), one home per fact; this file keeps
 > only the status of each part, why it is shaped this way, and what is still open.
-> Decisions: [DECISIONS](DECISIONS.md) (`DR5-n`, `A-n`). The earlier Spanish version of
-> the full spec is in the git history (commit `5a4ba36`).
+> Decisions: [DECISIONS](DECISIONS.md) (`DR5-n`, `A-n`).
 
 ## Status
 
@@ -13,18 +12,21 @@
 | Router and principles | [`SKILL.md`](../skill/brutalist/SKILL.md) | draft (A-4) |
 | `recreate` | [`recreate.md`](../skill/brutalist/references/recreate.md) | **closed** by the maintainer (rev. 5) |
 | `motion` | [`motion.md`](../skill/brutalist/references/motion.md) | rev. 3, **pending review** |
-| Effects ladder | [`effects.md`](../skill/brutalist/references/effects.md) | pending review (with motion) |
+| Effects ladder | [`effects.md`](../skill/brutalist/references/effects.md) | pending review; rules for questions A and B decided (A-11) |
 | Resources | [`resources.md`](../skill/brutalist/references/resources.md) | pending review (with motion) |
 | Accessibility | [`accessibility.md`](../skill/brutalist/references/accessibility.md) | **new draft** from the audit; pending review |
 | Glossary | [`glossary.md`](../skill/brutalist/references/glossary.md) | new; collects existing definitions |
 | `inspire` | [`inspire.md`](../skill/brutalist/references/inspire.md) | **experimental** (A-1): formats 2–4 still to test |
+| Field map (Styles tried once, inconclusive) | [`field-map.md`](../skill/brutalist/references/field-map.md) | **new, experimental** (A-13, approved in A-16): styles and axes, as compiled by the research |
+| Setup | [`setup.md`](../skill/brutalist/references/setup.md) | **new, experimental** (A-12): optional questions before sketching |
 | `edit` | [`edit.md`](../skill/brutalist/references/edit.md) | **experimental**: needs a test on a page the agent did not write |
 | `verify` | [`verify.md`](../skill/brutalist/references/verify.md) | not specified (interim rules) |
 | `critique` | [`critique.md`](../skill/brutalist/references/critique.md) | not specified |
-| Stacks | [`stacks.md`](../skill/brutalist/references/stacks.md) | not specified |
+| Stacks | [`stacks.md`](../skill/brutalist/references/stacks.md) | **partly specified**: output format (one file / modular) drafted (A-10), untested |
 | Templates | [`templates/`](../skill/brutalist/templates/) | new; follow the closed vocabulary |
 | Scripts | `sample_palette.py`, `find_rules.py`, `ink_bbox.py`, `overlay.html`, `shots.mjs` | written; used in the worked example. `spring_to_css`: planned |
 | Per-tool installer | [`install.mjs`](../install.mjs) (`npx brutalist-design-skill`) | done (A-6, A-7); **published on npm, 0.1.0**, and `npx brutalist-design-skill` tested from the registry; copy tested into Claude Code, Codex and Hermes folders of a test home; loading inside each tool not tested |
+| Templates collection | — | **idea** (A-14), not started: open-source starting points on the project site |
 | Gallery and site | [`examples/gallery/`](../examples/gallery/), [`index.html`](../index.html) | live on GitHub Pages (A-5, A-8); axe-core: 0 violations on every page after the second audit |
 | Worked example | [`examples/recreate-concrete-radio/`](../examples/recreate-concrete-radio/README.md) | done; not an independent test (same author as its reference) |
 | Tests against real references | — | planned (DR5-5) |
@@ -44,15 +46,22 @@
 
 ## Open questions
 
-- **A.** If the project already uses an animation library, does using it count as
-  climbing a rung?
-- **B.** May invented motion justify a higher rung when declared, or only the static look
-  and an animated source? (`effects.md` assumes yes, declared.)
-- **C.** Should `recreate` also export the inventory as `DESIGN.md`?
-- **D.** Is `accessibility.md` loaded by every command that writes code? (audit A1;
-  `SKILL.md` already assumes yes.)
-- **E.** Deliver both builds (fidelity and `build-a11y`) and state which is publishable?
-  (audit A3; draft rule in `accessibility.md`.)
+Decided on 2026-09-30 ([A-11](DECISIONS.md)):
+
+- **A.** Using an animation library the project already has is **not** a rung climb.
+- **B.** Invented motion may use a higher rung if declared (`DECISION` + reason).
+- **D.** `accessibility.md` is loaded by every command that writes code.
+- **E.** Two builds (fidelity and `build-a11y`) only when they differ; otherwise one.
+
+Still open:
+
+- **F.** May `critique` read a user's own page? `critique.md` says it reviews what the skill
+  produced, never the user's taste or references. Idea to test: questions about a piece
+  relative to itself (which position it reads as, whether its decisions hold together, what
+  it costs in usability and whether that is declared), never a checklist or verdict.
+
+- **C.** Should `recreate` also export the inventory as `DESIGN.md`? Agent's view
+  (`[proposal]`): not now; see A-11.
 
 ## Next
 

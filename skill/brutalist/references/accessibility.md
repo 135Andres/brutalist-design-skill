@@ -1,7 +1,7 @@
 # accessibility — for everything the skill builds
 
-> **Status: draft, new** (from the pre-publication audit, findings A1–A4; pending the
-> maintainer's review). The one home for accessibility rules; every command that writes
+> **Status: draft, new** (loaded by every command that writes code; wording still under
+> review). The one home for accessibility rules; every command that writes
 > code loads this file. Criteria refer to WCAG 2.2.
 
 Brutalism breaks conventions on purpose. Keep the look; do not break the person using it.
@@ -22,7 +22,10 @@ Everything added here is marked `ADDED` in the report.
 - Below AA (1.4.3 text 4.5:1 / large 3:1; 1.4.11 non-text 3:1): warn in the report with
   the measured pairs and ratios; the fix goes in a **separate variant** `build-a11y`,
   marked `ADDED`; never inside the fidelity build.
-- *Draft rule:* deliver both builds and say in the report which one is publishable.
+- **Both builds only when they differ** if any check fails (contrast or
+  another fix that would change the look), deliver the fidelity build **and** `build-a11y`
+  and say in the report which one is publishable. If nothing differs, deliver one build
+  and say so in the report.
 
 ## Brutalist devices and their defaults
 
@@ -33,7 +36,10 @@ Everything added here is marked `ADDED` in the report.
 | marquees with duplicated text | screen readers read it N times | one real copy; duplicates `aria-hidden="true"`; pause control | 1.3.1, 2.2.2 |
 | vertical, rotated, curved or 3D text | reading order and meaning break | real text in DOM order; decorative copies `aria-hidden`; an accessible name for the whole | 1.3.2, 1.1.1 |
 | sticky bars and headers | focused element hidden underneath | `scroll-margin-top`; check with Tab | 2.4.11 |
-| custom or hidden cursor | the pointer disappears | keep the system cursor or a clear replacement; never hide it on interactive areas | usability |
+| custom or hidden cursor | the pointer disappears | keep the system cursor or a clear replacement; never hide it on interactive areas | usability (no WCAG criterion covers the pointer itself) |
+| interaction driven by pointer position or dragging (a cursor that "tunes", sliders, drag-to-scroll) | not discoverable; impossible by keyboard or touch | a visible cue saying what to do; a single-pointer, non-drag alternative (buttons, arrow keys) | 2.5.1, 2.5.7, 2.1.1 |
+| content that appears on hover or focus | disappears before it is read; blocks other content | dismissible (Esc), hoverable, persistent | 1.4.13 |
+| tight line height and letter spacing set on purpose | breaks when the user overrides text spacing | no fixed heights on text boxes; test with the 1.4.12 spacing values | 1.4.12 |
 | raw links, text-only buttons | distinguished by color alone | underline or another non-color cue | 1.4.1 |
 | tiny targets in dense grids | hard to hit | at least 24×24 CSS px or enough spacing | 2.5.8 |
 | horizontal or hijacked scroll | disorients; keyboard trapped | native scroll where possible; every region reachable and escapable by keyboard | 2.1.1, 2.1.2 |
@@ -48,8 +54,13 @@ Everything added here is marked `ADDED` in the report.
   itself, lasts more than 5 s, and runs alongside other content (2.2.2). A marquee next to
   content usually meets them.
 - Loops pause off-screen and in hidden tabs; WebGL has a static fallback.
-- Keyboard and touch equivalents for everything the pointer triggers; focus behaviour and
-  semantics follow the conventions of real design systems — behaviour, not style.
+
+## Input equivalents
+
+- Keyboard and touch equivalents for everything the pointer triggers (hover, drag,
+  cursor position); the first-time visitor is told what to do (a visible cue). Focus
+  behaviour and semantics follow the conventions of real design systems — behaviour, not
+  style.
 
 ## Verify
 

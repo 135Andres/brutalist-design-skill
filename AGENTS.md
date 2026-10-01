@@ -21,5 +21,4 @@ For any AI working in this repository. Short: it routes, it does not explain.
    in a real browser and say what you did **not** verify.
 8. **Public repository**: never add content from private projects or local paths. For
    experiments, use a neutral or invented brief and say so.
-9. **English** for everything public (A-4); the maintainer's quotes stay in Spanish with a
-   translation.
+9. **English** for everything public, decisions included (A-4, A-11).

@@ -1,8 +1,9 @@
 # motion — plan and build motion
 
-> **Status: under review** (spec section 2, rev. 3). Loaded by `recreate` (step 6), by the
-> `motion` command, and by `inspire`/`edit` when they animate. §1 is defined only for
-> `recreate`. Vocabulary: [glossary](glossary.md). Rungs: [effects](effects.md).
+> **Status: under review** (rev. 3). Loaded by `recreate` (step 6), by the
+> `motion` command, and by `inspire`/`edit` when they animate. §1 (traits and inferences)
+> is defined only for `recreate`; §0, §2, §3 and §4–§7 apply to every command that animates
+> (in `edit`, the plan may be one line per change). Vocabulary: [glossary](glossary.md). Rungs: [effects](effects.md).
 
 ## 0. Declare the source (mandatory)
 
@@ -55,18 +56,18 @@ Apply the rule in [effects](effects.md) (cost and permission). Concrete tools:
 
 ## 5. Accessibility and performance
 
-Motion rules live in [accessibility](accessibility.md) §Motion. In short:
-`prefers-reduced-motion` in CSS **and** JS; nothing flashes more than 3 times per second;
-a pause control when motion starts by itself, lasts over 5 s and runs alongside other
-content; animate compositor properties (`transform`, `opacity`) by default, others
-(`clip-path`, `filter`, `mask`, `grid-template-rows`) only if verified smooth; pause
-off-screen loops; static fallback for WebGL. All marked `ADDED`.
+Motion rules (reduced motion in CSS and JS, flashing, pause control, off-screen loops,
+WebGL fallback) live in one place: [accessibility](accessibility.md) §Motion. Specific to
+performance: animate compositor properties (`transform`, `opacity`) by default; others
+(`clip-path`, `filter`, `mask`, `grid-template-rows`) only if verified smooth. All marked
+`ADDED`.
 
 ## 6. Verify
 
-Before/during/after, with frames or video saved to files. A hidden browser tab freezes the
+Before/during/after, with frames or video saved to files. Rounds are capped as in
+[recreate](recreate.md) §5 (closed rule). A hidden browser tab freezes the
 animation clock — sample in a visible or emulated-visible tab. No browser: "motion not
-observed" (method column). At most two adjustment rounds.
+observed" (method column).
 
 ## 7. Report
 

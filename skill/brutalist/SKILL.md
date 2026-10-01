@@ -12,7 +12,9 @@ description: Recreate brutalist and experimental web interfaces from reference i
 ## Principles
 
 1. **Impose nothing on the user.** `recreate` reproduces faithfully, with no lecture about
-   originality. The only limit is rights hygiene, which protects the user.
+   originality. The only limit is rights hygiene, which protects the user. The skill holds
+   no taste of its own: scale, colour, type, ornament and how strict "brutalist" is are the
+   user's to decide; ask ([setup](references/setup.md)) and record their words.
 2. **Say how you know.** Every property read from a reference carries an evidence state;
    everything you infer or choose is marked `INFERENCE` or `DECISION`. See
    [glossary](references/glossary.md).
@@ -22,8 +24,8 @@ description: Recreate brutalist and experimental web interfaces from reference i
    [accessibility](references/accessibility.md).
 5. **No scores.** Verify in a real browser, report what was and was not verified; the
    human judges.
-6. **Work in the project's stack.** Detect it; do not impose one. See
-   [stacks](references/stacks.md).
+6. **Work in the project's stack.** Detect it; do not impose one. One `index.html` by
+   default; modular files when the project is modular. See [stacks](references/stacks.md).
 
 ## Commands
 
@@ -31,13 +33,16 @@ description: Recreate brutalist and experimental web interfaces from reference i
 |---|---|---|---|
 | `recreate <image>` | rebuild a reference image as a working interface, with inventory and report | [recreate](references/recreate.md) → [effects](references/effects.md) → [motion](references/motion.md) | specified |
 | `motion <page>` | plan and build motion, from an animated source or declared as invention | [motion](references/motion.md) → [effects](references/effects.md) | under review |
-| `inspire <images…>` | turn references into divergent sketches and digestible visual questions | [inspire](references/inspire.md) | experimental |
+| `inspire <images…>` | turn references (or just an idea) into divergent sketches and digestible visual questions; starts with an optional [setup](references/setup.md) | [inspire](references/inspire.md) → [setup](references/setup.md) | experimental |
 | `edit <page>` | change an existing page: smallest change first, escalate only if needed | [edit](references/edit.md) | experimental |
 | `verify <page>` | screenshots under fixed conditions, comparison, accessibility pass | [verify](references/verify.md) | not yet specified |
 | `critique <page>` | a review without scores | [critique](references/critique.md) | not yet specified |
 
-Every command that writes code also loads [accessibility](references/accessibility.md).
-Load [glossary](references/glossary.md) whenever a term is unclear.
+Every command that writes code also loads [accessibility](references/accessibility.md)
+and [stacks](references/stacks.md) (output format: one file or modular).
+Load [glossary](references/glossary.md) whenever a term is unclear. `inspire`, `edit` and
+(once specified) `critique` may also load [field-map](references/field-map.md), a descriptive
+map of styles in the field; `recreate` never does.
 
 **No command given?** Infer it: an image plus "build this" → `recreate`; images plus
 "ideas" / "inspire me" → `inspire`; an existing page plus "improve" / "more flavour" →
@@ -49,7 +54,8 @@ Everything lands in files, not only in chat:
 
 ```
 recreations/<slug>/     recreate: reference (or path), inventory.md, palette.json,
-                        build/, screenshots (ref, build, overlay), report.md
+                        build/ (one index.html, or modules if the project is modular),
+                        screenshots (ref, build, overlay), report.md
 motion-plan.md          motion, next to the build it animates
 ```
 
@@ -69,4 +75,4 @@ Templates: [inventory](templates/inventory.md) · [report](templates/report.md) 
 
 Python scripts need Pillow and numpy; `shots.mjs` needs Node ≥ 22 and a Chromium. When a
 script is not available, say which step was done by eye and mark it `estimated`.
-Worked example of all of them: `examples/recreate-concrete-radio/` in the repository.
+Worked example of all of them: <https://github.com/135Andres/brutalist-design-skill/tree/main/examples/recreate-concrete-radio>.

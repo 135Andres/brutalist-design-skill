@@ -59,3 +59,21 @@ evidence · method. No totals, percentages or scores.
 
 - **Study** — a recreation whose rights are unknown; its files are marked
   `study — not for publication`.
+
+## Field terms
+
+Definitions only; no rules. Styles built on them: [field-map](field-map.md).
+
+- **Béton brut** — concrete cast in place that keeps the imprint of its formwork (Le Corbusier).
+- **Art brut** — "raw art" (Dubuffet); one root of the new brutalism according to Banham.
+- **As found** — valuing materials for their inherent qualities, without disguising them.
+- **Image (Banham)** — what, once seen, affects the emotions; not classical beauty.
+- **New brutalism** — the 1950s programme of the Smithsons and Banham; at once a label and a banner.
+- **Brutalism (style)** — later label for architecture of exposed concrete.
+- **Je-m'en-foutisme** — an attitude of indifference that Banham counts as central.
+- **Web brutalism** — the aesthetic and technical reaction on the web since 2014.
+- **Purists, UX minimalists, anti-ists** — Deville's micro-styles, as reported by O'Brien.
+- **L'Internet brut / fou** — O'Brien's two kinds of web brutalism.
+- **Brutalism / Antidesign (NN/g)** — a distinction by intent and effect.
+- **Neobrutalism** — interface style with a thick border, an offset shadow without blur and a flat fill.
+
