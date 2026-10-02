@@ -18,6 +18,7 @@
 | Glossary | [`glossary.md`](../skill/brutalist/references/glossary.md) | new; collects existing definitions |
 | `inspire` | [`inspire.md`](../skill/brutalist/references/inspire.md) | **experimental** (A-1): formats 2–4 still to test |
 | Field map (Styles tried once) | [`field-map.md`](../skill/brutalist/references/field-map.md) | **new, experimental** (A-13, approved in A-16): eight styles and five variants (A-17, A-19) and axes; the maintainer says it helped |
+| Craft (how each style is built) | [`craft.md`](../skill/brutalist/references/craft.md) | **new, experimental** (A-21): from research, mostly grade B sources |
 | Setup | [`setup.md`](../skill/brutalist/references/setup.md) | **new, experimental** (A-12): optional questions before sketching |
 | `edit` | [`edit.md`](../skill/brutalist/references/edit.md) | **experimental**: needs a test on a page the agent did not write |
 | `verify` | [`verify.md`](../skill/brutalist/references/verify.md) | not specified (interim rules) |

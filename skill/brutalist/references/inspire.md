@@ -44,7 +44,8 @@ deciding; they can answer by typing a name or in their own words. Ask one questi
 never use the research labels with the user. Then ask for a real brief and two to four references (never invented);
 declare the style and each axis value of a sketch as a `DECISION` with its reason; keep
 its origin visible ("style X; principles taken: …"); build and verify it for real and say
-what was not checked; load [accessibility](accessibility.md) and declare any cost a style
+what was not checked; load [craft](craft.md) for how the chosen style is built and
+[accessibility](accessibility.md), and declare any cost a style
 carries; record the user's reaction verbatim and treat a choice made from a preview as a
 hypothesis. When a reference's main element is a figurative image, ask the user which image
 or figure to use; do not substitute abstract shapes for it. The map names and asks; it never scores.

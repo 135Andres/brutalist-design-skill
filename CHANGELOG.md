@@ -11,6 +11,10 @@
   sources do not support; `critique.md` pointed to an internal decision id that users cannot
   see; `critique` now says plainly that it reviews the piece (yours or the skill's), never your
   taste.
+- **How each style is built** (`craft.md`, new): for each style, an order of work, the simplest
+  way to build each trait, common mistakes and style-specific accessibility risks, from
+  research. Tools with their licences are listed in `resources.md`; archives without a licence
+  are for study only. *Experimental.*
 - **A quieter installer.** A two-row wordmark replaces the five-row banner and the scrolling
   ticker (which got cut off on narrow terminals). Steps are a numbered log (`[1/3] scope`),
   lists collapse into their result once chosen, and red is kept for selection and status.

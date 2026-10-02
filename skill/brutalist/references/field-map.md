@@ -2,7 +2,7 @@
 
 > **Status: experimental**, reviewed 2026-10-01. Descriptive, not prescriptive. Loaded by
 > [inspire](inspire.md), [edit](edit.md) and, once specified, [critique](critique.md);
-> **never by [recreate](recreate.md)**. Source grades and claims are as compiled by the research
+> **never by [recreate](recreate.md)**. How each style is built: [craft](craft.md). Source grades and claims are as compiled by the research
 > behind this file.
 
 Sources use "brutalism" for several different things. This file names the styles so they

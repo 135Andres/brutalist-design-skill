@@ -89,13 +89,6 @@ share different kinds of brutalism. Goals recorded by the maintainer:
   [`stacks.md`](../skill/brutalist/references/stacks.md) §2) so that speed is prioritised.
 - Starts after the skill is more polished; the templates collection above is part of it.
 
-## Research to run (maintainer)
-
-- How each style is built (methods, resources with licences, mistakes, accessibility, cost):
-  prompt in [`prompts/research-styles-craft.md`](prompts/research-styles-craft.md). Results go
-  into `field-map.md`, `resources.md` and `effects.md`, so the agent follows sourced methods
-  instead of inventing them.
-
 ## Open after the Styles experiment
 
 - The maintainer says the map helped (A-17). Y2K, Rave, Webcore, Terminal and five variants were

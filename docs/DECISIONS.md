@@ -293,6 +293,23 @@ elements or keep pure brutalism, typography and the like. Answering is never req
    [`prompts/research-styles-craft.md`](prompts/research-styles-craft.md), so the agent follows
    sourced methods instead of inventing them.
 
+## A-21 · How each style is built: `craft.md` (2026-10-01)
+
+1. The maintainer ran the craft research (`prompts/research-styles-craft.md`) and asked that the
+   agent work from sourced methods instead of inventing them.
+2. **Applied (`[proposal]`):** a new reference file `craft.md`, loaded by `inspire` and `edit`
+   once a style is chosen and never by `recreate` (closed; it follows the reference). It holds
+   eight shared methods, an order of work, the lowest rung per trait, common mistakes,
+   style-specific risks and a cost table per style. It is separate from `field-map.md` so that
+   offering styles stays cheap and the build detail is read only when needed.
+3. Tools and licences went to `resources.md` (one home for tools), each with the licence as
+   recorded on 2026-10-01; archives with no licence are marked **study only**, and a
+   single-use shader component is marked "do not copy".
+4. Not taken into the skill: the research's numbered WCAG checklist claims (one B source
+   mislabelled the criteria; `accessibility.md` stays the home), and AAA criteria as
+   requirements.
+5. The research text itself is the maintainer's copy, not in the repository.
+
 ## Open questions
 
 Kept in one place: [`SPEC.md` § Open questions](SPEC.md#open-questions). *(This section
