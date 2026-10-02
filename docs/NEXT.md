@@ -7,8 +7,8 @@ this repository; the exceptions are listed at the end.
 
 - Repository: `main` on GitHub; site live on GitHub Pages
   (`https://135andres.github.io/brutalist-design-skill/`); npm `brutalist-design-skill@0.2.0`
-  published (2026-10-01), `npx brutalist-design-skill` works. Work continues on the branch `v0.2`
-  (the maintainer's request); what is on it and not on npm is listed under 0.3.0 in `CHANGELOG.md`.
+  published (2026-10-01), `npx brutalist-design-skill` works. Branch `v0.2` merged into `main`
+  for 0.3.0 (`package.json` bumped; publishing it is the maintainer's step, see Releasing).
 - Two audits answered: [`audits/`](audits/). axe-core: 0 violations on every page.
 
 ## Waiting for the maintainer

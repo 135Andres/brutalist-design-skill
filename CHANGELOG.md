@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.3.0 — unreleased
+## 0.3.0 — 2026-10-01
 
 - **Eight styles and five variants on the map**, researched: Webcore and Terminal are new; Swiss,
   Low-tech, Glitch, New Ugly and Frutiger Aero are variants inside the nearest style. Y2K and
