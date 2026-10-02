@@ -58,7 +58,7 @@ const pretty = p => p.startsWith(HOME) ? '~' + p.slice(HOME.length) : relative(C
 
 // ── the word, in half blocks ─────────────────────────────────────────────
 const GLYPHS = {
-  B: ['█▀▄', '█▄▀'], R: ['█▀█', '█▀▄'], U: ['█ █', '█▄█'], T: ['▀█▀', ' █ '],
+  B: ['█▄▄', '█▄█'], R: ['█▀█', '█▀▄'], U: ['█ █', '█▄█'], T: ['▀█▀', ' █ '],
   A: ['▄▀█', '█▀█'], L: ['█  ', '█▄▄'], I: ['█', '█'],     S: ['█▀▀', '▄▄█'],
 };
 const WORD = 'BRUTALIST';
@@ -86,23 +86,26 @@ async function intro() {
     w(rows.map(r => '  ' + bold(r)).join('\n') + '\n');
   }
   w('\n' + wrap(COMMANDS, ' · ', Math.max(20, COLS() - 4)).map(l => `  ${l}\n`).join(''));
-  w(`  ${dim('an agent skill for brutalist web design · skill/brutalist → your tools')}\n\n`);
+  w(wrap('an agent skill for brutalist web design · skill/brutalist → your tools'.split(' '), ' ', Math.max(20, COLS() - 4)).map(l => `  ${dim(l)}\n`).join('') + '\n');
 }
 
 // ── a keyboard list: ↑↓ move, space toggle, enter confirm ────────────────
 const BACK = Symbol('back');
-function choose({ step, title, items, multi, back }) {
+function choose({ step, title, items, multi, back, start = 0 }) {
   return new Promise(done => {
-    let at = 0, lines = 0;
+    let at = start, lines = 0;
     const draw = () => {
       up(lines);
       const help = (multi ? '↑↓ move · space toggle · a all · enter confirm' : '↑↓ move · enter choose') + (back ? ' · ← back' : '');
-      const body = [`  ${dim(`[${step}/${STEPS}]`)} ${bold(title)}  ${dim(help)}`, ''];
+      const head = `  [${step}/${STEPS}] ${title}  `;  // the help wraps under itself, so a redraw never miscounts lines
+      const helps = wrap(help.split(' · '), ' · ', Math.max(12, COLS() - head.length - 1));
+      const body = [`  ${dim(`[${step}/${STEPS}]`)} ${bold(title)}  ${dim(helps[0])}`, ...helps.slice(1).map(l => ' '.repeat(head.length) + dim(l)), ''];
       items.forEach((it, i) => {
         const box = multi ? (it.on ? red('■') : '□') + ' ' : '';
+        const narrow = COLS() < 50;                 // on narrow terminals the path goes, so no line wraps
         const room = Math.max(8, COLS() - 26 - (it.note ? it.note.length + 2 : 0));
-        const label = it.label.padEnd(16);
-        let line = `  ${i === at ? red('▸') : ' '} ${box}${i === at ? bold(label) : label} ${dim(clip(it.hint || '', room))}`;
+        const label = it.label.padEnd(narrow ? 13 : 16);
+        let line = `  ${i === at ? red('▸') : ' '} ${box}${i === at ? bold(label) : label}${narrow ? '' : ' ' + dim(clip(it.hint || '', room))}`;
         if (it.note) line += '  ' + red(it.note);
         body.push(line);
       });
@@ -207,17 +210,19 @@ async function main() {
   const interactive = TTY && !args.yes;
   const want = typeof args.tools === 'string' ? args.tools.split(',').map(s => s.trim()).filter(Boolean) : null;
   const askScope = !args.scope && interactive;
-  let scope, avail, picked;
+  let scope, avail, picked, scopeAt = 0;
   for (;;) {                                    // ← on the second list returns to the first
     scope = args.scope;
     if (askScope) {
-      scope = (await choose({ step: 1, title: 'scope', items: [
+      const scopes = [
         { label: 'Everywhere', hint: 'your home folder: every project', value: 'global' },
         { label: 'This project', hint: CWD.startsWith(HOME) ? '~' + CWD.slice(HOME.length) : CWD, value: 'project' },
-      ] })).value;
+      ];
+      scope = (await choose({ step: 1, title: 'scope', items: scopes, start: scopeAt })).value;
+      scopeAt = scopes.findIndex(x => x.value === scope);   // ← comes back to the same choice
     }
     scope = scope === 'project' ? 'project' : 'global';
-    log(1, 'scope', scope === 'global' ? 'everywhere (~)' : 'this project ' + dim(pretty(CWD)));
+    log(1, 'scope', scope === 'global' ? 'everywhere (~)' : 'this project ' + dim(clip(pretty(CWD), Math.max(8, COLS() - 31))));
     avail = TOOLS.filter(t => where(t, scope));
     if (interactive && !want) {
       const items = avail.map(t => ({ tool: t, label: t.name, hint: pretty(where(t, scope)), note: detected(t, scope) ? 'detected' : '', on: detected(t, scope) }));

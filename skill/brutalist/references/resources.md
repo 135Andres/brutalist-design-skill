@@ -9,7 +9,7 @@ that *points here*; the skill text itself names no tool (only the concept from K
 folded in, in [motion](motion.md) §2). Style catalogs: study them to name the
 default you are subverting; never clone a catalog style as the design.
 
-| Use | Resource | Consulted by | License (as recorded 2026-09-29) |
+| Use | Resource | Consulted by | License (as recorded 2026-09-29; rows consulted by craft, 2026-10-01) |
 |---|---|---|---|
 | Describing motion as spring parameters (concept only) | kinetics.colorion.co · github.com/ckissi/kinetics | [motion](motion.md) §2 | **none found** (no LICENSE file, no package.json field, not in README) → all rights reserved: do not copy code or parameter values |
 | Rung-1 type effects | text-effects.colorion.co · github.com/ckissi/colorion-text-effects | [effects](effects.md) | **declared MIT** in its README and site footer; **no LICENSE file** in the repo |
@@ -18,7 +18,7 @@ default you are subverting; never clone a catalog style as the design.
 | Focus and semantics conventions | component.gallery | [accessibility](accessibility.md) | verify at time of use |
 | `DESIGN.md` format (if export is adopted) | designmd.ai | [recreate](recreate.md) §8 | verify at time of use |
 | Flat captures for recreate tests | minimal.gallery, appshot.gallery | test corpus | verify at time of use |
-| Open typefaces (most under the OFL; some Apache 2.0 or UFL) | github.com/google/fonts · openfontlicense.org | [craft](craft.md), all styles | per font; "most" OFL-1.1 per the README (as recorded 2026-10-01) |
+| Open typefaces (most under the OFL; some Apache 2.0 or UFL) | github.com/google/fonts · openfontlicense.org | [craft](craft.md), all styles | per font; "most" OFL-1.1 per the README |
 | Monospace and pixel fonts | JetBrains Mono · IBM Plex Mono · Space Mono · Press Start 2P | [craft](craft.md) Terminal, Webcore | OFL-1.1 (JetBrains Mono from its README; the others from package pages) |
 | Experimental display fonts | velvetyne.fr · collletttivo.it · open-foundry.com | [craft](craft.md) Rave, Antidesign | **per font**; foundry-wide licence not found: read each font's licence |
 | Retro desktop UI stylesheets | 98.css · XP.css | [craft](craft.md) Webcore, Y2K | MIT (READMEs) |

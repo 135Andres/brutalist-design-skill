@@ -18,7 +18,9 @@
 - **A quieter installer.** A two-row wordmark replaces the five-row banner and the scrolling
   ticker (which got cut off on narrow terminals). Steps are a numbered log (`[1/3] scope`),
   lists collapse into their result once chosen, and red is kept for selection and status.
-  Press ← on the tools list to go back and change the scope.
+  Press ← on the tools list to go back and change the scope; the list remembers your choice.
+  On narrow terminals the help and the tagline wrap by words and paths are shortened, so the
+  lists redraw cleanly.
 
 ## 0.2.0 — 2026-10-01
 

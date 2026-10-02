@@ -16,7 +16,9 @@ this repository; the exceptions are listed at the end.
 1. Open questions: none (C and F decided in A-17).
 2. **Approval** of the drafts `motion.md`, `effects.md`, `resources.md`, `accessibility.md`
    (reviewed and corrected 2026-09-30, see A-10) and of `stacks.md` §2 (new).
-3. Radio Estática was **not liked** (recorded in [`FINDINGS.md`](FINDINGS.md)); it stays out
+3. **Approval** of the `[proposal]` items in A-20 (variants mentioned only when the user leans
+   towards their style; Rave offers both looks) and A-21 (`craft.md`, how each style is built).
+4. Radio Estática was **not liked** (recorded in [`FINDINGS.md`](FINDINGS.md)); it stays out
    of the landing.
 
 ## Idea from the maintainer: a templates collection
