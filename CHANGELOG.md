@@ -11,6 +11,10 @@
   sources do not support; `critique.md` pointed to an internal decision id that users cannot
   see; `critique` now says plainly that it reviews the piece (yours or the skill's), never your
   taste.
+- **A quieter installer.** A two-row wordmark replaces the five-row banner and the scrolling
+  ticker (which got cut off on narrow terminals). Steps are a numbered log (`[1/3] scope`),
+  lists collapse into their result once chosen, and red is kept for selection and status.
+  Press ← on the tools list to go back and change the scope.
 
 ## 0.2.0 — 2026-10-01
 
