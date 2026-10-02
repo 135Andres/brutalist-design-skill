@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.3.0 — 2026-10-01
+## 0.3.0 — unreleased (merged into `main` 2026-10-01; npm still serves 0.2.0)
 
 - **Eight styles and five variants on the map**, researched: Webcore and Terminal are new; Swiss,
   Low-tech, Glitch, New Ugly and Frutiger Aero are variants inside the nearest style. Y2K and
@@ -15,6 +15,21 @@
   way to build each trait, common mistakes and style-specific accessibility risks, from
   research. Tools with their licences are listed in `resources.md`; archives without a licence
   are for study only. *Experimental.*
+- **Safer installer.** Misspelt options stop the run instead of installing; `--tools x` and
+  `--scope x` work with a space; a requested tool with no folder for the scope stops before
+  anything changes; uninstall keeps a copy you edited; an update copies beside the old skill
+  and swaps, so a failure leaves the old one; a skill folder that is a link is left alone; a dry
+  run ends with "Nothing changed"; the final message says how to name the skill in Claude Code
+  (`/brutalist`) and Codex (`$brutalist`). Copilot is no longer "detected" in every repository
+  with a `.github/` folder.
+- **Screenshots you can trust.** `shots.mjs` opens dev-server URLs (`http://…`) and fails loudly
+  when a page does not load, a selector matches nothing or a JS step throws; parallel runs no
+  longer share a browser, and none is left running.
+- **Measurements on dark pages.** `find_rules.py --polarity light|auto` finds light lines on
+  dark backgrounds; `sample_palette.py` uses far less memory on large screenshots.
+- **Clearer rules.** One table says what each command loads; `recreate` never asks style
+  questions; `edit` keeps your original recoverable and defines its moves; the two-build rule
+  applies only to `recreate`.
 - **A quieter installer.** A two-row wordmark replaces the five-row banner and the scrolling
   ticker (which got cut off on narrow terminals). Steps are a numbered log (`[1/3] scope`),
   lists collapse into their result once chosen, and red is kept for selection and status.

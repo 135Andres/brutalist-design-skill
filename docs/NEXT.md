@@ -18,7 +18,11 @@ this repository; the exceptions are listed at the end.
    (reviewed and corrected 2026-09-30, see A-10) and of `stacks.md` §2 (new).
 3. **Approval** of the `[proposal]` items in A-20 (variants mentioned only when the user leans
    towards their style; Rave offers both looks) and A-21 (`craft.md`, how each style is built).
-4. Radio Estática was **not liked** (recorded in [`FINDINGS.md`](FINDINGS.md)); it stays out
+4. **Decisions from the third audit** (A-23): the number of questions per turn; a minimal edit
+   of the closed `recreate.md` (open question C and a spec id still in it); global folders for
+   Cursor, Gemini CLI and Copilot or `~/.agents/skills` as a shared target; GitHub email
+   privacy; whether A-11.8 stands; a name for the efficient mode; approval of A-23's proposals.
+5. Radio Estática was **not liked** (recorded in [`FINDINGS.md`](FINDINGS.md)); it stays out
    of the landing.
 
 ## Idea from the maintainer: a templates collection
@@ -99,7 +103,7 @@ share different kinds of brutalism. Goals recorded by the maintainer:
 
 ## Work that can start
 
-- `inspire` from zero: re-run it on the maintainer's own projects (see the open question on where they live and what may be published), then the same flow with reference images; format 4 (classic derive) later — see
+- `inspire` from zero: re-run it on the maintainer's own projects (ask first where they live and what may be published), then the same flow with reference images; format 4 (classic derive) later — see
   [`inspire.md`](../skill/brutalist/references/inspire.md); record reactions in FINDINGS.
 - `edit`: a second test on a page the agent did not write.
 - Test `stacks.md` §2 on a modular project (React/Vue/Svelte/Vite) and on an empty folder.

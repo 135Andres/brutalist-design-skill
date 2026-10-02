@@ -1,8 +1,7 @@
 # setup — ask how the user imagines the page
 
-> **Status: experimental.** Loaded by [inspire](inspire.md) when the user is still imagining
-> the page, and by any command that is about to choose look-and-feel on its own. Every
-> question is **optional**.
+> **Status: experimental.** When it is loaded: [SKILL.md](../SKILL.md) (`inspire`, and `edit`
+> when it must choose a look on its own; never `recreate`). Every question is **optional**.
 
 The skill has no taste of its own to impose. Scale, colour, typography, ornament and how
 strictly "brutalist" is read differ from project to project and from person to person; the

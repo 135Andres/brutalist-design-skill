@@ -43,6 +43,7 @@ defined**, of which derive is only one possible form.
 Consequences: the creative mode is not specified until there are results; its name was
 open (*resolved by A-4: `inspire`*). A **maintainer proposal** recorded later: the skill
 should be able to **edit existing pages** ("There's no need to settle on one design from the start; we have to explore and experiment with different designs, so let's work hard on making recreation or inspiration from images really good".
+*(Note added 2026-10-01: this paragraph and the `[proposal]` under A-4 were garbled by the commit that translated the quotes, and A-2 and A-5 were deleted; the original text is restored in [A-22](#a-22--a-2-and-a-5-restored-after-a-faulty-edit-2026-10-01).)*
 
 ## A-3 · Public repository (2026-09-29)
 
@@ -62,6 +63,8 @@ After the pre-publication audit ([`audits/2026-09-29-pre-publication.md`](audits
    `verify`, `critique`. `inspire` and `edit` are marked experimental.
 4. **Examples:** create **original brutalist references** in this repository (rights
    held) and one fully worked example, so examples can be published.
+
+*(Note added 2026-10-01: the next paragraph is garbled; see A-22.)*
 
 `[proposal]` applied with this restructure (the maintainer asked to "I didn't like the recreate example as much — I get it, but it is brutalism; I'd like something more like this", with four third-party references (#39–#42, described in
 `references/README.md`, not versioned). And of the type-test sketch from the private
@@ -309,6 +312,67 @@ elements or keep pure brutalism, typography and the like. Answering is never req
    mislabelled the criteria; `accessibility.md` stays the home), and AAA criteria as
    requirements.
 5. The research text itself is the maintainer's copy, not in the repository.
+
+## A-22 · A-2 and A-5 restored after a faulty edit (2026-10-01)
+
+An independent audit found that the commit that recorded the maintainer's words in English only
+(2026-09-30) rewrote earlier entries: it **deleted A-2 and A-5**, attached A-2's quote to the
+end of A-1 and A-5's quote to the `[proposal]` under A-4, and dropped that proposal's content.
+`FINDINGS.md`, `SPEC.md`, `references/README.md` and a gallery page still cite A-2 and A-5.
+This entry restores the original text (translated to English, per A-11) without editing the
+entries again; notes in A-1 and A-4 point here.
+
+**A-1, last sentence, as written:** a maintainer proposal recorded later: the skill should be
+able to **edit existing pages** ("give it more flavour"); whether that is its own mode was open
+(resolved by A-4: `edit` command).
+
+**A-2 · Own repository and an image-first direction (2026-09-29)**
+1. The work lives in its own repository, `brutalist-design-skill`, under git.
+2. Direction, in the maintainer's words: "There's no need to settle on one design from the
+   start; we have to explore and experiment with different designs, so let's work hard on
+   making recreation or inspiration from images really good."
+
+**A-4, the `[proposal]`, as written:** applied with this restructure (the maintainer asked to
+"structure the skill a bit more"; not separately approved): content moves from the spec into
+the skill's reference files (one home per fact); `accessibility.md` and `glossary.md` are new;
+the spec keeps only status, rationale and open questions.
+
+**A-5 · A gallery, a live site, and the type-test design (2026-09-30)**
+After seeing the worked example, the maintainer's words: "I didn't like the recreate example as
+much — I get it, but it is brutalism; I'd like something more like this", with four third-party
+references (#39–#42, described in `references/README.md`, not versioned). And of the type-test
+sketch from the private experiments: "It's the one I liked most of what we made with this skill."
+1. **Type-test design:** rebuilt with the **same design and invented content**; nothing from the
+   private project is published (A-3 stands).
+2. **Gallery:** new original pages in the spirit of #39–#42 (principles only) go at the top of the
+   README; the Concrete Radio example stays as the step-by-step method demo.
+3. **Live site:** the pages are published with GitHub Pages and linked from the README; the agent
+   asks before enabling it.
+
+`[proposal]`: a check that rejects commits removing lines from this file.
+
+## A-23 · Third audit answered (2026-10-01)
+
+Two independent audits (Claude Opus 5.5, DeepSeek V4.1 Flash); findings and responses in
+[`audits/2026-10-01-third-audit.md`](audits/2026-10-01-third-audit.md). Errors were fixed and
+re-verified. `[proposal]`, applied with the fixes and awaiting approval:
+
+1. **One loading table** in `SKILL.md`; reference files no longer list who loads them.
+   `setup` is loaded by `inspire`, and by `edit` only when it must choose a look on its own.
+2. **Two builds apply to `recreate`**; `inspire`, `edit` and `motion` fix the page and declare
+   each fix `ADDED`.
+3. **`edit` keeps the original recoverable**: under version control, edit in place and show the
+   diff; otherwise a copy beside the original, replaced only when the user says so. Each move
+   (quieter, bolder, delight, typeset, restyle, recompose) is defined in the file.
+4. **Installer:** unknown options stop the run; uninstall backs up a copy that differs; symbolic
+   links are left untouched; Copilot is detected by `.github/skills` or
+   `.github/copilot-instructions.md`, not by any `.github/`.
+
+**For the maintainer:** the number of questions per turn (O-9); authorizing a minimal edit of the
+closed `recreate.md` (O-11); global folders for Cursor, Gemini CLI and Copilot, or
+`~/.agents/skills` as a shared target (O-6); email privacy on GitHub (O-8); whether A-11.8 ("no
+code for now") still stands (O-17); a name for the efficient mode distinct from the Efficiency
+style (O-22).
 
 ## Open questions
 

@@ -70,8 +70,8 @@ copies [`skill/brutalist/`](skill/brutalist/SKILL.md) into each one's skills fol
 
 | Option | Does |
 |---|---|
-| `--yes` | no questions: detected tools, everywhere |
-| `--tools=claude,codex,…` | choose tools (`claude`, `codex`, `cursor`, `gemini`, `copilot`, `opencode`, `hermes`) |
+| `--yes` | no questions: detected tools (Claude Code if none is detected), everywhere unless `--scope`; also what happens when the installer does not run in a terminal |
+| `--tools=claude,codex,…` | choose tools; a tool with no folder for the scope stops the run before anything changes (`claude`, `codex`, `cursor`, `gemini`, `copilot`, `opencode`, `hermes`) |
 | `--scope=global` / `--scope=project` | your home folder / the current folder |
 | `--list` | every tool, its folders, and whether it was detected |
 | `--dry-run` | show what would happen, change nothing |
@@ -86,13 +86,19 @@ copies [`skill/brutalist/`](skill/brutalist/SKILL.md) into each one's skills fol
 | Gemini CLI | — | `.gemini/skills/` |
 | GitHub Copilot | — | `.github/skills/` |
 | OpenCode | `~/.config/opencode/skills/` | `.opencode/skills/` |
-| Hermes Agent | `$HERMES_HOME/skills/` | — |
+| Hermes Agent | `$HERMES_HOME/skills/` (default `~/.hermes/skills/`) | — |
 
 The folders follow each tool's documented skills location. The copy was tested into the
 Claude Code, Codex and Hermes folders of a test home folder; loading inside each tool has
 not been tested yet.
-Updating keeps a copy of an installed skill you edited in `~/.brutalist-skill/backups/`.
-OpenCode also reads `~/.claude/skills/` and `~/.agents/skills/`.
+Updating or uninstalling first keeps a copy of an installed skill that differs from this version
+(edited, or older) in `~/.brutalist-skill/backups/`. The new copy is written beside the old one
+and swapped in, so a failed update leaves the old skill as it was. A skill folder that is a
+symbolic link (a development checkout) is left untouched. Unknown options stop the run.
+Some tools read each other's folders (OpenCode, Cursor, Gemini CLI and Copilot also read
+`~/.agents/skills/` or `~/.claude/skills/`), so installing for several tools can show the skill
+twice in one of them. To name the skill: `/brutalist` in Claude Code, `$brutalist` in Codex;
+tools can also pick it up from a request in plain words.
 **Manual install:** copy `skill/brutalist` into any of the folders above.
 
 ## What makes it different
@@ -149,7 +155,7 @@ by eye):
 | [`docs/SPEC.md`](docs/SPEC.md) | status of each part, rationale, open questions |
 | [`docs/DECISIONS.md`](docs/DECISIONS.md) | the maintainer's decisions (append-only) |
 | [`docs/FINDINGS.md`](docs/FINDINGS.md) | lessons from experiments |
-| [`docs/audits/`](docs/audits/2026-09-29-pre-publication.md) | the pre-publication audit |
+| [`docs/audits/`](docs/audits/) | summaries of the independent audits |
 | [`references/`](references/README.md) | third-party references (described; images not versioned) |
 | [`AGENTS.md`](AGENTS.md) | rules for AIs contributing here |
 

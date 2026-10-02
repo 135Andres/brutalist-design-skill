@@ -1,12 +1,12 @@
 # stacks — work in the project's stack
 
-> **Status: partly specified.** The output-format rule (§2) is untested. Every command that writes code
-> loads this file before writing it.
+> **Status: partly specified.** The output-format rule (§2) is untested. Loaded before
+> writing code ([SKILL.md](../SKILL.md)).
 
 ## 1. Detect, do not impose
 
 Detect the stack from the project (framework, styling approach, existing animation
-library) and build in it. Record it in the inventory under **Assumptions & decisions**
+library) and build in it. Record it under **Assumptions & decisions** in the inventory (`recreate`) or in the report
 (`observed` if read from a file, `INFERENCE` if guessed).
 
 ## 2. Output format — one file by default, modular when the project is
@@ -22,7 +22,7 @@ Look at the project **before** choosing how many files to write.
 
 Rules:
 
-- **Detection is evidence, not a guess.** Name the files that decided it in the inventory
+- **Detection is evidence, not a guess.** Name the files that decided it there
   (e.g. "`package.json` lists `vite` and `svelte`; `src/lib/` holds components").
 - **The user's words win**, in both directions: "give me a single file" forces one file
   inside a modular project; "split it" forces modules in an empty one. Record it as a

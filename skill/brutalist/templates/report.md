@@ -2,7 +2,7 @@
 
 > Template. The rows below are **illustrative examples** — replace them. Vocabulary: [glossary](../references/glossary.md).
 
-Reference: `<path>` · Rights: <…> · Builds: `build/` (fidelity) · `build-a11y/` (if contrast < AA)
+Reference: `<path>` · Rights: <…> · Builds: `build/` (fidelity) · `build-a11y/` (only if a check fails and the fix would change the look)
 Conditions: viewport <w × h>, DPR <n>, zoom 100 %, fonts loaded, animations frozen at start.
 Verified: <what, with which tool> · **Not verified:** <what>
 

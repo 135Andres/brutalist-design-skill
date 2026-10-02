@@ -5,7 +5,7 @@ description: Recreate brutalist and experimental web interfaces from reference i
 
 # brutalist
 
-> **Draft (2026-09-29).** `recreate` is fully specified; `motion` is under review;
+> **Draft (2026-10-01).** `recreate` is fully specified; `motion` is under review;
 > `inspire` and `edit` are experimental; `verify` and `critique` are not yet specified.
 > Each reference file states its own status at the top.
 
@@ -29,21 +29,31 @@ description: Recreate brutalist and experimental web interfaces from reference i
 
 ## Commands
 
-| Command | Use it to | Load | Status |
-|---|---|---|---|
-| `recreate <image>` | rebuild a reference image as a working interface, with inventory and report | [recreate](references/recreate.md) → [effects](references/effects.md) → [motion](references/motion.md) | specified |
-| `motion <page>` | plan and build motion, from an animated source or declared as invention | [motion](references/motion.md) → [effects](references/effects.md) | under review |
-| `inspire <images…>` | turn references (or just an idea) into divergent sketches and digestible visual questions; starts with an optional [setup](references/setup.md) | [inspire](references/inspire.md) → [setup](references/setup.md) | experimental |
-| `edit <page>` | change an existing page: smallest change first, escalate only if needed | [edit](references/edit.md) | experimental |
-| `verify <page>` | screenshots under fixed conditions, comparison, accessibility pass | [verify](references/verify.md) | not yet specified |
-| `critique <page>` | a review without scores | [critique](references/critique.md) | not yet specified |
+| Command | Use it to | Status |
+|---|---|---|
+| `recreate <image>` | rebuild a reference image as a working interface, with inventory and report | specified |
+| `motion <page>` | plan and build motion, from an animated source or declared as invention | under review |
+| `inspire <images…>` | turn references (or just an idea) into divergent sketches and digestible visual questions; starts with an optional setup | experimental |
+| `edit <page>` | change an existing page: smallest change first, escalate only if needed | experimental |
+| `verify <page>` | screenshots under fixed conditions, comparison, accessibility pass | not yet specified |
+| `critique <page>` | a review without scores | not yet specified |
 
-Every command that writes code also loads [accessibility](references/accessibility.md)
-and [stacks](references/stacks.md) (output format: one file or modular).
-Load [glossary](references/glossary.md) whenever a term is unclear. `inspire`, `edit` and
-(once specified) `critique` may also load [field-map](references/field-map.md), a descriptive
-map of styles in the field, and [craft](references/craft.md), how each style is built, once a
-style is chosen; `recreate` never loads either.
+## What each command loads
+
+The one list of loading rules; reference files do not repeat it.
+
+| Command | Always | Only when |
+|---|---|---|
+| `recreate` | [recreate](references/recreate.md), [effects](references/effects.md), [motion](references/motion.md), [accessibility](references/accessibility.md), [stacks](references/stacks.md), [verify](references/verify.md) | — |
+| `motion` | [motion](references/motion.md), [effects](references/effects.md), [accessibility](references/accessibility.md), [stacks](references/stacks.md) | verify: before delivering |
+| `inspire` | [inspire](references/inspire.md), [setup](references/setup.md), [accessibility](references/accessibility.md), [stacks](references/stacks.md) | [field-map](references/field-map.md) when styles are offered; [craft](references/craft.md) once a style is chosen; motion and effects when a sketch animates; verify before delivering |
+| `edit` | [edit](references/edit.md), [accessibility](references/accessibility.md), [stacks](references/stacks.md) | inspire's "Iterating on a sketch" for annotated screenshots; setup when the edit must choose a look on its own; field-map and craft when the page moves towards a named style; motion and effects when it animates; verify before delivering |
+| `verify` | [verify](references/verify.md), [accessibility](references/accessibility.md) | — |
+| `critique` | [critique](references/critique.md), [verify](references/verify.md), [accessibility](references/accessibility.md) | field-map and craft, once critique is specified |
+
+`recreate` **never** loads setup, field-map or craft: it follows the reference.
+[glossary](references/glossary.md): whenever a term is unclear. [resources](references/resources.md):
+only when a section points to it for a concrete tool.
 
 **No command given?** Infer it: an image plus "build this" → `recreate`; images plus
 "ideas" / "inspire me" → `inspire`; an existing page plus "improve" / "more flavour" →

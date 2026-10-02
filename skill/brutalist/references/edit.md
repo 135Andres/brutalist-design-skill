@@ -11,7 +11,10 @@
    far the edit may go.
 2. **Fix the truth first.** If the page states something false, fix that before polishing
    its design.
-3. **Copy, don't overwrite.** Work on a copy; record the original's file and hash.
+3. **Keep the original recoverable.** In a project under version control, edit in place and show
+   the diff (the history keeps the original). Otherwise work on a copy next to it
+   (`<name>.edit.<ext>`), record the original's file and hash, and replace it only when the user
+   says so.
 4. **Smallest change first**, unless the user asks for more. Solve the concrete complaint
    with the least change, and show it. Escalate only if it is not enough, or if the user
    says to:
@@ -19,7 +22,8 @@
    structure). If the edit moves the page towards a named style, load [craft](craft.md).
 5. **Make variants switchable** when the question is "which one?" (e.g. four typefaces ×
    two scales on the same page) instead of rebuilding.
-6. **Map every move to a known playbook** and log it: quieter (noise), bolder / delight
-   (flavour), typeset (type) from Impeccable; restyle vs recompose from claude-design.
-7. **Log the edit**: what you read, the diagnosis, the playbook, what changed, what was
+6. **Name every move** and log it: *quieter* (remove noise: ornament, extra colour, motion),
+   *bolder* (stronger contrast and scale), *delight* (one small detail that adds flavour),
+   *typeset* (type only: family, size, spacing), *restyle* and *recompose* (step 4).
+7. **Log the edit**: what you read, the diagnosis, the moves, what changed, what was
    kept, why, the evidence.

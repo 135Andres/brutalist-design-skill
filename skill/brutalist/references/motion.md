@@ -1,14 +1,15 @@
 # motion — plan and build motion
 
-> **Status: under review** (rev. 3). Loaded by `recreate` (step 6), by the
-> `motion` command, and by `inspire`/`edit` when they animate. §1 (traits and inferences)
-> is defined only for `recreate`; §0, §2, §3 and §4–§7 apply to every command that animates
+> **Status: under review** (rev. 3). When it is loaded: [SKILL.md](../SKILL.md). §1 (traits
+> and inferences) is defined only for `recreate`; §0, §2, §3 and §4–§7 apply to every command that animates
 > (in `edit`, the plan may be one line per change). Vocabulary: [glossary](glossary.md). Rungs: [effects](effects.md).
 
 ## 0. Declare the source (mandatory)
 
-- First line of `motion-plan.md`: "The reference is static; all motion in this build is
-  invention." Template: [motion plan](../templates/motion-plan.md).
+- First line of `motion-plan.md` declares the source: a static reference ("The reference is
+  static; all motion in this build is invention"), an animated source (below), or no
+  reference, as in `inspire` or `edit` ("No reference; all motion is invention").
+  Template: [motion plan](../templates/motion-plan.md).
 - With a GIF or video: name it and say what it shows; extract frames with a script. Only
   what that source shows can reach `REPRODUCED`.
 - No animated source: motion rows are `INVENTED`, fidelity `—`, behaviour `unknown`.

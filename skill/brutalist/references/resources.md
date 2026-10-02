@@ -4,15 +4,16 @@
 > skill; what matters is folded into that section, and only the pointer and license stay
 > here.
 
-The skill depends on none of these at runtime. The column "Consulted by" names the section
-that *points here*; the skill text itself names no tool (only the concept from Kinetics is
-folded in, in [motion](motion.md) §2). Style catalogs: study them to name the
-default you are subverting; never clone a catalog style as the design.
+The skill depends on none of these at runtime. The column "Relevant to" names the sections
+whose content rests on the resource; the other skill files name no tool (only the concept from
+Kinetics is folded in, in [motion](motion.md) §2). Style catalogs and component kits: study them
+for principles and to name a default the design may subvert; never clone one as the design.
+A licence marked "verify at time of use" or "none found" means study only until checked.
 
-| Use | Resource | Consulted by | License (as recorded 2026-09-29; rows consulted by craft, 2026-10-01) |
+| Use | Resource | Relevant to | License (as recorded 2026-09-29; rows relevant to craft, 2026-10-01) |
 |---|---|---|---|
 | Describing motion as spring parameters (concept only) | kinetics.colorion.co · github.com/ckissi/kinetics | [motion](motion.md) §2 | **none found** (no LICENSE file, no package.json field, not in README) → all rights reserved: do not copy code or parameter values |
-| Rung-1 type effects | text-effects.colorion.co · github.com/ckissi/colorion-text-effects | [effects](effects.md) | **declared MIT** in its README and site footer; **no LICENSE file** in the repo |
+| Rung-1 type effects | text-effects.colorion.co · github.com/ckissi/colorion-text-effects | [effects](effects.md) | **declared MIT** in its README and site footer; **no LICENSE file** in the repo: verify at time of use before copying code |
 | Rung-2 option, framework-agnostic | animejs.com | [motion](motion.md) §4 | verify at time of use |
 | Real motion to observe; animated source for study | scrolltide.co | [motion](motion.md) §0; test corpus | "© 2026 Scrolltide. All rights reserved.", mostly paid: study only |
 | Focus and semantics conventions | component.gallery | [accessibility](accessibility.md) | verify at time of use |

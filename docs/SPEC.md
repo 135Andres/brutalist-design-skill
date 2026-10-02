@@ -29,7 +29,7 @@
 | Per-tool installer | [`install.mjs`](../install.mjs) (`npx brutalist-design-skill`) | done (A-6, A-7); **published on npm, 0.2.0** (2026-10-01), and `npx brutalist-design-skill` tested from the registry; copy tested into Claude Code, Codex and Hermes folders of a test home; loading inside each tool not tested |
 | Efficient mode | — | **decided** (A-18, A-19): a modifier inside the skill, one reference file; content to be measured |
 | Templates collection | — | **idea** (A-14), not started: open-source starting points on the project site |
-| Gallery and site | [`examples/gallery/`](../examples/gallery/), [`index.html`](../index.html) | live on GitHub Pages (A-5, A-8); axe-core: 0 violations on every page after the second audit |
+| Gallery and site | [`examples/gallery/`](../examples/gallery/), [`index.html`](../index.html) | live on GitHub Pages (A-5, A-8); axe-core: 0 violations on every page after the second audit; third audit answered (A-23) |
 | Worked example | [`examples/recreate-concrete-radio/`](../examples/recreate-concrete-radio/README.md) | done; not an independent test (same author as its reference) |
 | Tests against real references | — | planned (DR5-5) |
 
@@ -71,4 +71,4 @@ None open.
 2. Creative-mode formats 2–4 → specify `inspire`.
 3. A second `edit` test on a page the agent did not write.
 4. Specify `verify`, `critique`, `stacks`; write the scripts.
-5. Installer per tool; tests against real references.
+5. Installer: test loading inside each tool, Node 18 and Windows; tests against real references.

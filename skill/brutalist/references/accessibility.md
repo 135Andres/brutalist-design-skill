@@ -1,8 +1,7 @@
 # accessibility — for everything the skill builds
 
-> **Status: draft, new** (loaded by every command that writes code; wording still under
-> review). The one home for accessibility rules; every command that writes
-> code loads this file. Criteria refer to WCAG 2.2.
+> **Status: draft, new** (wording still under review). The one home for accessibility rules.
+> Criteria refer to WCAG 2.2.
 
 Brutalism breaks conventions on purpose. Keep the look; do not break the person using it.
 Everything added here is marked `ADDED` in the report.
@@ -22,10 +21,12 @@ Everything added here is marked `ADDED` in the report.
 - Below AA (1.4.3 text 4.5:1 / large 3:1; 1.4.11 non-text 3:1): warn in the report with
   the measured pairs and ratios; the fix goes in a **separate variant** `build-a11y`,
   marked `ADDED`; never inside the fidelity build.
-- **Both builds only when they differ** if any check fails (contrast or
-  another fix that would change the look), deliver the fidelity build **and** `build-a11y`
-  and say in the report which one is publishable. If nothing differs, deliver one build
-  and say so in the report.
+- **Both builds only when they differ.** If any check fails (contrast or another fix that
+  would change the look), deliver the fidelity build **and** `build-a11y` and say in the
+  report which one is publishable. If nothing differs, deliver one build and say so.
+- The two builds apply to `recreate`, where the fidelity build follows the reference. In
+  `inspire`, `edit` and `motion` there is no reference to be faithful to: fix the page itself
+  and declare each fix as `ADDED`.
 
 ## Brutalist devices and their defaults
 

@@ -26,7 +26,7 @@ def hexify(rgb):
 
 def luminance(rgb):
     c = np.asarray(rgb, dtype=float) / 255
-    c = np.where(c <= 0.03928, c / 12.92, ((c + 0.055) / 1.055) ** 2.4)
+    c = np.where(c <= 0.04045, c / 12.92, ((c + 0.055) / 1.055) ** 2.4)   # same result as 0.03928 for 8-bit values
     return float(0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2])
 
 
@@ -56,7 +56,9 @@ def clusters(px, n, seed=0):
         if np.allclose(new, cent):
             break
         cent = new
-    lab = np.argmin(((data[:, None] - cent[None]) ** 2).sum(-1), axis=1)
+    # label in blocks so a large screenshot does not hold every distance in memory at once
+    lab = np.concatenate([np.argmin(((data[i:i + 200000, None] - cent[None]) ** 2).sum(-1), axis=1)
+                          for i in range(0, len(data), 200000)])
     out = [{'hex': hexify(cent[k]), 'pixels': int((lab == k).sum()),
             'share': round(float((lab == k).mean()), 4), 'method': f'k-means, k={n}, seed={seed}'}
            for k in range(n)]
@@ -77,10 +79,15 @@ def main():
     res = {'image': a.image, 'size': list(img.size), 'regions': [], 'contrast': [], 'clusters': []}
     for r in a.region:
         name, box = r.split('=', 1)
-        res['regions'].append(region_median(px, name, [int(v) for v in box.split(',')]))
+        x, y, w, h = [int(v) for v in box.split(',')]
+        if w <= 0 or h <= 0 or x < 0 or y < 0 or x + w > img.width or y + h > img.height:
+            sys.exit(f'region {name}={box} is not inside the {img.width}x{img.height} image')
+        res['regions'].append(region_median(px, name, [x, y, w, h]))
     named = {r['name']: r['rgb'] for r in res['regions']}
     for pair in a.contrast:
         p, q = pair.split(':')
+        if p not in named or q not in named:
+            sys.exit(f'--contrast {pair}: name each side with a --region first')
         ratio = contrast(named[p], named[q])
         res['contrast'].append({'pair': [p, q], 'ratio': round(ratio, 2),
                                 'AA_normal_4.5': ratio >= 4.5, 'AA_large_3': ratio >= 3})

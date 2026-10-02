@@ -3,7 +3,7 @@
 > Template. The rows below are **illustrative examples** — replace them. Vocabulary: [glossary](../references/glossary.md).
 
 **Source:** The reference is static; all motion in this build is invention.
-<!-- or: "Animated source: <file>, shows <what>; frames in frames/." -->
+<!-- or: "Animated source: <file>, shows <what>; frames in frames/."; or, with no reference (inspire, edit): "No reference; all motion is invention." -->
 
 | Layer | Trigger | Property | Parameters (`DECISION`) | Rung | From | Reduced variant |
 |---|---|---|---|---|---|---|

@@ -2,9 +2,8 @@
 
 > **Status: experimental**, from a research compiled 2026-10-01; most of it rests on tutorials
 > and vendor guides (grade B), and practitioner methods were not found for several styles
-> (marked). Loaded by [inspire](inspire.md) and [edit](edit.md) once a style from
-> [field-map](field-map.md) is chosen; **never by [recreate](recreate.md)**, which follows the
-> reference. Methods here are starting points, not rules: the user's words win.
+> (marked). When it is loaded: [SKILL.md](../SKILL.md). Methods here are starting points, not
+> rules: the user's words win.
 
 What this file adds: a sourced order of work and the lowest rung of the
 [effects ladder](effects.md) for each trait, so the agent does not improvise methods. Tools
@@ -38,7 +37,7 @@ are named only in [resources](resources.md); accessibility rules live in
   `grid-template-columns` with unequal tracks, type with `clamp()`. No rung above 1.
 - **Mistakes:** rawness read as neglect (the original ethic demanded relentless coherence);
   "no CSS at all" is not the method.
-- **Cost:** the cheapest to produce and serve.
+- **Cost:** cheap to produce and serve (only Efficiency is lighter to serve).
 
 ### Efficiency (and Low-tech)
 - **Order (Low-tech Magazine's own build):** a static site → default typefaces (omit
