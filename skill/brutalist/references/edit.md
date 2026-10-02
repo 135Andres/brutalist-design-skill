@@ -16,7 +16,7 @@
    with the least change, and show it. Escalate only if it is not enough, or if the user
    says to:
    **restyle** (type, spacing, weight — same structure) → **recompose** (order and
-   structure).
+   structure). If the edit moves the page towards a named style, load [craft](craft.md).
 5. **Make variants switchable** when the question is "which one?" (e.g. four typefaces ×
    two scales on the same page) instead of rebuilding.
 6. **Map every move to a known playbook** and log it: quieter (noise), bolder / delight

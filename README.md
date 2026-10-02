@@ -62,7 +62,7 @@ page more flavour" — and the skill picks the command.
 npx brutalist-design-skill
 ```
 
-<img src="docs/media/installer.gif" alt="The installer: the word BRUTALIST drawn in blocks, a red bar, a ticker of commands, then a keyboard menu to choose where and which tools, and progress bars ending in DONE" width="620">
+<img src="docs/media/installer.gif" alt="The installer: the word BRUTALIST in half blocks, the list of commands, then a numbered log: a keyboard menu for the scope and the tools, and progress bars ending in OK" width="620">
 
 No dependencies: `npx` runs [`install.mjs`](install.mjs), published on npm as
 [`brutalist-design-skill`](https://www.npmjs.com/package/brutalist-design-skill). Pick **everywhere** (your home folder) or **this project**, then the tools; it

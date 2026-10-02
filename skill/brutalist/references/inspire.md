@@ -35,16 +35,17 @@ or in part; what is skipped becomes your declared `DECISION`.
 | **Sketches first, from images** | 4–6 divergent sketches without asking, each inspired by a different reference; then ask | the user brings images |
 | **Provocations** | 3 unexpected premises, one sentence + one sketch each | the user asks for surprise |
 | **Derive** | one reference → explicit principles → 3 directions | one strong reference |
-| **Styles** | 3–4 sketches of one real brief, each in a different style from [field-map](field-map.md), every axis value a `DECISION`; *tried once, inconclusive* | the user wants to see how the same content reads from different stances |
+| **Styles** | 3–4 sketches of one real brief, each in a different style from [field-map](field-map.md), every axis value a `DECISION`; *tried once; the user said the map helped, the rest of the feedback was about execution* | the user wants to see how the same content reads from different stances |
 
-Styles, protocol: first explain the step in plain words: what the styles are (kinds of
-brutalism people already name) and why they are offered. Show each by its name, one line of what
+Styles, protocol: first explain the step in plain words: what the styles are (readings of
+brutalism and nearby aesthetics people already name) and why they are offered. Show each by its name, one line of what
 the user would see and a small ASCII preview, and invite them to look the name up before
 deciding; they can answer by typing a name or in their own words. Ask one question at a time and
 never use the research labels with the user. Then ask for a real brief and two to four references (never invented);
 declare the style and each axis value of a sketch as a `DECISION` with its reason; keep
 its origin visible ("style X; principles taken: …"); build and verify it for real and say
-what was not checked; load [accessibility](accessibility.md) and declare any cost a style
+what was not checked; load [craft](craft.md) for how the chosen style is built and
+[accessibility](accessibility.md), and declare any cost a style
 carries; record the user's reaction verbatim and treat a choice made from a preview as a
 hypothesis. When a reference's main element is a figurative image, ask the user which image
 or figure to use; do not substitute abstract shapes for it. The map names and asks; it never scores.

@@ -1,6 +1,6 @@
 {
   "name": "brutalist-design-skill",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "An agent skill for brutalist web design: recreate brutalist interfaces from reference images, or take inspiration from them.",
   "type": "module",
   "bin": {

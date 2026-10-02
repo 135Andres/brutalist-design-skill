@@ -1,4 +1,4 @@
-# Next — where the work stands (2026-09-30)
+# Next — where the work stands (2026-10-01)
 
 Handoff for whoever continues (a remote Claude session, or anyone). Everything needed is in
 this repository; the exceptions are listed at the end.
@@ -6,17 +6,19 @@ this repository; the exceptions are listed at the end.
 ## State
 
 - Repository: `main` on GitHub; site live on GitHub Pages
-  (`https://135andres.github.io/brutalist-design-skill/`); npm `brutalist-design-skill@0.1.0`
-  published (0.2.0 is prepared in `package.json`; publish after the merge), `npx brutalist-design-skill` works.
+  (`https://135andres.github.io/brutalist-design-skill/`); npm `brutalist-design-skill@0.2.0`
+  published (2026-10-01), `npx brutalist-design-skill` works. Branch `v0.2` merged into `main`
+  for 0.3.0 (`package.json` bumped; publishing it is the maintainer's step, see Releasing).
 - Two audits answered: [`audits/`](audits/). axe-core: 0 violations on every page.
 
 ## Waiting for the maintainer
 
-1. **Open question C** (`DESIGN.md` export) in [`SPEC.md`](SPEC.md#open-questions). A, B, D
-   and E were decided in A-11.
+1. Open questions: none (C and F decided in A-17).
 2. **Approval** of the drafts `motion.md`, `effects.md`, `resources.md`, `accessibility.md`
    (reviewed and corrected 2026-09-30, see A-10) and of `stacks.md` §2 (new).
-3. Radio Estática was **not liked** (recorded in [`FINDINGS.md`](FINDINGS.md)); it stays out
+3. **Approval** of the `[proposal]` items in A-20 (variants mentioned only when the user leans
+   towards their style; Rave offers both looks) and A-21 (`craft.md`, how each style is built).
+4. Radio Estática was **not liked** (recorded in [`FINDINGS.md`](FINDINGS.md)); it stays out
    of the landing.
 
 ## Idea from the maintainer: a templates collection
@@ -35,8 +37,8 @@ tests behind each). Free to use, as the repository is. To scope before building:
 ## Idea from the maintainer: beautiful pages with few tokens (to research)
 
 Extend "Efficiency" beyond a style: make good-looking web pages while spending few tokens. Not
-started; the maintainer wants a research first. Open design question: a **mode inside `brutalist`**
-or a **separate skill**.
+started; the maintainer wants a research first. **Decided (A-18, A-19): a modifier inside `brutalist`** that
+combines with any command and style, in one reference file loaded only when used. The next bullet is the earlier view, kept as history.
 
 - Agent's view (`[proposal]`, revised after the research): decide **after measuring**. For now the
   content can live in one reference file of this skill (cost zero until used), written so it can be
@@ -91,9 +93,9 @@ share different kinds of brutalism. Goals recorded by the maintainer:
 
 ## Open after the Styles experiment
 
-- Whether the field map helps is **unanswered** (the user's feedback was about execution). Ask the
-  three questions again, or leave the map experimental.
-- C of the four sketches was dropped; sources of the map are still not re-read by the agent.
+- The maintainer says the map helped (A-17). Y2K, Rave, Webcore, Terminal and five variants were
+  added (A-19, from research); the next `inspire` run should show Y2K and Rave as sketches.
+- C of the four sketches was dropped.
 
 ## Work that can start
 

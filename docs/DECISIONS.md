@@ -231,6 +231,85 @@ elements or keep pure brutalism, typography and the like. Answering is never req
    improves the quality of use for users; the npm package is to be updated (version 0.2.0). Publishing
    needs the maintainer's account and 2FA, so it is the maintainer's step after the merge.
 
+## A-17 · Questions C and F decided (2026-10-01)
+
+1. **C.** `recreate` does not export the inventory as `DESIGN.md` for now; the maintainer agreed
+   with the agent's view (A-11). It can be reopened by the low-token research, where a tokens file
+   before the page is one of the levers to test.
+2. **F.** `critique` may review a user's own page **only if it renders it and looks at it**
+   (screenshots, read together with the content). Reading the page's text or code alone is not
+   enough: the maintainer's view is that it "would not be of much use". The rest of F stands as an
+   idea to test: questions about the piece relative to itself, never a checklist or a verdict.
+   If the page cannot be rendered, `critique` reviews the **quality of the code** instead and says
+   it could not see the page. `critique.md` is still not specified.
+3. **Field map:** the maintainer says the map of styles "helped quite a lot" (answer to the open
+   question of the first Styles run). It stays experimental, and two styles are added at the
+   maintainer's request: **Y2K** and **Rave** ("acid graphics"), from a short search, with weaker
+   sources than the four from the research.
+
+## A-18 · The efficient mode lives inside the skill (2026-10-01)
+
+1. The maintainer decided that "beautiful pages with few tokens" is a **mode inside `brutalist`**,
+   not a separate skill. This closes the open design question in `NEXT.md`; the agent's earlier
+   view (decide after measuring) no longer applies to *where* it lives, only to *what* it contains.
+2. Its content goes in one reference file loaded only when the mode is used, so it costs nothing
+   otherwise. Which levers it includes is still decided by measurement (protocol in `NEXT.md`).
+3. A research prompt on Y2K, Rave and further candidate styles is in
+   [`prompts/research-styles-y2k-rave.md`](prompts/research-styles-y2k-rave.md).
+
+## A-19 · The map grows to eight styles; the efficient mode is a modifier (2026-10-01)
+
+1. The research on Y2K and Rave was answered (the maintainer ran the prompt in
+   `prompts/research-styles-y2k-rave.md`). Corrections applied to `field-map.md`: Y2K is polished,
+   not raw, and is grouped with brutalism only by trend articles; Rave names **two looks** (the
+   1980s–90s flyer and the 2010s "acid graphics"), and "on black" was dropped as unsupported.
+2. **Added at the maintainer's choice:** two styles, **Webcore** and **Terminal** (Terminal on
+   grade B sources only), and five **variants** inside existing styles: Swiss (Brutalism),
+   Low-tech (Efficiency), Glitch and New Ugly (Antidesign), Frutiger Aero (Y2K).
+3. **Not taken:** Vaporwave, and grouping the list by stance and era. Left out by the research:
+   Memphis, maximalism, broken grid, kinetic type.
+4. **The efficient mode is a modifier** that combines with any command and any style ("inspire in
+   efficient mode"), not a command of its own. The research also found Efficiency weakest as a
+   style and better read as an axis; it stays on the map as a look for now.
+5. The full research text is not in the repository (the maintainer's copy); its sources that
+   matter are listed in `field-map.md`.
+
+## A-20 · Branch v0.2; review of A-17–A-19 (2026-10-01)
+
+1. `brutalist-design-skill@0.2.0` is on npm (published by the maintainer). From now on the
+   agent's commits go to the branch **`v0.2`**, at the maintainer's request.
+2. The maintainer asked for a full review ("no errors, no contradictions, nothing that could
+   affect the user"). Fixed: published 0.2.0 still said "fluorescent on black" for Rave and
+   `critique.md` named an internal decision id; the skill files named decision ids again
+   (they must stay self-contained); `inspire.md` called every style a kind of brutalism; the
+   Styles format was still marked inconclusive; `critique.md` said both "never the user's taste"
+   and "the user's own page" without reconciling them; ASCII previews were misaligned.
+3. `[proposal]`, added in the review: with eight styles, a **variant is mentioned only when the
+   user leans towards its style**; for Rave the agent **offers both looks** and, if the user does
+   not choose, picks one as a `DECISION` (setup questions are skippable, so "ask which one" was
+   not enough).
+4. A second research prompt, on how each style is built (methods, resources with licences,
+   mistakes, accessibility, cost), is in
+   [`prompts/research-styles-craft.md`](prompts/research-styles-craft.md), so the agent follows
+   sourced methods instead of inventing them.
+
+## A-21 · How each style is built: `craft.md` (2026-10-01)
+
+1. The maintainer ran the craft research (`prompts/research-styles-craft.md`) and asked that the
+   agent work from sourced methods instead of inventing them.
+2. **Applied (`[proposal]`):** a new reference file `craft.md`, loaded by `inspire` and `edit`
+   once a style is chosen and never by `recreate` (closed; it follows the reference). It holds
+   eight shared methods, an order of work, the lowest rung per trait, common mistakes,
+   style-specific risks and a cost table per style. It is separate from `field-map.md` so that
+   offering styles stays cheap and the build detail is read only when needed.
+3. Tools and licences went to `resources.md` (one home for tools), each with the licence as
+   recorded on 2026-10-01; archives with no licence are marked **study only**, and a
+   single-use shader component is marked "do not copy".
+4. Not taken into the skill: the research's numbered WCAG checklist claims (one B source
+   mislabelled the criteria; `accessibility.md` stays the home), and AAA criteria as
+   requirements.
+5. The research text itself is the maintainer's copy, not in the repository.
+
 ## Open questions
 
 Kept in one place: [`SPEC.md` § Open questions](SPEC.md#open-questions). *(This section
