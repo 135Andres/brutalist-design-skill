@@ -1,11 +1,13 @@
 ---
 name: brutalist
 description: Recreate brutalist and experimental web interfaces from reference images (screenshots, Pinterest captures), motion included, or take inspiration from them to design something original. Use when the user shares an image of a brutalist site and wants it built, animated, edited, verified or critiqued. Commands - recreate, motion, inspire, edit, verify, critique.
+license: Apache-2.0
+compatibility: Any agent that reads SKILL.md. Scripts need a shell, Python 3 with Pillow and numpy, and Node 22+ with Chromium for screenshots; without them the skill still works and marks estimates.
 ---
 
 # brutalist
 
-> **Draft (2026-10-01).** `recreate` is fully specified; `motion` is under review;
+> **Draft (2026-10-03).** `recreate` is fully specified; `motion` is under review;
 > `inspire` and `edit` are experimental; `verify` and `critique` are not yet specified.
 > Each reference file states its own status at the top.
 
@@ -57,7 +59,25 @@ only when a section points to it for a concrete tool.
 
 **No command given?** Infer it: an image plus "build this" → `recreate`; images plus
 "ideas" / "inspire me" → `inspire`; an existing page plus "improve" / "more flavour" →
-`edit`. If two fit, ask one short question.
+`edit`. If two fit, ask one short question. The user may name the skill (`/brutalist`,
+`$brutalist`, `/skill:brutalist`, depending on the tool) or only describe the task.
+
+## In any tool, with any model
+
+- **Paths.** Links and `scripts/…` paths are relative to the folder that holds this file.
+  Outputs go in the user's project (the working directory). Run a script by its path inside
+  this folder, e.g. `python3 <this folder>/scripts/find_rules.py` (`python` or `py` on Windows).
+- **Read before acting.** Read each file the table above lists, in full, before starting the
+  command; this page is a router, not a summary of them.
+- **Images.** Measure from the image file with the scripts, not from your view of it: tools
+  may resize or compress an image before you see it. If you cannot see images at all (the
+  model has no vision, or the tool did not pass the image), say so at once and never describe
+  an image you have not seen: measure what the scripts can (palette, grid, ink boxes), ask the
+  user to transcribe the text and describe the type and layout, and record those rows as
+  `estimated`, method "user's description".
+- **Questions.** Ask in plain text when the tool has no question widget. When no one can
+  answer (a non-interactive or scheduled run), do not wait: take the most conservative
+  choice, mark it `DECISION`, and list it in the report.
 
 ## Outputs
 

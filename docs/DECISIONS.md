@@ -374,6 +374,34 @@ closed `recreate.md` (O-11); global folders for Cursor, Gemini CLI and Copilot, 
 code for now") still stands (O-17); a name for the efficient mode distinct from the Efficiency
 style (O-22).
 
+## A-24 · Any model, any tool (2026-10-03)
+
+The maintainer (translated): "the skill must work for every AI model and every harness, mainly
+Claude Code, Codex, agy and OpenCode; Pi too, because I plan to use it."
+
+1. **Installer:** Antigravity (`~/.gemini/config/skills`, `.agents/skills`) and Pi
+   (`~/.agents/skills`, `.agents/skills`), from each tool's documentation. Antigravity's global
+   folder was chosen by test: `agy` 1.2.9 read `~/.gemini/config/skills` and not
+   `~/.gemini/antigravity-cli/skills`, which its web docs also name.
+2. **Tools that share a folder share one copy**; uninstalling says which other tools lose it.
+3. **The installer lists other copies that differ** from the version it installs. Found by test:
+   OpenCode 2.0.16, with four copies installed, loaded an old `~/.config/opencode/skills` copy
+   instead of a newer project copy.
+
+`[proposal]`, applied and awaiting approval:
+
+4. **`SKILL.md` § "In any tool, with any model":** paths are relative to the skill folder and
+   scripts are run by that path; read the listed files before acting; measure from the image
+   file, not from the resized view a tool may show; a model that cannot see images says so,
+   never describes an unseen image, and records the user's description as `estimated`; when no
+   one can answer, take the most conservative choice, mark it `DECISION` and list it.
+5. **Frontmatter:** `license` and `compatibility`, optional fields of the Agent Skills format;
+   parsed by `agy` and OpenCode in the tests above.
+
+Tested 2026-10-03: `agy` lists the skill (global folder; project folder with `--add-dir`);
+OpenCode with DeepSeek V4.1 Flash loaded it, resolved the full script path from the skill folder
+and applied the no-answer rule. Not tested: Codex and Pi (not installed), a model without vision.
+
 ## Open questions
 
 Kept in one place: [`SPEC.md` § Open questions](SPEC.md#open-questions). *(This section

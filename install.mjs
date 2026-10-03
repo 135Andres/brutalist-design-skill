@@ -56,12 +56,15 @@ const HERMES = process.env.HERMES_HOME || join(HOME, '.hermes');
 const TOOLS = [
   { id: 'claude',   name: 'Claude Code',    global: join(HOME, '.claude', 'skills'), project: '.claude/skills',   mark: [join(HOME, '.claude'), '.claude'] },
   { id: 'codex',    name: 'Codex CLI',      global: join(HOME, '.agents', 'skills'), project: '.agents/skills',   mark: [join(HOME, '.codex'), '.agents'] },
+  { id: 'antigravity', name: 'Antigravity', global: join(HOME, '.gemini', 'config', 'skills'), project: '.agents/skills', mark: [[join(HOME, '.gemini', 'config'), join(HOME, '.gemini', 'antigravity-cli')], '.agents'] },
+  { id: 'pi',       name: 'Pi',             global: join(HOME, '.agents', 'skills'), project: '.agents/skills',   mark: [join(HOME, '.pi'), '.pi'] },
   { id: 'cursor',   name: 'Cursor',         project: '.cursor/skills',   mark: [null, '.cursor'] },
   { id: 'gemini',   name: 'Gemini CLI',     project: '.gemini/skills',   mark: [null, '.gemini'] },
   { id: 'copilot',  name: 'GitHub Copilot', project: '.github/skills',   mark: [null, ['.github/skills', '.github/copilot-instructions.md']] },
   { id: 'opencode', name: 'OpenCode',       global: join(HOME, '.config', 'opencode', 'skills'), project: '.opencode/skills', mark: [join(HOME, '.config', 'opencode'), '.opencode'] },
   { id: 'hermes',   name: 'Hermes Agent',   global: join(HERMES, 'skills'), mark: [HERMES, null] },
 ];
+const NAMED = { claude: '/brutalist', codex: '$brutalist', antigravity: '/brutalist', pi: '/skill:brutalist' };   // how each tool names a skill
 const where = (t, scope) => scope === 'global' ? t.global : t.project && resolve(CWD, t.project);
 const detected = (t, scope) => [t.mark[scope === 'global' ? 0 : 1]].flat().some(m => !!m && existsSync(scope === 'global' ? m : resolve(CWD, m)));
 const pretty = p => p === HOME || p.startsWith(HOME + sep) ? '~' + p.slice(HOME.length) : relative(CWD, p) || '.';
@@ -273,13 +276,33 @@ async function main() {
   if (!picked.length) { w('  nothing selected. nothing changed.\n\n'); return; }
   log(2, 'targets', picked.map(t => t.name).join(' · '));
   log(3, args.uninstall ? 'remove' : 'copy', args['dry-run'] ? dim('dry run, nothing changes') : '');
-  for (const t of picked) await (args.uninstall ? uninstall : install)(t, scope, !!args['dry-run']);
+  const seen = new Map();                       // tools that share a folder share one copy
+  for (const t of picked) {
+    const p = where(t, scope);
+    if (seen.has(p)) { w(`        ${t.name.padEnd(15)} ${dim('same folder as ' + seen.get(p) + ': one copy serves both tools')}\n`); continue; }
+    seen.set(p, t.name);
+    await (args.uninstall ? uninstall : install)(t, scope, !!args['dry-run']);
+    const others = TOOLS.filter(o => o !== t && where(o, scope) === p && !picked.includes(o)).map(o => o.name);
+    if (others.length) w(`        ${' '.repeat(15)} ${dim(args.uninstall ? `${others.join(', ')} read the same copy: removed for ${others.length > 1 ? 'them' : 'it'} too` : 'this folder is also read by ' + others.join(', '))}\n`);
+  }
+  // other copies a tool may load instead (OpenCode, for one, reads several folders and takes its own first)
+  const stale = new Map();
+  for (const t of TOOLS) for (const s of ['global', 'project']) {
+    const p = where(t, s), d = p && join(p, 'brutalist');
+    if (!p || seen.has(p) || !existsSync(join(d, 'SKILL.md')) || sameTree(SRC, d)) continue;
+    stale.set(d, { s, ids: [...(stale.get(d)?.ids || []), t.id] });
+  }
+  if (stale.size) {
+    w(`\n  ${dim('older or edited copies elsewhere (a tool may load one instead):')}\n`);
+    for (const [d, { s, ids }] of stale) w(`    ${clip(pretty(d), Math.max(12, COLS() - 40)).padEnd(34)} ${dim(`--scope=${s} --tools=${ids.join(',')}`)}\n`);
+    w(`  ${dim('update one with its options, or remove it by adding --uninstall')}\n`);
+  }
   if (args.uninstall) { w('\n'); return; }
   if (args['dry-run']) { w(`\n  ${red('■')} ${bold('Dry run.')} Nothing changed.\n\n`); return; }
   w(`\n  ${red('■')} ${bold('Ready.')} Restart your tool, then ask in your own words:\n\n`);
   w(`    ${inv(' "rebuild this image as a page" ')}  ${dim('or "inspire me with these"')}\n`);
-  const named = [picked.some(t => t.id === 'claude') && '/brutalist in Claude Code', picked.some(t => t.id === 'codex') && '$brutalist in Codex'].filter(Boolean);
-  if (named.length) w(`    ${dim('to name the skill: ' + named.join(' · '))}\n`);
+  const named = picked.filter(t => NAMED[t.id]).map(t => `${NAMED[t.id]} in ${t.name}`);
+  if (named.length) w(wrap(['to name the skill:', ...named], ' · ', Math.max(20, COLS() - 6)).map(l => `    ${dim(l.replace(': · ', ': '))}\n`).join(''));
   w('\n');
   w(`  ${dim('docs  https://github.com/135Andres/brutalist-design-skill')}\n\n`);
 }

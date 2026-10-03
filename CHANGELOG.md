@@ -15,6 +15,11 @@
   way to build each trait, common mistakes and style-specific accessibility risks, from
   research. Tools with their licences are listed in `resources.md`; archives without a licence
   are for study only. *Experimental.*
+- **Any model, any tool.** The installer adds Antigravity (app, IDE and `agy`) and Pi; tools
+  that share a folder share one copy, and the installer lists older or edited copies elsewhere
+  that a tool might load instead. The skill now says where its paths start, what to do when the
+  model cannot see images (say so; never describe an unseen image) and what to do when no one
+  can answer a question. *Proposal, awaiting approval.*
 - **Safer installer.** Misspelt options stop the run instead of installing; `--tools x` and
   `--scope x` work with a space; a requested tool with no folder for the scope stops before
   anything changes; uninstall keeps a copy you edited; an update copies beside the old skill

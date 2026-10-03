@@ -26,7 +26,7 @@
 | Stacks | [`stacks.md`](../skill/brutalist/references/stacks.md) | **partly specified**: output format (one file / modular) drafted (A-10), untested |
 | Templates | [`templates/`](../skill/brutalist/templates/) | new; follow the closed vocabulary |
 | Scripts | `sample_palette.py`, `find_rules.py`, `ink_bbox.py`, `overlay.html`, `shots.mjs` | written; used in the worked example. `spring_to_css`: planned |
-| Per-tool installer | [`install.mjs`](../install.mjs) (`npx brutalist-design-skill`) | done (A-6, A-7); **published on npm, 0.2.0** (2026-10-01), and `npx brutalist-design-skill` tested from the registry; copy tested into Claude Code, Codex and Hermes folders of a test home; loading inside each tool not tested |
+| Per-tool installer | [`install.mjs`](../install.mjs) (`npx brutalist-design-skill`) | done (A-6, A-7); **published on npm, 0.2.0** (2026-10-01), and `npx brutalist-design-skill` tested from the registry; copy tested into Claude Code, Codex and Hermes folders of a test home; Antigravity and Pi added, loading tested in `agy` and OpenCode (A-24); Codex and Pi not tested |
 | Efficient mode | — | **decided** (A-18, A-19): a modifier inside the skill, one reference file; content to be measured |
 | Templates collection | — | **idea** (A-14), not started: open-source starting points on the project site |
 | Gallery and site | [`examples/gallery/`](../examples/gallery/), [`index.html`](../index.html) | live on GitHub Pages (A-5, A-8); axe-core: 0 violations on every page after the second audit; third audit answered (A-23) |
@@ -71,4 +71,4 @@ None open.
 2. Creative-mode formats 2–4 → specify `inspire`.
 3. A second `edit` test on a page the agent did not write.
 4. Specify `verify`, `critique`, `stacks`; write the scripts.
-5. Installer: test loading inside each tool, Node 18 and Windows; tests against real references.
+5. Installer: test loading in Codex and Pi, Node 18 and Windows; tests against real references.

@@ -1,4 +1,4 @@
-# Next — where the work stands (2026-10-01)
+# Next — where the work stands (2026-10-03)
 
 Handoff for whoever continues (a remote Claude session, or anyone). Everything needed is in
 this repository; the exceptions are listed at the end.
@@ -22,7 +22,9 @@ this repository; the exceptions are listed at the end.
    of the closed `recreate.md` (open question C and a spec id still in it); global folders for
    Cursor, Gemini CLI and Copilot or `~/.agents/skills` as a shared target; GitHub email
    privacy; whether A-11.8 stands; a name for the efficient mode; approval of A-23's proposals.
-5. Radio Estática was **not liked** (recorded in [`FINDINGS.md`](FINDINGS.md)); it stays out
+5. **Approval** of the `[proposal]` items in A-24 (`SKILL.md` § "In any tool, with any model";
+   `license` and `compatibility` in the frontmatter).
+6. Radio Estática was **not liked** (recorded in [`FINDINGS.md`](FINDINGS.md)); it stays out
    of the landing.
 
 ## Idea from the maintainer: a templates collection
@@ -108,8 +110,9 @@ share different kinds of brutalism. Goals recorded by the maintainer:
 - `edit`: a second test on a page the agent did not write.
 - Test `stacks.md` §2 on a modular project (React/Vue/Svelte/Vite) and on an empty folder.
 - Specify `verify`, `critique`, the rest of `stacks`; write `scripts/spring_to_css`.
-- Test the installed skill inside each tool (Claude Code first), Node 18 and Windows; check
-  the tool folders of Codex, Cursor, Gemini CLI, Copilot and Hermes against their docs.
+- Test the installed skill in Codex and Pi (Antigravity and OpenCode tested, A-24), with a model
+  without vision, on Node 18 and on Windows; check the folders of Cursor, Gemini CLI, Copilot and
+  Hermes against their docs.
 - A `recreate` test on a reference nobody here authored (the worked example is not
   independent).
 - GitHub: repository *topics*; a social-preview image (1280 × 640).

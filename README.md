@@ -71,7 +71,7 @@ copies [`skill/brutalist/`](skill/brutalist/SKILL.md) into each one's skills fol
 | Option | Does |
 |---|---|
 | `--yes` | no questions: detected tools (Claude Code if none is detected), everywhere unless `--scope`; also what happens when the installer does not run in a terminal |
-| `--tools=claude,codex,…` | choose tools; a tool with no folder for the scope stops the run before anything changes (`claude`, `codex`, `cursor`, `gemini`, `copilot`, `opencode`, `hermes`) |
+| `--tools=claude,codex,…` | choose tools; a tool with no folder for the scope stops the run before anything changes (`claude`, `codex`, `antigravity`, `pi`, `cursor`, `gemini`, `copilot`, `opencode`, `hermes`) |
 | `--scope=global` / `--scope=project` | your home folder / the current folder |
 | `--list` | every tool, its folders, and whether it was detected |
 | `--dry-run` | show what would happen, change nothing |
@@ -82,23 +82,33 @@ copies [`skill/brutalist/`](skill/brutalist/SKILL.md) into each one's skills fol
 |---|---|---|
 | Claude Code | `~/.claude/skills/` | `.claude/skills/` |
 | Codex CLI | `~/.agents/skills/` | `.agents/skills/` |
+| Antigravity (app, IDE, `agy`) | `~/.gemini/config/skills/` | `.agents/skills/` |
+| Pi | `~/.agents/skills/` | `.agents/skills/` |
 | Cursor | — | `.cursor/skills/` |
 | Gemini CLI | — | `.gemini/skills/` |
 | GitHub Copilot | — | `.github/skills/` |
 | OpenCode | `~/.config/opencode/skills/` | `.opencode/skills/` |
 | Hermes Agent | `$HERMES_HOME/skills/` (default `~/.hermes/skills/`) | — |
 
-The folders follow each tool's documented skills location. The copy was tested into the
-Claude Code, Codex and Hermes folders of a test home folder; loading inside each tool has
-not been tested yet.
+The folders follow each tool's documented skills location. Tools that share a folder share
+one copy (Codex, Antigravity and Pi in a project; Codex and Pi in your home folder).
+Loading tested on 2026-10-03: Claude Code loads it (used daily). Antigravity CLI 1.2.9 loads
+`~/.gemini/config/skills/`, and a project's `.agents/skills/` only when the folder is in the
+workspace (`agy --add-dir .` in print mode); its docs also name `~/.gemini/antigravity-cli/skills/`,
+which that version did not read. OpenCode 2.0.16 loads it, but with several copies installed it
+took the one in `~/.config/opencode/skills/` over a newer project copy, so the installer lists
+copies that differ from the version it installs. Codex and Pi: not tested yet.
 Updating or uninstalling first keeps a copy of an installed skill that differs from this version
 (edited, or older) in `~/.brutalist-skill/backups/`. The new copy is written beside the old one
 and swapped in, so a failed update leaves the old skill as it was. A skill folder that is a
 symbolic link (a development checkout) is left untouched. Unknown options stop the run.
 Some tools read each other's folders (OpenCode, Cursor, Gemini CLI and Copilot also read
 `~/.agents/skills/` or `~/.claude/skills/`), so installing for several tools can show the skill
-twice in one of them. To name the skill: `/brutalist` in Claude Code, `$brutalist` in Codex;
-tools can also pick it up from a request in plain words.
+twice in one of them. To name the skill: `/brutalist` in Claude Code and Antigravity,
+`$brutalist` in Codex, `/skill:brutalist` in Pi; every tool can also pick it up from a request in
+plain words. The skill does not depend on one model or tool: paths are relative to its folder,
+it says what to do when a model cannot see images or no one can answer a question, and it works
+without its scripts, marking estimates.
 **Manual install:** copy `skill/brutalist` into any of the folders above.
 
 ## What makes it different

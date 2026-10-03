@@ -25,7 +25,7 @@ def pump(until):
             except OSError: return
             if not d: return
             chunks.append((time.time()-t0,d))
-# scope: down, up, enter (everywhere); targets: down, down, space (OpenCode), enter
+# scope: down, up, enter (everywhere); targets: down, down, space (Antigravity), enter
 DEFAULT=[[2.6,'1b5b42'],[3.2,'1b5b41'],[3.9,'0d'],[4.8,'1b5b42'],[5.3,'1b5b42'],[5.9,'20'],[6.8,'0d']]
 keys=json.loads(sys.argv[1]) if len(sys.argv)>1 else DEFAULT
 sched=[(t,bytes.fromhex(k)) for t,k in keys]
